@@ -5,21 +5,22 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Certificação em Coaching e Treino Canino — Ricardo Calheiros</title>
 <meta name="description" content="A única Certificação em Coaching e Treino Canino em Portugal ensinada por 1 dos 4 treinadores Koehler reconhecidos na Europa. Seis meses, online, Turma ou Individual.">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Manrope:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Manrope:wght@400;500;600;700;800;900&family=Dancing+Script:wght@500;700&display=swap" rel="stylesheet">
 <style>
 /* ═══════════════════════════════════════════════
-   NOIR TINSEL PREMIUM — full DS inline
+   NOIR TINSEL PREMIUM — v3
    ═══════════════════════════════════════════════ */
 :root{
-  --bg-deepest:#16191D; --bg-base:#23262B; --bg-elevated:#2D3037; --bg-elevated-2:#383B42;
+  --bg-deepest:#16191D;--bg-base:#23262B;--bg-elevated:#2D3037;--bg-elevated-2:#383B42;
   --bg-warm-tint:#6A3A30;
-  --border-subtle:#1B1E22; --border-default:#383B42; --border-warm:#6A3A30;
-  --text-primary:#ECE1AB; --text-secondary:#E0D49B; --text-muted:#B8A879; --text-faded:#7A6F4A;
-  --gold:#CB9650; --gold-bright:#DDA968; --gold-deep:#A87938;
-  --gold-glow:rgba(203,150,80,0.45); --gold-glow-soft:rgba(203,150,80,0.18); --gold-tint:rgba(203,150,80,0.08);
-  --mistletoe:#6A3A30; --mistletoe-soft:rgba(106,58,48,0.5);
+  --border-subtle:#1B1E22;--border-default:#383B42;--border-warm:#6A3A30;
+  --text-primary:#ECE1AB;--text-secondary:#E0D49B;--text-muted:#B8A879;--text-faded:#7A6F4A;
+  --gold:#CB9650;--gold-bright:#DDA968;--gold-deep:#A87938;
+  --gold-glow:rgba(203,150,80,0.45);--gold-glow-soft:rgba(203,150,80,0.18);--gold-tint:rgba(203,150,80,0.08);
+  --mistletoe:#6A3A30;--mistletoe-soft:rgba(106,58,48,0.5);
   --font-display:'Manrope',-apple-system,sans-serif;
   --font-body:'Inter',-apple-system,sans-serif;
+  --font-script:'Dancing Script',cursive;
   --shadow-sm:0 2px 8px rgba(0,0,0,0.4);
   --shadow:0 8px 24px rgba(0,0,0,0.5);
   --shadow-md:0 16px 48px rgba(0,0,0,0.6);
@@ -49,25 +50,13 @@ img{max-width:100%;display:block}
 .container{max-width:1240px;margin:0 auto;padding:0 32px}
 
 /* ═══ TEXT GRADIENTS ═══ */
-.txt-gradient{
-  background:linear-gradient(120deg,var(--gold) 0%,var(--gold-bright) 50%,var(--gold) 100%);
-  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;
-}
-.txt-gradient-animated{
-  background:linear-gradient(120deg,var(--gold) 0%,var(--gold-bright) 30%,var(--text-primary) 50%,var(--gold-bright) 70%,var(--gold) 100%);
-  background-size:200% auto;-webkit-background-clip:text;background-clip:text;
-  -webkit-text-fill-color:transparent;color:transparent;animation:gradient-shift 8s linear infinite;
-}
+.txt-gradient{background:linear-gradient(120deg,var(--gold) 0%,var(--gold-bright) 50%,var(--gold) 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
+.txt-gradient-animated{background:linear-gradient(120deg,var(--gold) 0%,var(--gold-bright) 30%,var(--text-primary) 50%,var(--gold-bright) 70%,var(--gold) 100%);background-size:200% auto;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;animation:gradient-shift 8s linear infinite}
+.txt-gradient-polaroid{background:linear-gradient(135deg,var(--text-primary) 0%,var(--gold) 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
 @keyframes gradient-shift{0%{background-position:0% 50%}100%{background-position:200% 50%}}
 
 /* ═══ NAV ═══ */
-.nav{
-  position:fixed;top:0;left:0;right:0;z-index:100;
-  background:rgba(22,25,29,0.85);backdrop-filter:blur(20px) saturate(180%);
-  -webkit-backdrop-filter:blur(20px) saturate(180%);
-  border-bottom:1px solid var(--border-subtle);padding:18px 0;
-  transition:all 250ms var(--ease);
-}
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(22,25,29,0.85);backdrop-filter:blur(20px) saturate(180%);-webkit-backdrop-filter:blur(20px) saturate(180%);border-bottom:1px solid var(--border-subtle);padding:18px 0;transition:all 250ms var(--ease)}
 .nav.scrolled{background:rgba(22,25,29,0.96);border-bottom-color:var(--border-warm);padding:14px 0}
 .nav-inner{max-width:1240px;margin:0 auto;padding:0 32px;display:flex;align-items:center;justify-content:space-between;gap:32px}
 .nav-logo{font-family:var(--font-display);font-size:22px;font-weight:800;color:var(--text-primary);letter-spacing:-0.01em}
@@ -79,72 +68,29 @@ img{max-width:100%;display:block}
 .nav-links a:hover::after{width:100%}
 
 /* ═══ BUTTONS ═══ */
-.btn{
-  display:inline-flex;align-items:center;gap:12px;
-  background:var(--gold);color:var(--bg-deepest);
-  font-family:var(--font-body);font-weight:700;font-size:14px;
-  letter-spacing:0.04em;text-transform:uppercase;
-  padding:18px 36px;border:none;border-radius:6px;cursor:pointer;
-  box-shadow:var(--glow);transition:all 300ms var(--ease);text-decoration:none;
-  position:relative;overflow:hidden;
-}
-.btn::after{
-  content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;
-  background:linear-gradient(120deg,transparent,rgba(255,255,255,0.4),transparent);
-  transition:left 0.7s var(--ease);
-}
+.btn{display:inline-flex;align-items:center;gap:12px;background:var(--gold);color:var(--bg-deepest);font-family:var(--font-body);font-weight:700;font-size:14px;letter-spacing:0.04em;text-transform:uppercase;padding:18px 36px;border:none;border-radius:6px;cursor:pointer;box-shadow:var(--glow);transition:all 300ms var(--ease);text-decoration:none;position:relative;overflow:hidden}
+.btn::after{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(120deg,transparent,rgba(255,255,255,0.4),transparent);transition:left 0.7s var(--ease)}
 .btn:hover{background:var(--gold-bright);transform:translateY(-2px);box-shadow:var(--glow-md)}
 .btn:hover::after{left:100%}
 .btn-lg{padding:22px 48px;font-size:15px}
 .btn-pulse{animation:btn-pulse 2.6s ease-in-out infinite}
-@keyframes btn-pulse{
-  0%,100%{box-shadow:0 0 0 0 rgba(203,150,80,0.7),var(--glow)}
-  50%{box-shadow:0 0 0 14px rgba(203,150,80,0),var(--glow-md)}
-}
+@keyframes btn-pulse{0%,100%{box-shadow:0 0 0 0 rgba(203,150,80,0.7),var(--glow)}50%{box-shadow:0 0 0 14px rgba(203,150,80,0),var(--glow-md)}}
 .btn-ghost{background:transparent;color:var(--gold);border:1px solid var(--gold);box-shadow:none}
 .btn-ghost::after{display:none}
 .btn-ghost:hover{background:var(--gold-tint);color:var(--gold-bright);border-color:var(--gold-bright)}
-.btn-link{
-  background:transparent;color:var(--text-muted);padding:18px 8px;border:none;cursor:pointer;
-  font-family:var(--font-body);font-size:13px;font-weight:500;letter-spacing:0.04em;
-  transition:color 250ms var(--ease);text-decoration:none;
-}
+.btn-link{background:transparent;color:var(--text-muted);padding:18px 8px;border:none;cursor:pointer;font-family:var(--font-body);font-size:13px;font-weight:500;letter-spacing:0.04em;transition:color 250ms var(--ease);text-decoration:none}
 .btn-link:hover{color:var(--gold)}
 
 /* ═══ TAG ═══ */
-.tag{
-  display:inline-flex;align-items:center;gap:14px;color:var(--gold);
-  font-size:11px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:24px;
-}
+.tag{display:inline-flex;align-items:center;gap:14px;color:var(--gold);font-size:11px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:24px}
 .tag::before{content:'';width:36px;height:1px;background:var(--gold)}
+.tag.centered{justify-content:center}
+.tag.centered::after{content:'';width:36px;height:1px;background:var(--gold)}
 
 /* ═══ BADGE ═══ */
-.badge{
-  display:inline-flex;align-items:center;gap:8px;
-  background:var(--gold-tint);border:1px solid var(--gold);color:var(--gold);
-  padding:8px 14px;border-radius:9999px;
-  font-size:11px;font-weight:700;letter-spacing:0.5px;text-transform:uppercase;
-}
+.badge{display:inline-flex;align-items:center;gap:8px;background:var(--gold-tint);border:1px solid var(--gold);color:var(--gold);padding:8px 14px;border-radius:9999px;font-size:11px;font-weight:700;letter-spacing:0.5px;text-transform:uppercase}
 .badge::before{content:'';width:7px;height:7px;border-radius:50%;background:var(--gold);animation:dot-pulse 2.4s ease-in-out infinite}
 @keyframes dot-pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(1.6)}}
-
-/* ═══ ANNOUNCEMENT MARQUEE BAR ═══ */
-.announce{
-  background:var(--bg-deepest);
-  border-top:1px solid var(--border-warm);
-  border-bottom:1px solid var(--gold);
-  padding:14px 0;overflow:hidden;position:relative;
-  -webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);
-  mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);
-}
-.announce-track{
-  display:flex;gap:48px;width:max-content;animation:marquee 38s linear infinite;
-  font-size:13px;font-weight:600;color:var(--text-primary);letter-spacing:0.6px;
-  text-transform:uppercase;align-items:center;
-}
-.announce-track strong{color:var(--gold)}
-.announce-track .dot{width:6px;height:6px;border-radius:50%;background:var(--gold);flex-shrink:0}
-@keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 
 /* ═══ HERO ═══ */
 .hero{
@@ -154,12 +100,17 @@ img{max-width:100%;display:block}
     radial-gradient(ellipse 40% 30% at 10% 80%,rgba(106,58,48,0.35),transparent 70%),
     linear-gradient(165deg,var(--bg-deepest) 0%,var(--bg-base) 60%,var(--bg-elevated) 100%);
 }
+/* ABSTRACT PATTERN OVERLAY */
 .hero::before{
-  content:'';position:absolute;width:520px;height:520px;
-  background:radial-gradient(circle,rgba(203,150,80,0.45),transparent 70%);
-  filter:blur(90px);top:-150px;right:-100px;
-  animation:orb-drift 28s ease-in-out infinite;
-  pointer-events:none;
+  content:'';position:absolute;inset:0;opacity:0.35;pointer-events:none;z-index:0;
+  background-image:
+    radial-gradient(circle at 15% 25%,rgba(203,150,80,0.12) 0,transparent 50%),
+    radial-gradient(circle at 85% 70%,rgba(106,58,48,0.18) 0,transparent 50%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600' viewBox='0 0 600 600'%3E%3Cg fill='none' stroke='%23CB9650' stroke-width='0.5' opacity='0.35'%3E%3Ccircle cx='300' cy='300' r='80'/%3E%3Ccircle cx='300' cy='300' r='150'/%3E%3Ccircle cx='300' cy='300' r='220'/%3E%3Ccircle cx='300' cy='300' r='290'/%3E%3Cpath d='M0,300 L600,300 M300,0 L300,600'/%3E%3Cpath d='M87,87 L513,513 M513,87 L87,513'/%3E%3C/g%3E%3C/svg%3E");
+  background-size:auto,auto,800px 800px;
+  background-position:center,center,center;
+  background-repeat:no-repeat,no-repeat,no-repeat;
+  filter:blur(0.3px);
 }
 .hero::after{
   content:'';position:absolute;width:600px;height:600px;
@@ -168,280 +119,148 @@ img{max-width:100%;display:block}
   animation:orb-drift 32s ease-in-out infinite;animation-delay:-6s;
   pointer-events:none;
 }
-@keyframes orb-drift{
-  0%,100%{transform:translate(0,0) scale(1)}
-  33%{transform:translate(60px,-40px) scale(1.1)}
-  66%{transform:translate(-40px,60px) scale(0.95)}
-}
-.hero-grid{
-  display:grid;grid-template-columns:1.05fr 0.95fr;gap:64px;align-items:center;
-  position:relative;z-index:1;
-}
-.hero h1{
-  font-size:clamp(38px,4.6vw,62px);
-  font-weight:800;line-height:1.1;margin:24px 0 22px;
-  max-width:18ch;
-}
-.hero-sub{
-  font-size:17px;color:var(--text-muted);line-height:1.75;
-  margin-bottom:32px;max-width:540px;
-}
+@keyframes orb-drift{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(60px,-40px) scale(1.1)}66%{transform:translate(-40px,60px) scale(0.95)}}
+.hero-grid{display:grid;grid-template-columns:1.05fr 0.95fr;gap:64px;align-items:center;position:relative;z-index:1}
+.hero h1{font-size:clamp(38px,4.6vw,62px);font-weight:800;line-height:1.1;margin:24px 0 22px;max-width:18ch}
+.hero-sub{font-size:17px;color:var(--text-muted);line-height:1.75;margin-bottom:32px;max-width:540px}
 .hero-sub strong{color:var(--text-primary);font-weight:600}
 .hero-badges{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:34px}
-.hero-badge{
-  background:var(--bg-elevated);border:1px solid var(--border-default);
-  padding:10px 16px;border-radius:6px;
-  font-size:11px;font-weight:600;color:var(--text-secondary);letter-spacing:0.3px;
-  transition:all 250ms var(--ease);
-}
+.hero-badge{background:var(--bg-elevated);border:1px solid var(--border-default);padding:10px 16px;border-radius:6px;font-size:11px;font-weight:600;color:var(--text-secondary);letter-spacing:0.3px;transition:all 250ms var(--ease)}
 .hero-badge strong{color:var(--gold);font-weight:800}
 .hero-badge:hover{border-color:var(--gold);background:var(--bg-elevated-2);transform:translateY(-2px)}
 .hero-cta-row{display:flex;gap:18px;flex-wrap:wrap;align-items:center}
 .hero-micro{margin-top:18px;font-size:12px;color:var(--text-faded);letter-spacing:0.3px}
-
-.hero-portrait{
-  position:relative;aspect-ratio:4/5;
-  border-radius:14px;overflow:hidden;
-  box-shadow:24px 24px 0 0 var(--gold),0 30px 80px rgba(0,0,0,0.7);
-  isolation:isolate;
-}
+.hero-portrait{position:relative;aspect-ratio:4/5;border-radius:14px;overflow:hidden;box-shadow:24px 24px 0 0 var(--gold),0 30px 80px rgba(0,0,0,0.7);isolation:isolate}
 .hero-portrait img{width:100%;height:100%;object-fit:cover;filter:contrast(1.05) brightness(0.95) saturate(1.1)}
-.hero-portrait::after{
-  content:'';position:absolute;inset:0;
-  background:linear-gradient(180deg,transparent 55%,rgba(22,25,29,0.95) 100%);
-  pointer-events:none;
-}
-.hero-portrait-cap{
-  position:absolute;bottom:24px;left:24px;right:24px;z-index:2;
-}
-.hero-portrait-cap .name{
-  font-family:var(--font-display);font-size:22px;font-weight:700;color:var(--text-primary);
-}
-.hero-portrait-cap .role{
-  font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;
-  color:var(--gold);margin-top:4px;
-}
+.hero-portrait::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(22,25,29,0.95) 100%);pointer-events:none}
+.hero-portrait-cap{position:absolute;bottom:24px;left:24px;right:24px;z-index:2}
+.hero-portrait-cap .name{font-family:var(--font-display);font-size:22px;font-weight:700;color:var(--text-primary)}
+.hero-portrait-cap .role{font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);margin-top:4px}
 
-/* ═══ VSL SECTION (vídeo grande) ═══ */
-.vsl{
-  padding:90px 0;position:relative;
-  background:
-    radial-gradient(ellipse 60% 80% at 50% 50%,rgba(203,150,80,0.12),transparent 70%),
-    var(--bg-deepest);
-  border-top:1px solid var(--border-warm);
-  border-bottom:1px solid var(--border-warm);
-}
+/* ═══ ANNOUNCEMENT MARQUEE ═══ */
+.announce{background:var(--bg-deepest);border-top:1px solid var(--border-warm);border-bottom:1px solid var(--gold);padding:14px 0;overflow:hidden;position:relative;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.announce-track{display:flex;gap:48px;width:max-content;animation:marquee 38s linear infinite;font-size:13px;font-weight:600;color:var(--text-primary);letter-spacing:0.6px;text-transform:uppercase;align-items:center}
+.announce-track strong{color:var(--gold)}
+.announce-track .dot{width:6px;height:6px;border-radius:50%;background:var(--gold);flex-shrink:0}
+@keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+/* ═══ VSL ═══ */
+.vsl{padding:90px 0;position:relative;background:radial-gradient(ellipse 60% 80% at 50% 50%,rgba(203,150,80,0.12),transparent 70%),var(--bg-deepest);border-top:1px solid var(--border-warm);border-bottom:1px solid var(--border-warm)}
 .vsl-inner{max-width:980px;margin:0 auto;padding:0 32px;text-align:center}
-.vsl h2{
-  font-size:clamp(28px,3vw,42px);font-weight:800;
-  margin-bottom:14px;max-width:24ch;margin-left:auto;margin-right:auto;
-}
+.vsl h2{font-size:clamp(28px,3vw,42px);font-weight:800;margin-bottom:14px;max-width:24ch;margin-left:auto;margin-right:auto}
 .vsl h2 .accent{color:var(--gold);font-style:italic}
-.vsl p.lead-vsl{
-  color:var(--text-muted);font-size:16px;line-height:1.7;
-  max-width:600px;margin:0 auto 36px;
-}
-.vsl-video{
-  position:relative;aspect-ratio:16/9;border-radius:14px;overflow:hidden;
-  box-shadow:0 30px 80px rgba(0,0,0,0.7),0 0 0 1px var(--gold),var(--glow-lg);
-  background:var(--bg-deepest);
-}
+.vsl p.lead-vsl{color:var(--text-muted);font-size:16px;line-height:1.7;max-width:600px;margin:0 auto 36px}
+.vsl-video{position:relative;aspect-ratio:16/9;border-radius:14px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,0.7),0 0 0 1px var(--gold),var(--glow-lg);background:var(--bg-deepest)}
 .vsl-video iframe{width:100%;height:100%;border:none;display:block}
 .vsl-bottom{margin-top:32px;font-size:13px;color:var(--text-muted)}
 
 /* ═══ SECTION COMMON ═══ */
 section.s{padding:110px 0;position:relative;background:var(--bg-base)}
 section.s.deepest{background:var(--bg-deepest)}
-section.s.elevated{background:var(--bg-elevated)}
-section.s.aurora{
-  background:
-    linear-gradient(180deg,rgba(203,150,80,0.1) 0%,transparent 30%),
-    var(--bg-base);
-}
-section.s.warm{
-  background:
-    radial-gradient(ellipse at top right,rgba(106,58,48,0.4),transparent 60%),
-    var(--bg-deepest);
-}
-section.s.mesh{
-  background:
-    radial-gradient(ellipse 40% 30% at 20% 30%,rgba(203,150,80,0.18),transparent 70%),
-    radial-gradient(ellipse 30% 25% at 80% 20%,rgba(106,58,48,0.45),transparent 70%),
-    radial-gradient(ellipse 50% 40% at 50% 80%,rgba(168,121,56,0.15),transparent 70%),
-    var(--bg-deepest);
-}
-.h2{
-  font-size:clamp(32px,3.6vw,52px);font-weight:800;color:var(--text-primary);
-  margin-bottom:24px;max-width:24ch;line-height:1.15;
-}
+.h2{font-size:clamp(32px,3.6vw,52px);font-weight:800;color:var(--text-primary);margin-bottom:24px;max-width:24ch;line-height:1.15}
+.h2.centered{margin-left:auto;margin-right:auto;text-align:center}
 .h2 .accent{color:var(--gold);font-style:italic}
-.lead{
-  font-size:17px;color:var(--text-muted);line-height:1.85;
-  max-width:62ch;margin-bottom:48px;
-}
+.lead{font-size:17px;color:var(--text-muted);line-height:1.85;max-width:62ch;margin-bottom:48px}
+.lead.centered{margin-left:auto;margin-right:auto;text-align:center}
 .lead strong{color:var(--text-primary)}
 
-/* ═══ SECTION DIVIDER (pattern break) ═══ */
-.divider-curve{
-  height:120px;position:relative;overflow:hidden;background:var(--bg-deepest);
-}
-.divider-curve::before{
-  content:'';position:absolute;top:-1px;left:-5%;right:-5%;height:120px;
-  background:var(--bg-base);
-  border-radius:0 0 50% 50% / 0 0 100% 100%;
-}
-.divider-line{
-  height:1px;
-  background:linear-gradient(90deg,transparent,var(--gold) 20%,var(--gold-bright) 50%,var(--gold) 80%,transparent);
-  margin:0;
-}
-.divider-decorative{
-  display:flex;align-items:center;justify-content:center;gap:24px;padding:48px 0;
-  background:var(--bg-base);
-}
-.divider-decorative::before,.divider-decorative::after{
-  content:'';flex:1;max-width:240px;height:1px;
-  background:linear-gradient(90deg,transparent,var(--gold-deep),var(--gold),var(--gold-deep),transparent);
-}
-.divider-decorative .icon{
-  width:48px;height:48px;border-radius:50%;
-  background:var(--bg-deepest);border:1px solid var(--gold);
-  display:flex;align-items:center;justify-content:center;
-  color:var(--gold);font-family:var(--font-display);font-size:18px;font-weight:800;
-  box-shadow:var(--glow-sm);
-}
-
-/* ═══ FOR WHO — cards com blur on hover others ═══ */
-.for-who-grid{
-  display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:32px;
-}
-.for-who-grid:hover .who-block:not(:hover){
-  filter:blur(2px) brightness(0.55);
-  transform:scale(0.98);
-}
+/* ═══ FOR WHO — Image #2 style (large cards with icon + title + image) ═══ */
+.for-who-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:32px}
 .who-block{
-  background:var(--bg-elevated);
-  border:1px solid var(--border-default);
-  border-top:4px solid var(--gold);
-  border-radius:14px;padding:48px 42px;
-  transition:all 400ms var(--ease);
-  position:relative;overflow:hidden;
-  isolation:isolate;
-}
-.who-block::before{
-  content:'';position:absolute;top:-50%;right:-30%;width:70%;height:200%;
-  background:radial-gradient(circle,rgba(203,150,80,0.1),transparent 70%);
-  pointer-events:none;
-}
-.who-block:nth-child(2){border-top-color:var(--mistletoe)}
-.who-block:nth-child(2)::before{
-  background:radial-gradient(circle,rgba(106,58,48,0.25),transparent 70%);
+  background:var(--bg-elevated);border:1px solid var(--border-default);
+  border-radius:16px;overflow:hidden;
+  transition:all 400ms var(--ease);position:relative;
+  display:flex;flex-direction:column;
 }
 .who-block:hover{
-  background:var(--bg-elevated-2);
-  border-color:var(--gold);
-  transform:translateY(-8px) scale(1.02);
-  box-shadow:var(--shadow-lg),var(--glow);
-  z-index:5;
+  border-color:var(--gold);transform:translateY(-6px);
+  box-shadow:var(--shadow-md),var(--glow);
 }
-.who-block-num{
-  font-family:var(--font-display);font-style:italic;
-  font-size:13px;font-weight:600;color:var(--gold);margin-bottom:8px;
-  letter-spacing:0.5px;text-transform:uppercase;
+.who-block-body{padding:44px 44px 24px}
+.who-icon{
+  width:56px;height:56px;border-radius:12px;
+  background:var(--gold-tint);border:1px solid var(--gold);
+  display:flex;align-items:center;justify-content:center;color:var(--gold);
+  margin-bottom:24px;transition:all 400ms var(--ease);
 }
-.who-block:nth-child(2) .who-block-num{color:var(--mistletoe)}
-.who-block h3{font-size:24px;color:var(--text-primary);margin-bottom:24px}
-.who-block ul{list-style:none}
-.who-block li{
-  padding:14px 0 14px 32px;position:relative;
-  font-size:15px;color:var(--text-secondary);line-height:1.6;
-  border-bottom:1px solid var(--border-default);
-}
-.who-block li:last-child{border-bottom:none}
-.who-block li::before{
-  content:'→';position:absolute;left:0;top:14px;
-  color:var(--gold);font-weight:700;font-size:18px;
-}
-.who-block:nth-child(2) li::before{color:var(--mistletoe)}
-.for-fecho{
-  text-align:center;margin-top:48px;
-  font-family:var(--font-display);font-style:italic;
-  font-size:20px;color:var(--text-secondary);font-weight:500;
-}
+.who-block:hover .who-icon{background:var(--gold);color:var(--bg-deepest);transform:rotate(-6deg) scale(1.08)}
+.who-icon svg{width:28px;height:28px}
+.who-block h3{font-size:28px;font-weight:800;color:var(--text-primary);margin-bottom:14px;line-height:1.2;letter-spacing:-0.02em}
+.who-block .sub{font-size:15px;color:var(--text-muted);line-height:1.65;margin-bottom:24px}
+.who-block ul{list-style:none;margin-bottom:24px}
+.who-block li{padding:10px 0 10px 26px;position:relative;font-size:14px;color:var(--text-secondary);line-height:1.55}
+.who-block li::before{content:'→';position:absolute;left:0;top:10px;color:var(--gold);font-weight:700}
+.who-block-img{position:relative;aspect-ratio:16/10;overflow:hidden;margin-top:auto}
+.who-block-img img{width:100%;height:100%;object-fit:cover;filter:contrast(1.05) brightness(0.9);transition:transform 700ms var(--ease)}
+.who-block:hover .who-block-img img{transform:scale(1.05)}
+.who-block-img::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,var(--bg-elevated) 100%);pointer-events:none}
+.for-fecho{text-align:center;margin-top:48px;font-family:var(--font-display);font-style:italic;font-size:20px;color:var(--text-secondary);font-weight:500}
 .for-fecho strong{color:var(--text-primary);font-weight:700;font-style:normal}
 
-/* ═══ PROBLEM — split foto + texto ═══ */
-.problem-grid{
-  display:grid;grid-template-columns:1fr 1.1fr;gap:64px;align-items:center;margin-top:32px;
+/* ═══ PROBLEM — minimalist abstract bg ═══ */
+.problem-section{position:relative;overflow:hidden;padding:110px 0;background:var(--bg-deepest)}
+.problem-section::before{
+  content:'';position:absolute;inset:0;opacity:0.5;pointer-events:none;z-index:0;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='800' viewBox='0 0 1200 800'%3E%3Cg fill='none' stroke='%23CB9650' stroke-width='0.4' opacity='0.2'%3E%3Cpath d='M0,400 Q300,200 600,400 T1200,400'/%3E%3Cpath d='M0,450 Q300,250 600,450 T1200,450'/%3E%3Cpath d='M0,350 Q300,150 600,350 T1200,350'/%3E%3C/g%3E%3Cg fill='%23CB9650' opacity='0.08'%3E%3Ccircle cx='100' cy='100' r='2'/%3E%3Ccircle cx='300' cy='200' r='2'/%3E%3Ccircle cx='500' cy='150' r='2'/%3E%3Ccircle cx='700' cy='250' r='2'/%3E%3Ccircle cx='900' cy='100' r='2'/%3E%3Ccircle cx='1100' cy='200' r='2'/%3E%3Ccircle cx='200' cy='600' r='2'/%3E%3Ccircle cx='400' cy='700' r='2'/%3E%3Ccircle cx='600' cy='650' r='2'/%3E%3Ccircle cx='800' cy='700' r='2'/%3E%3Ccircle cx='1000' cy='600' r='2'/%3E%3C/g%3E%3C/svg%3E");
+  background-size:cover;background-position:center;
 }
-.problem-img{
-  position:relative;aspect-ratio:4/5;
-  border-radius:14px;overflow:hidden;
-  box-shadow:0 30px 80px rgba(0,0,0,0.7);
-  isolation:isolate;
+.problem-section::after{
+  content:'';position:absolute;inset:0;pointer-events:none;z-index:0;
+  background:
+    radial-gradient(ellipse 30% 40% at 15% 50%,rgba(106,58,48,0.25),transparent 70%),
+    radial-gradient(ellipse 35% 35% at 85% 40%,rgba(203,150,80,0.1),transparent 70%);
 }
+.problem-section .container{position:relative;z-index:1}
+.problem-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:64px;align-items:center;margin-top:32px}
+.problem-img{position:relative;aspect-ratio:4/5;border-radius:14px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,0.7);isolation:isolate}
 .problem-img img{width:100%;height:100%;object-fit:cover;filter:contrast(1.1) brightness(0.85)}
-.problem-img::after{
-  content:'';position:absolute;inset:0;
-  background:linear-gradient(135deg,transparent 50%,rgba(22,25,29,0.85) 100%);
-  pointer-events:none;
-}
-.problem-img::before{
-  content:'';position:absolute;left:-12px;top:-12px;
-  width:60%;height:60%;border:1px solid var(--gold);border-right:none;border-bottom:none;
-  pointer-events:none;
-}
+.problem-img::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,transparent 50%,rgba(22,25,29,0.85) 100%);pointer-events:none}
+.problem-img::before{content:'';position:absolute;left:-12px;top:-12px;width:60%;height:60%;border:1px solid var(--gold);border-right:none;border-bottom:none;pointer-events:none}
 .problem-text p{font-size:16px;color:var(--text-secondary);line-height:1.85;margin-bottom:20px}
 .problem-text p strong{color:var(--text-primary);font-weight:600}
-.quote-box{
-  background:var(--bg-elevated);border-left:4px solid var(--gold);
-  padding:36px 42px;border-radius:0 12px 12px 0;
-  position:relative;margin-top:28px;
-  box-shadow:var(--shadow);
-}
-.quote-box::before{
-  content:'"';position:absolute;top:-24px;left:24px;
-  font-family:Georgia,serif;font-size:120px;color:var(--gold);
-  line-height:1;opacity:0.2;
-}
-.quote-box p{
-  font-family:var(--font-display);font-style:italic;
-  font-size:20px;line-height:1.5;color:var(--text-primary);font-weight:500;
-  position:relative;z-index:1;
-}
-.quote-box cite{
-  display:block;margin-top:18px;font-style:normal;
-  font-family:var(--font-body);font-size:11px;font-weight:700;
-  color:var(--gold);letter-spacing:1.5px;text-transform:uppercase;
-}
+.quote-box{background:var(--bg-elevated);border-left:4px solid var(--gold);padding:36px 42px;border-radius:0 12px 12px 0;position:relative;margin-top:28px;box-shadow:var(--shadow)}
+.quote-box::before{content:'"';position:absolute;top:-24px;left:24px;font-family:Georgia,serif;font-size:120px;color:var(--gold);line-height:1;opacity:0.2}
+.quote-box p{font-family:var(--font-display);font-style:italic;font-size:20px;line-height:1.5;color:var(--text-primary);font-weight:500;position:relative;z-index:1}
+.quote-box cite{display:block;margin-top:18px;font-style:normal;font-family:var(--font-body);font-size:11px;font-weight:700;color:var(--gold);letter-spacing:1.5px;text-transform:uppercase}
 .quote-box cite::before{content:'— '}
+/* NEW: problem-fecho with corner-bracket style */
 .problem-fecho{
-  text-align:center;margin-top:60px;padding:24px 32px;
-  background:var(--bg-elevated);
-  border:1px solid var(--gold);border-radius:8px;
-  font-size:17px;color:var(--text-primary);font-weight:600;
-  max-width:700px;margin-left:auto;margin-right:auto;
+  margin-top:64px;padding:36px 44px;
+  background:transparent;
+  font-size:18px;color:var(--text-primary);font-weight:600;text-align:center;
+  max-width:780px;margin-left:auto;margin-right:auto;
+  position:relative;
 }
-.problem-fecho .accent{color:var(--gold)}
+.problem-fecho::before,.problem-fecho::after{
+  content:'';position:absolute;width:40px;height:40px;
+  border:2px solid var(--gold);
+}
+.problem-fecho::before{top:0;left:0;border-right:none;border-bottom:none}
+.problem-fecho::after{bottom:0;right:0;border-left:none;border-top:none}
+.problem-fecho .accent{color:var(--gold);font-style:italic}
 
-/* ═══ PROMISE — 3 cards expansíveis ═══ */
+/* ═══ PROMISE — cards com foto bg opacity ═══ */
 .promise-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:32px;perspective:1000px}
-.promise-grid:hover .p-card:not(:hover){
-  filter:blur(2px) brightness(0.6);
-  transform:scale(0.97);
-}
+.promise-grid:hover .p-card:not(:hover){filter:blur(2px) brightness(0.6);transform:scale(0.97)}
 .p-card{
-  background:var(--bg-elevated);
-  border:1px solid var(--border-default);
+  position:relative;border:1px solid var(--border-default);
   border-radius:14px;padding:48px 38px;
   transition:all 400ms var(--ease);
-  position:relative;overflow:hidden;
-  cursor:pointer;
+  overflow:hidden;cursor:pointer;isolation:isolate;
+  background:var(--bg-elevated);
+}
+.p-card-bg{
+  position:absolute;inset:0;z-index:0;
+  background-size:cover;background-position:center;
+  opacity:0.12;filter:contrast(1.1) saturate(1.1);
+  transition:opacity 400ms var(--ease),transform 1.2s var(--ease);
 }
 .p-card::before{
-  content:'';position:absolute;top:-50%;right:-30%;width:70%;height:200%;
-  background:radial-gradient(circle,rgba(203,150,80,0.12),transparent 70%);
-  pointer-events:none;transition:opacity 400ms var(--ease);
+  content:'';position:absolute;inset:0;z-index:0;
+  background:
+    linear-gradient(180deg,rgba(22,25,29,0.4) 0%,rgba(22,25,29,0.85) 70%,var(--bg-elevated) 100%),
+    radial-gradient(circle at top right,rgba(203,150,80,0.15),transparent 70%);
+  pointer-events:none;
 }
 .p-card:hover{
   transform:translateY(-12px) scale(1.04);
@@ -449,66 +268,156 @@ section.s.mesh{
   box-shadow:var(--shadow-lg),var(--glow-md);
   z-index:5;
 }
-.p-num{
-  font-family:var(--font-display);font-style:italic;
-  font-size:64px;font-weight:800;color:var(--gold);
-  line-height:1;margin-bottom:24px;display:block;position:relative;
-}
-.p-card h3{font-size:22px;color:var(--text-primary);margin-bottom:16px;line-height:1.3;position:relative}
-.p-card p{font-size:15px;color:var(--text-secondary);line-height:1.75;position:relative}
-.promise-note{
-  margin-top:48px;font-family:var(--font-display);font-style:italic;
-  font-size:13px;color:var(--text-muted);text-align:center;
-  max-width:760px;margin-left:auto;margin-right:auto;
-}
+.p-card:hover .p-card-bg{opacity:0.22;transform:scale(1.08)}
+.p-num{font-family:var(--font-display);font-style:italic;font-size:64px;font-weight:800;color:var(--gold);line-height:1;margin-bottom:24px;display:block;position:relative;z-index:1}
+.p-card h3{font-size:22px;color:var(--text-primary);margin-bottom:16px;line-height:1.3;position:relative;z-index:1}
+.p-card p{font-size:15px;color:var(--text-secondary);line-height:1.75;position:relative;z-index:1}
+.promise-note{margin-top:48px;font-family:var(--font-display);font-style:italic;font-size:13px;color:var(--text-muted);text-align:center;max-width:760px;margin-left:auto;margin-right:auto}
 
-/* ═══ STORY ═══ */
+/* ═══ STORY — abstract effects around photo ═══ */
 .story-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:80px;align-items:start;margin-top:48px}
-.story-img-wrap{position:sticky;top:120px}
-.story-portrait{
-  aspect-ratio:3/4;border-radius:8px;overflow:hidden;
-  box-shadow:18px 18px 0 0 var(--gold),0 24px 60px rgba(0,0,0,0.7);
-  isolation:isolate;position:relative;
-}
+.story-img-wrap{position:sticky;top:120px;padding:32px}
+.story-portrait{aspect-ratio:3/4;border-radius:8px;overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,0.7);isolation:isolate;position:relative;z-index:2}
 .story-portrait img{width:100%;height:100%;object-fit:cover;filter:sepia(0.12) contrast(1.05) brightness(0.95)}
-.story-portrait::after{
-  content:'';position:absolute;inset:0;
-  background:linear-gradient(180deg,transparent 60%,rgba(22,25,29,0.5) 100%);
-  pointer-events:none;
+.story-portrait::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(22,25,29,0.5) 100%);pointer-events:none}
+/* abstract decorative elements around photo */
+.story-img-wrap::before{
+  content:'';position:absolute;top:-20px;left:-20px;width:120px;height:120px;
+  border:1px solid var(--gold);border-right:none;border-bottom:none;border-radius:4px 0 0 0;
+  z-index:1;pointer-events:none;
 }
-.story-badge{
-  margin-top:32px;background:var(--bg-elevated);border:1px solid var(--gold);
-  padding:18px 22px;border-radius:8px;font-size:12px;font-weight:600;color:var(--gold);
-  text-align:center;letter-spacing:0.4px;line-height:1.6;
+.story-img-wrap::after{
+  content:'';position:absolute;bottom:-20px;right:-20px;width:120px;height:120px;
+  border:1px solid var(--gold);border-left:none;border-top:none;border-radius:0 0 4px 0;
+  z-index:1;pointer-events:none;
 }
+.story-deco-circle{
+  position:absolute;top:50%;right:-40px;transform:translateY(-50%);
+  width:80px;height:80px;border:1px solid rgba(203,150,80,0.4);border-radius:50%;
+  pointer-events:none;animation:spin 40s linear infinite;
+}
+.story-deco-circle::before{content:'';position:absolute;top:-4px;left:50%;transform:translateX(-50%);width:8px;height:8px;background:var(--gold);border-radius:50%;box-shadow:var(--glow-sm)}
+.story-deco-dots{
+  position:absolute;top:-10px;right:40px;width:60px;height:60px;
+  background-image:radial-gradient(circle,var(--gold) 1px,transparent 1.5px);
+  background-size:10px 10px;opacity:0.4;pointer-events:none;
+}
+@keyframes spin{to{transform:translateY(-50%) rotate(360deg)}}
+.story-badge{margin-top:32px;background:var(--bg-elevated);border:1px solid var(--gold);padding:18px 22px;border-radius:8px;font-size:12px;font-weight:600;color:var(--gold);text-align:center;letter-spacing:0.4px;line-height:1.6;position:relative;z-index:2}
 .story-badge strong{display:block;color:var(--text-primary);font-weight:700;margin-bottom:4px;font-size:13px}
 .story-badge::before{content:'★ ';color:var(--gold-bright)}
 .story-text p{font-size:16px;color:var(--text-secondary);line-height:1.85;margin-bottom:22px}
 .story-text p strong{color:var(--text-primary);font-weight:600}
-.story-quote{
-  background:rgba(203,150,80,0.06);border-left:4px solid var(--gold);
-  padding:32px 38px;margin:32px 0;border-radius:0 8px 8px 0;
-  font-family:var(--font-display);font-style:italic;
-  font-size:21px;color:var(--text-primary);line-height:1.55;font-weight:500;
-}
+.story-quote{background:rgba(203,150,80,0.06);border-left:4px solid var(--gold);padding:32px 38px;margin:32px 0;border-radius:0 8px 8px 0;font-family:var(--font-display);font-style:italic;font-size:21px;color:var(--text-primary);line-height:1.55;font-weight:500}
 
-/* ═══ METHOD — 3 pillars com border gradient animada ═══ */
-.pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:32px}
-.pillar{
-  position:relative;background:var(--bg-elevated);
-  border-radius:14px;padding:44px 36px;
+/* ═══ METHOD — timeline vertical alinhada à esquerda ═══ */
+.method-wrap{max-width:820px;margin:32px 0 0 0;position:relative;padding-left:60px}
+.method-wrap::before{
+  content:'';position:absolute;left:20px;top:20px;bottom:20px;
+  width:1px;
+  background:linear-gradient(180deg,var(--gold) 0%,var(--gold-bright) 50%,var(--gold) 100%);
+  box-shadow:0 0 8px rgba(203,150,80,0.4);
+}
+.method-item{position:relative;padding-bottom:48px}
+.method-item:last-child{padding-bottom:0}
+.method-item::before{
+  content:'';position:absolute;left:-46px;top:6px;
+  width:20px;height:20px;border-radius:50%;
+  background:var(--bg-deepest);border:2px solid var(--gold);
+  box-shadow:0 0 0 4px rgba(203,150,80,0.15),var(--glow-sm);
   transition:all 400ms var(--ease);
+}
+.method-item:hover::before{background:var(--gold);transform:scale(1.2);box-shadow:0 0 0 6px rgba(203,150,80,0.2),var(--glow)}
+.method-item::after{
+  content:'';position:absolute;left:-42px;top:10px;
+  width:12px;height:12px;border-radius:50%;
+  background:var(--gold);opacity:0;
+  transition:opacity 400ms var(--ease);
+}
+.method-item:hover::after{opacity:1}
+.method-item .meta{font-family:var(--font-display);font-style:italic;font-size:12px;font-weight:600;color:var(--gold);letter-spacing:1px;text-transform:uppercase;margin-bottom:6px;display:block}
+.method-item h3{font-size:24px;font-weight:800;color:var(--text-primary);margin-bottom:10px;line-height:1.2;letter-spacing:-0.01em}
+.method-item p{font-size:16px;color:var(--text-secondary);line-height:1.75;max-width:65ch}
+.method-note{margin-top:56px;background:var(--bg-elevated);border:1px solid var(--gold);border-left:4px solid var(--gold);padding:32px 38px;border-radius:0 8px 8px 0;font-size:15px;color:var(--text-secondary);line-height:1.85}
+.method-note strong{color:var(--gold);font-weight:700}
+
+/* ═══ VIDEO BREAK (em vez de img break) ═══ */
+.video-break{
+  position:relative;height:64vh;min-height:460px;overflow:hidden;
+  display:flex;align-items:center;justify-content:center;
+  background:var(--bg-deepest);
+}
+.video-break-bg{
+  position:absolute;inset:0;z-index:0;
+  background-image:url('img/method.jpeg');
+  background-size:cover;background-position:center;
+  filter:blur(6px) brightness(0.32) contrast(1.15) saturate(0.8);
+  transform:scale(1.15);
+}
+.video-break::before{
+  content:'';position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:
+    radial-gradient(ellipse at center,transparent 30%,rgba(22,25,29,0.7) 80%),
+    linear-gradient(180deg,var(--bg-deepest) 0%,transparent 20%,transparent 80%,var(--bg-base) 100%);
+}
+.video-break-content{position:relative;z-index:2;text-align:center;padding:0 32px;max-width:820px}
+.video-break-content .tag{justify-content:center}
+.video-break-content .tag::after{content:'';width:36px;height:1px;background:var(--gold)}
+.video-break h3{
+  font-family:var(--font-display);font-size:clamp(36px,4.6vw,64px);
+  font-weight:800;color:var(--text-primary);
+  max-width:22ch;margin:0 auto;line-height:1.1;
+  text-shadow:0 4px 40px rgba(0,0,0,0.9);
+}
+.video-break h3 .accent{color:var(--gold);font-style:italic}
+
+/* ═══ LEARN — bento grid assimétrico ═══ */
+.bento{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:180px;gap:18px;margin-top:32px}
+.bento-item{
+  background:var(--bg-elevated);border:1px solid var(--border-default);
+  border-radius:14px;padding:32px;position:relative;overflow:hidden;
+  transition:all 400ms var(--ease);cursor:pointer;
+}
+.bento-item:hover{
+  border-color:var(--gold);background:var(--bg-elevated-2);
+  transform:translateY(-4px);box-shadow:var(--shadow-md),var(--glow-sm);
+}
+.bento-item::before{
+  content:'';position:absolute;top:-40%;right:-40%;width:80%;height:180%;
+  background:radial-gradient(circle,rgba(203,150,80,0.12),transparent 70%);
+  pointer-events:none;transition:opacity 400ms var(--ease);opacity:0.6;
+}
+.bento-item:hover::before{opacity:1}
+.bento-lg{grid-column:span 2;grid-row:span 2}
+.bento-wide{grid-column:span 2}
+.bento-tall{grid-row:span 2}
+.bento-num{
+  font-family:var(--font-display);font-style:italic;
+  font-size:36px;font-weight:800;color:var(--gold);line-height:1;
+  margin-bottom:16px;display:block;position:relative;
+}
+.bento-lg .bento-num{font-size:64px;margin-bottom:24px}
+.bento-item h4{font-family:var(--font-display);font-size:17px;font-weight:700;color:var(--text-primary);margin-bottom:8px;line-height:1.25;position:relative}
+.bento-lg h4{font-size:26px}
+.bento-item p{font-size:13px;color:var(--text-muted);line-height:1.6;position:relative}
+.bento-lg p{font-size:15px;line-height:1.7}
+
+/* ═══ INCLUDES — border trace premium ═══ */
+.inc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:32px}
+.inc{
+  position:relative;background:var(--bg-elevated);border-radius:14px;
+  padding:38px 34px;transition:all 400ms var(--ease);cursor:pointer;
   isolation:isolate;
 }
-.pillar::before{
+.inc::before{
   content:'';position:absolute;inset:0;padding:1px;border-radius:inherit;
-  background:linear-gradient(135deg,var(--gold) 0%,transparent 40%,transparent 60%,var(--gold) 100%);
+  background:linear-gradient(135deg,var(--border-default) 0%,var(--border-warm) 50%,var(--border-default) 100%);
   -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
   mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
   -webkit-mask-composite:xor;mask-composite:exclude;
-  pointer-events:none;opacity:0.5;transition:opacity 400ms var(--ease);
+  pointer-events:none;transition:opacity 400ms var(--ease);
 }
-.pillar::after{
+.inc::after{
   content:'';position:absolute;inset:0;padding:1.5px;border-radius:inherit;
   background:conic-gradient(from var(--rot,0deg),var(--gold-deep),var(--gold-bright),var(--gold),var(--gold-deep));
   -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
@@ -518,136 +427,65 @@ section.s.mesh{
   animation:rot-conic 5s linear infinite;
 }
 @keyframes rot-conic{to{--rot:360deg}}
-.pillar:hover{
-  background:var(--bg-elevated-2);transform:translateY(-8px);
-  box-shadow:var(--shadow-md),var(--glow);
-}
-.pillar:hover::before{opacity:0}
-.pillar:hover::after{opacity:1}
-.pillar-num{
-  font-family:var(--font-display);font-style:italic;
-  font-size:13px;font-weight:600;color:var(--gold);margin-bottom:14px;
-  letter-spacing:0.5px;text-transform:uppercase;display:block;
-}
-.pillar h3{font-size:22px;color:var(--text-primary);margin-bottom:14px;line-height:1.3}
-.pillar p{font-size:15px;color:var(--text-secondary);line-height:1.75}
-.method-note{
-  margin-top:48px;background:var(--bg-elevated);
-  border:1px solid var(--gold);border-left:4px solid var(--gold);
-  padding:32px 38px;border-radius:0 8px 8px 0;
-  font-size:15px;color:var(--text-secondary);line-height:1.85;
-}
-.method-note strong{color:var(--gold);font-weight:700}
-
-/* ═══ FULL-BLEED IMAGE BREAK ═══ */
-.img-break{
-  height:60vh;min-height:420px;position:relative;
-  background-attachment:scroll;background-size:cover;background-position:center;
-  display:flex;align-items:center;justify-content:center;
-  overflow:hidden;
-}
-.img-break::before{
-  content:'';position:absolute;inset:0;
-  background:
-    linear-gradient(180deg,var(--bg-deepest) 0%,transparent 25%,transparent 75%,var(--bg-base) 100%),
-    radial-gradient(ellipse at center,transparent 30%,rgba(22,25,29,0.85) 100%);
-  pointer-events:none;
-}
-.img-break-content{
-  position:relative;z-index:2;text-align:center;padding:0 32px;
-}
-.img-break h3{
-  font-family:var(--font-display);font-size:clamp(32px,4vw,56px);
-  font-weight:800;color:var(--text-primary);max-width:22ch;margin:0 auto;
-  text-shadow:0 4px 30px rgba(0,0,0,0.8);
-}
-.img-break h3 .accent{color:var(--gold);font-style:italic}
-
-/* ═══ LEARN — modules em grid expansíveis ═══ */
-.modules{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:32px}
-.modules:hover .mod:not(:hover){filter:blur(1.5px) brightness(0.65)}
-.mod{
-  background:var(--bg-elevated);border:1px solid var(--border-default);
-  border-left:3px solid var(--gold);border-radius:8px;
-  padding:28px 32px 28px 92px;position:relative;
-  transition:all 400ms var(--ease);cursor:pointer;
-}
-.mod:hover{
-  background:var(--bg-elevated-2);border-color:var(--gold);
-  transform:translateX(8px) scale(1.015);
-  box-shadow:var(--shadow-md),var(--glow-sm);
-  z-index:5;
-}
-.mod-n{
-  position:absolute;left:32px;top:28px;
-  font-family:var(--font-display);font-style:italic;
-  font-size:36px;font-weight:800;color:var(--gold);line-height:1;
-  transition:transform 400ms var(--ease);
-}
-.mod:hover .mod-n{transform:scale(1.15) rotate(-3deg)}
-.mod h4{font-size:17px;color:var(--text-primary);margin-bottom:8px;font-weight:700;line-height:1.3}
-.mod p{font-size:14px;color:var(--text-secondary);line-height:1.65}
-
-/* ═══ INCLUDES — cards blur on hover others ═══ */
-.inc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:32px}
-.inc-grid:hover .inc:not(:hover){filter:blur(2.5px) brightness(0.55);transform:scale(0.97)}
-.inc{
-  background:var(--bg-elevated);border:1px solid var(--border-default);
-  border-radius:8px;padding:36px 32px;
-  transition:all 400ms var(--ease);cursor:pointer;
-}
-.inc:hover{
-  border-color:var(--gold);transform:translateY(-6px) scale(1.03);
-  background:var(--bg-elevated-2);box-shadow:var(--shadow-md),var(--glow);
-  z-index:5;
-}
-.inc-icon{
-  width:54px;height:54px;background:var(--gold-tint);
-  border:1px solid var(--gold);color:var(--gold);
-  border-radius:8px;display:flex;align-items:center;justify-content:center;
-  margin-bottom:22px;font-size:22px;font-weight:800;
-  font-family:var(--font-display);font-style:italic;
-  transition:all 400ms var(--ease);
-}
+.inc:hover{background:var(--bg-elevated-2);transform:translateY(-6px) scale(1.02);box-shadow:var(--shadow-md),var(--glow)}
+.inc:hover::before{opacity:0}
+.inc:hover::after{opacity:1}
+.inc-icon{width:54px;height:54px;background:var(--gold-tint);border:1px solid var(--gold);color:var(--gold);border-radius:8px;display:flex;align-items:center;justify-content:center;margin-bottom:22px;font-size:22px;font-weight:800;font-family:var(--font-display);font-style:italic;transition:all 400ms var(--ease)}
 .inc:hover .inc-icon{background:var(--gold);color:var(--bg-deepest);transform:rotate(-6deg) scale(1.1)}
 .inc h4{font-size:17px;color:var(--text-primary);margin-bottom:10px;font-weight:700}
 .inc p{font-size:14px;color:var(--text-secondary);line-height:1.7}
 
-/* ═══ BONUS ═══ */
+/* ═══ BONUS — Image #3 style (large cards with icon + big title + illustration) ═══ */
+.bonus-section{padding:110px 0;position:relative;background:radial-gradient(ellipse at top right,rgba(106,58,48,0.35),transparent 60%),var(--bg-deepest)}
 .bonus-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:32px}
 .bonus{
   background:var(--bg-elevated);border:1px solid var(--border-default);
-  border-top:4px solid var(--gold);
-  border-radius:14px;padding:48px 44px;
-  box-shadow:var(--shadow);transition:all 400ms var(--ease);
-  position:relative;overflow:hidden;
+  border-radius:20px;padding:52px 48px 40px;
+  transition:all 400ms var(--ease);position:relative;overflow:hidden;
+  display:flex;flex-direction:column;min-height:520px;
 }
+.bonus:hover{border-color:var(--gold);transform:translateY(-8px);box-shadow:var(--shadow-lg),var(--glow-md)}
 .bonus::before{
-  content:'';position:absolute;top:-100%;right:-30%;width:80%;height:300%;
-  background:radial-gradient(circle,rgba(203,150,80,0.12),transparent 70%);
+  content:'';position:absolute;top:-60%;right:-40%;width:100%;height:200%;
+  background:radial-gradient(circle,rgba(203,150,80,0.1),transparent 60%);
   pointer-events:none;
 }
-.bonus:hover{transform:translateY(-8px);border-color:var(--gold);box-shadow:var(--shadow-md),var(--glow-md)}
-.bonus-tag{
-  display:inline-block;color:var(--gold);
-  padding-bottom:10px;border-bottom:1px solid var(--gold);
-  font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;
-  margin-bottom:22px;position:relative;
-}
-.bonus h3{font-size:26px;color:var(--text-primary);margin-bottom:18px;position:relative}
-.bonus p{font-size:15px;color:var(--text-secondary);line-height:1.8;position:relative}
-.bonus-note{
-  margin-top:36px;font-family:var(--font-display);font-style:italic;
-  font-size:13px;color:var(--text-muted);text-align:center;
-}
-
-/* ═══ EXAME FINAL — 4 vídeos ═══ */
-.exam-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:28px;margin-top:32px}
-.exam{
-  background:var(--bg-elevated);border:1px solid var(--border-default);
-  border-radius:12px;overflow:hidden;
+.bonus-icon{
+  width:64px;height:64px;border-radius:14px;
+  background:var(--gold-tint);border:1px solid var(--gold);
+  display:flex;align-items:center;justify-content:center;
+  color:var(--gold);margin-bottom:28px;position:relative;z-index:1;
   transition:all 400ms var(--ease);
 }
+.bonus:hover .bonus-icon{background:var(--gold);color:var(--bg-deepest);transform:rotate(-8deg) scale(1.1)}
+.bonus-icon svg{width:32px;height:32px}
+.bonus h3{font-family:var(--font-display);font-size:34px;font-weight:800;color:var(--text-primary);margin-bottom:16px;line-height:1.15;letter-spacing:-0.02em;position:relative;z-index:1}
+.bonus p{font-size:15px;color:var(--text-muted);line-height:1.7;position:relative;z-index:1}
+.bonus-illust{
+  margin-top:40px;aspect-ratio:16/10;
+  border-radius:14px;overflow:hidden;position:relative;
+  background:linear-gradient(135deg,var(--bg-deepest) 0%,var(--bg-warm-tint) 100%);
+  display:flex;align-items:center;justify-content:center;
+  border:1px solid var(--border-warm);
+}
+.bonus-illust svg{width:70%;height:70%;opacity:0.9}
+.bonus-note{margin-top:48px;font-family:var(--font-display);font-style:italic;font-size:13px;color:var(--text-muted);text-align:center}
+
+/* ═══ EXAME — minimalist abstract bg ═══ */
+.exam-section{padding:110px 0;position:relative;background:var(--bg-base);overflow:hidden}
+.exam-section::before{
+  content:'';position:absolute;inset:0;opacity:0.35;pointer-events:none;z-index:0;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='800' viewBox='0 0 1200 800'%3E%3Cg fill='none' stroke='%23CB9650' stroke-width='0.5'%3E%3Cpath d='M0,100 L1200,100' opacity='0.15'/%3E%3Cpath d='M0,200 L1200,200' opacity='0.1'/%3E%3Cpath d='M0,300 L1200,300' opacity='0.12'/%3E%3Cpath d='M0,500 L1200,500' opacity='0.1'/%3E%3Cpath d='M0,600 L1200,600' opacity='0.15'/%3E%3Cpath d='M0,700 L1200,700' opacity='0.1'/%3E%3C/g%3E%3Cg fill='%23CB9650' opacity='0.15'%3E%3Ccircle cx='150' cy='150' r='3'/%3E%3Ccircle cx='400' cy='100' r='2'/%3E%3Ccircle cx='750' cy='200' r='3'/%3E%3Ccircle cx='1000' cy='150' r='2'/%3E%3Ccircle cx='250' cy='550' r='2'/%3E%3Ccircle cx='550' cy='650' r='3'/%3E%3Ccircle cx='850' cy='600' r='2'/%3E%3C/g%3E%3C/svg%3E");
+  background-size:cover;background-position:center;
+}
+.exam-section::after{
+  content:'';position:absolute;top:-100px;right:-100px;width:500px;height:500px;
+  background:radial-gradient(circle,rgba(203,150,80,0.12),transparent 70%);
+  filter:blur(60px);pointer-events:none;z-index:0;
+}
+.exam-section .container{position:relative;z-index:1}
+.exam-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:28px;margin-top:32px}
+.exam{background:var(--bg-elevated);border:1px solid var(--border-default);border-radius:12px;overflow:hidden;transition:all 400ms var(--ease)}
 .exam:hover{border-color:var(--gold);transform:translateY(-6px);box-shadow:var(--shadow-md),var(--glow-sm)}
 .exam-video{aspect-ratio:16/9;background:var(--bg-deepest);position:relative;overflow:hidden}
 .exam-video iframe{width:100%;height:100%;border:none;display:block}
@@ -655,193 +493,230 @@ section.s.mesh{
 .exam-info h4{font-family:var(--font-display);font-size:17px;color:var(--text-primary);font-weight:700}
 .exam-info .role{font-size:11px;color:var(--gold);letter-spacing:1px;text-transform:uppercase;font-weight:700;margin-top:4px}
 .exam-info .stars{color:var(--gold);font-size:13px;letter-spacing:1.5px}
-.exam-note{
-  margin-top:36px;text-align:center;font-family:var(--font-display);font-style:italic;
-  font-size:14px;color:var(--text-muted);
-}
+.exam-note{margin-top:36px;text-align:center;font-family:var(--font-display);font-style:italic;font-size:14px;color:var(--text-muted)}
 
-/* ═══ TESTEMUNHOS CARROSSEL INFINITO ═══ */
-.test-section{padding:110px 0;background:var(--bg-deepest);overflow:hidden}
-.test-section .container{margin-bottom:48px}
+/* ═══ TESTEMUNHOS — centered + perfect loop ═══ */
+.test-section{padding:110px 0 130px;background:var(--bg-deepest);overflow:hidden;position:relative}
+.test-section::before{
+  content:'';position:absolute;inset:0;opacity:0.3;pointer-events:none;
+  background:radial-gradient(ellipse 60% 40% at 50% 30%,rgba(203,150,80,0.15),transparent 70%);
+}
+.test-section .test-header{text-align:center;max-width:720px;margin:0 auto 48px;padding:0 32px;position:relative;z-index:1}
+.test-section .tag{justify-content:center;margin-left:auto;margin-right:auto}
+.test-section .tag::after{content:'';width:36px;height:1px;background:var(--gold)}
+.test-section .h2{text-align:center;margin-left:auto;margin-right:auto}
+.test-section .lead{text-align:center;margin-left:auto;margin-right:auto;margin-bottom:0}
 .test-marquee{
   position:relative;overflow:hidden;
-  -webkit-mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);
-  mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);
+  mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);
 }
 .test-track{
   display:flex;gap:24px;width:max-content;
-  animation:marquee 60s linear infinite;
+  animation:test-marquee 50s linear infinite;
   padding:24px 0;
 }
 .test-marquee:hover .test-track{animation-play-state:paused}
-.test{
-  flex-shrink:0;width:280px;
-  background:var(--bg-elevated);border:1px solid var(--border-default);
-  border-radius:12px;overflow:hidden;
-  transition:all 400ms var(--ease);
+/* Perfect loop: track is 2x the original content, animation moves exactly -50% */
+@keyframes test-marquee{
+  from{transform:translateX(0)}
+  to{transform:translateX(calc(-50% - 12px))} /* 12px = half the gap (24px/2) */
 }
+.test{flex-shrink:0;width:280px;background:var(--bg-elevated);border:1px solid var(--border-default);border-radius:12px;overflow:hidden;transition:all 400ms var(--ease)}
 .test:hover{border-color:var(--gold);transform:scale(1.05);box-shadow:var(--shadow-md),var(--glow)}
 .test-video{aspect-ratio:9/16;background:var(--bg-deepest);position:relative;overflow:hidden}
 .test-video iframe{width:100%;height:100%;border:none;display:block}
-.test-link{
-  display:flex;align-items:center;justify-content:center;flex-direction:column;gap:10px;
-  width:100%;height:100%;background:linear-gradient(135deg,var(--bg-deepest),var(--bg-elevated));
-  color:var(--text-primary);font-family:var(--font-body);font-size:13px;font-weight:600;
-  text-align:center;padding:24px;letter-spacing:0.3px;
-}
+.test-link{display:flex;align-items:center;justify-content:center;flex-direction:column;gap:10px;width:100%;height:100%;background:linear-gradient(135deg,var(--bg-deepest),var(--bg-elevated));color:var(--text-primary);font-family:var(--font-body);font-size:13px;font-weight:600;text-align:center;padding:24px;letter-spacing:0.3px}
 .test-link::before{content:'▶';font-size:42px;color:var(--gold)}
 .test-info{padding:18px 22px}
 .test-info .stars{color:var(--gold);font-size:13px;letter-spacing:1.5px;margin-bottom:6px}
 .test-info h4{font-family:var(--font-display);font-size:16px;color:var(--text-primary);margin-bottom:2px;font-weight:700}
 .test-info p{font-size:11px;color:var(--text-muted);font-weight:600;letter-spacing:0.5px;text-transform:uppercase}
 
-/* ═══ PRICING ═══ */
-.pricing-intro{
-  background:var(--bg-elevated);border-left:4px solid var(--gold);
-  padding:30px 40px;border-radius:0 8px 8px 0;
-  font-family:var(--font-display);font-style:italic;
-  font-size:18px;color:var(--text-primary);line-height:1.65;
-  margin-bottom:48px;font-weight:500;
+/* ═══ PRICING — Image #4 premium style (diagonal rays + central cards) ═══ */
+.pricing-section{
+  padding:130px 0 120px;position:relative;overflow:hidden;
+  background:linear-gradient(180deg,var(--bg-deepest) 0%,#0A0C10 100%);
 }
-.pricing-intro strong{
-  font-weight:700;font-style:normal;color:var(--gold);
-  font-family:var(--font-body);font-size:16px;
+.pricing-section::before{
+  content:'';position:absolute;inset:0;pointer-events:none;z-index:0;opacity:0.65;
+  background-image:
+    linear-gradient(60deg,transparent 42%,rgba(203,150,80,0.45) 44%,rgba(221,169,104,0.55) 46%,rgba(203,150,80,0.3) 47%,transparent 49%),
+    linear-gradient(60deg,transparent 45%,rgba(106,58,48,0.5) 47%,transparent 50%),
+    linear-gradient(120deg,transparent 92%,rgba(203,150,80,0.4) 94%,rgba(221,169,104,0.5) 96%,transparent 98%),
+    linear-gradient(120deg,transparent 50%,rgba(106,58,48,0.4) 52%,transparent 55%);
+  filter:blur(1.5px);
 }
-.price-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+.pricing-section::after{
+  content:'';position:absolute;inset:0;pointer-events:none;z-index:0;
+  background:
+    radial-gradient(ellipse 50% 70% at 50% 50%,rgba(22,25,29,0) 0%,rgba(22,25,29,0.6) 80%,var(--bg-deepest) 100%);
+}
+.pricing-section .container{position:relative;z-index:1}
+.pricing-section .tag{justify-content:center;margin-left:auto;margin-right:auto}
+.pricing-section .tag::after{content:'';width:36px;height:1px;background:var(--gold)}
+.pricing-section .h2{text-align:center;margin-left:auto;margin-right:auto;max-width:22ch}
+.pricing-section .lead{text-align:center;margin-left:auto;margin-right:auto}
+.pricing-intro{background:var(--bg-elevated);border-left:4px solid var(--gold);padding:30px 40px;border-radius:0 8px 8px 0;font-family:var(--font-display);font-style:italic;font-size:18px;color:var(--text-primary);line-height:1.65;margin:0 auto 56px;font-weight:500;max-width:820px;text-align:left}
+.pricing-intro strong{font-weight:700;font-style:normal;color:var(--gold);font-family:var(--font-body);font-size:16px}
+.price-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;max-width:960px;margin:0 auto}
 .price-card{
-  background:var(--bg-elevated);border:1px solid var(--border-default);
-  border-radius:14px;padding:56px 44px;position:relative;
+  background:linear-gradient(180deg,rgba(45,48,55,0.95) 0%,rgba(35,38,43,0.98) 100%);
+  border:1px solid var(--border-default);
+  border-radius:20px;padding:56px 44px;position:relative;
   transition:all 400ms var(--ease);
+  backdrop-filter:blur(10px);
+  -webkit-backdrop-filter:blur(10px);
 }
-.price-card:hover{transform:translateY(-8px);border-color:var(--border-warm);box-shadow:var(--shadow-md),var(--glow-sm)}
+.price-card:hover{transform:translateY(-8px);border-color:var(--gold);box-shadow:var(--shadow-lg),var(--glow)}
 .price-card.featured{
-  background:linear-gradient(180deg,var(--bg-elevated) 0%,rgba(106,58,48,0.18) 100%);
+  background:linear-gradient(180deg,rgba(45,48,55,0.98) 0%,rgba(106,58,48,0.25) 100%);
   isolation:isolate;
 }
 .price-card.featured::before{
-  content:'';position:absolute;inset:0;padding:1.5px;border-radius:inherit;
+  content:'';position:absolute;inset:-1px;padding:2px;border-radius:inherit;
   background:conic-gradient(from var(--rot,0deg),var(--gold-deep),var(--gold-bright),var(--gold),var(--gold-deep));
   -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
   mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
   -webkit-mask-composite:xor;mask-composite:exclude;
   animation:rot-conic 6s linear infinite;pointer-events:none;
 }
+.price-signature{
+  font-family:var(--font-script);font-size:26px;color:var(--gold);
+  text-align:center;margin-bottom:16px;font-weight:700;
+}
 .price-badge-top{
-  position:absolute;top:-14px;left:50%;transform:translateX(-50%);
-  background:var(--gold);color:var(--bg-deepest);
-  padding:8px 22px;border-radius:9999px;
+  display:inline-block;background:var(--gold);color:var(--bg-deepest);
+  padding:10px 22px;border-radius:9999px;
   font-family:var(--font-body);font-size:10px;font-weight:800;
   letter-spacing:1.5px;text-transform:uppercase;
-  box-shadow:var(--glow);z-index:2;
+  box-shadow:var(--glow);margin-bottom:24px;
 }
-.plan-tag{
-  font-family:var(--font-display);font-style:italic;
-  font-size:14px;font-weight:600;color:var(--gold);margin-bottom:8px;
-}
-.plan-name{
-  font-family:var(--font-display);font-size:36px;font-weight:700;
-  color:var(--text-primary);margin-bottom:32px;
-}
-.price-now{font-family:var(--font-display);font-size:64px;font-weight:800;color:var(--text-primary);line-height:1;margin-bottom:6px}
-.price-now sup{font-size:24px;font-weight:600;color:var(--gold);vertical-align:super}
-.price-freq{font-size:13px;color:var(--text-muted);margin-bottom:14px}
-.price-total{font-size:14px;color:var(--text-secondary);font-weight:600;margin-bottom:6px}
-.price-save{
-  display:inline-block;background:var(--gold-tint);color:var(--gold);
-  border:1px solid var(--gold);padding:6px 14px;border-radius:4px;
-  font-size:12px;font-weight:700;margin-bottom:32px;
-}
+.plan-tag{font-family:var(--font-display);font-style:italic;font-size:14px;font-weight:600;color:var(--gold);margin-bottom:6px;text-align:center}
+.plan-name{font-family:var(--font-display);font-size:38px;font-weight:800;color:var(--text-primary);margin-bottom:32px;text-align:center;letter-spacing:-0.02em}
+.price-row{text-align:center;margin-bottom:6px}
+.price-now{font-family:var(--font-display);font-size:72px;font-weight:900;color:var(--text-primary);line-height:1;letter-spacing:-0.03em}
+.price-now sup{font-size:26px;font-weight:600;color:var(--gold);vertical-align:super}
+.price-freq{font-size:13px;color:var(--text-muted);margin-bottom:14px;text-align:center}
+.price-total{font-size:14px;color:var(--text-secondary);font-weight:600;margin-bottom:6px;text-align:center}
+.price-save{display:inline-block;background:var(--gold-tint);color:var(--gold);border:1px solid var(--gold);padding:6px 14px;border-radius:4px;font-size:12px;font-weight:700;margin-bottom:32px}
+.price-save-wrap{text-align:center}
 .price-card ul{list-style:none;margin-bottom:36px}
-.price-card li{
-  padding:14px 0 14px 28px;position:relative;
-  font-size:14px;color:var(--text-secondary);line-height:1.55;
-  border-bottom:1px solid var(--border-default);
-}
+.price-card li{padding:14px 0 14px 28px;position:relative;font-size:14px;color:var(--text-secondary);line-height:1.55;border-bottom:1px solid var(--border-default)}
 .price-card li:last-child{border-bottom:none}
-.price-card li::before{content:'→';position:absolute;left:0;top:14px;color:var(--gold);font-weight:700;font-size:16px}
+.price-card li::before{content:'✓';position:absolute;left:0;top:14px;color:var(--gold);font-weight:700;font-size:16px}
 .price-card li strong{color:var(--text-primary);font-weight:600}
 .price-card .btn{display:flex;width:100%;justify-content:center}
-.pricing-note{
-  margin-top:40px;text-align:center;font-size:13px;color:var(--text-muted);
-  line-height:1.85;max-width:720px;margin-left:auto;margin-right:auto;font-style:italic;
-}
+.pricing-note{margin-top:48px;text-align:center;font-size:13px;color:var(--text-muted);line-height:1.85;max-width:720px;margin-left:auto;margin-right:auto;font-style:italic}
 .pricing-note strong{color:var(--text-primary);font-style:normal;font-weight:600}
+/* seal below pricing */
+.pricing-seal-wrap{display:flex;flex-direction:column;align-items:center;margin-top:72px}
+.pricing-seal{
+  position:relative;width:160px;height:160px;
+  display:flex;align-items:center;justify-content:center;
+}
+.pricing-seal svg.seal-text{
+  position:absolute;inset:0;width:100%;height:100%;
+  animation:spin 24s linear infinite;
+}
+.pricing-seal .seal-inner{
+  width:90px;height:90px;border-radius:50%;
+  background:linear-gradient(135deg,var(--gold) 0%,var(--gold-deep) 100%);
+  display:flex;align-items:center;justify-content:center;flex-direction:column;
+  color:var(--bg-deepest);font-family:var(--font-display);font-weight:900;
+  box-shadow:var(--glow-lg),inset 0 -4px 12px rgba(0,0,0,0.3);
+  position:relative;z-index:1;
+}
+.pricing-seal .seal-inner .num{font-size:36px;line-height:1}
+.pricing-seal .seal-inner .label{font-size:9px;letter-spacing:1px;text-transform:uppercase;margin-top:2px}
+.pricing-seal-title{margin-top:20px;font-family:var(--font-display);font-size:22px;font-weight:800;color:var(--text-primary)}
+.pricing-seal-desc{margin-top:10px;font-size:14px;color:var(--text-muted);max-width:560px;text-align:center;line-height:1.75}
 
 /* ═══ HOW IT WORKS — timeline ═══ */
 .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:32px;position:relative}
-.steps::before{
-  content:'';position:absolute;top:38px;left:5%;right:5%;height:1px;
-  background:linear-gradient(90deg,transparent,var(--gold),var(--gold-bright),var(--gold),transparent);
-  z-index:0;
-}
-.step{
-  background:var(--bg-elevated);border:1px solid var(--border-default);
-  border-radius:8px;padding:28px;position:relative;z-index:1;
-  transition:all 350ms var(--ease);
-}
+.steps::before{content:'';position:absolute;top:38px;left:5%;right:5%;height:1px;background:linear-gradient(90deg,transparent,var(--gold),var(--gold-bright),var(--gold),transparent);z-index:0}
+.step{background:var(--bg-elevated);border:1px solid var(--border-default);border-radius:8px;padding:28px;position:relative;z-index:1;transition:all 350ms var(--ease)}
 .step:hover{border-color:var(--gold);transform:translateY(-4px);box-shadow:var(--glow-sm)}
-.step-num{
-  width:48px;height:48px;border-radius:50%;
-  background:var(--bg-deepest);border:2px solid var(--gold);
-  font-family:var(--font-display);font-style:italic;
-  font-size:22px;font-weight:800;color:var(--gold);
-  display:flex;align-items:center;justify-content:center;
-  margin-bottom:18px;box-shadow:var(--glow-sm);
-}
+.step-num{width:48px;height:48px;border-radius:50%;background:var(--bg-deepest);border:2px solid var(--gold);font-family:var(--font-display);font-style:italic;font-size:22px;font-weight:800;color:var(--gold);display:flex;align-items:center;justify-content:center;margin-bottom:18px;box-shadow:var(--glow-sm)}
 .step h4{font-size:16px;color:var(--text-primary);margin-bottom:8px;line-height:1.3;font-weight:700}
 .step p{font-size:13px;color:var(--text-secondary);line-height:1.7}
-.steps-note{
-  margin-top:48px;font-family:var(--font-display);font-style:italic;
-  font-size:14px;color:var(--text-muted);text-align:center;
-  max-width:680px;margin-left:auto;margin-right:auto;
-}
+.steps-note{margin-top:48px;font-family:var(--font-display);font-style:italic;font-size:14px;color:var(--text-muted);text-align:center;max-width:680px;margin-left:auto;margin-right:auto}
 
-/* ═══ FAQ ═══ */
-.faq-list{margin-top:32px;display:flex;flex-direction:column;gap:14px;max-width:880px;margin-left:auto;margin-right:auto}
-.faq{background:var(--bg-elevated);border:1px solid var(--border-default);border-radius:8px;overflow:hidden;transition:all 250ms var(--ease)}
+/* ═══ FAQ — centered + smoother accordion ═══ */
+.faq-section .tag{justify-content:center;margin-left:auto;margin-right:auto}
+.faq-section .tag::after{content:'';width:36px;height:1px;background:var(--gold)}
+.faq-section .h2{text-align:center;margin-left:auto;margin-right:auto}
+.faq-list{margin-top:32px;display:flex;flex-direction:column;gap:14px;max-width:820px;margin-left:auto;margin-right:auto}
+.faq{background:var(--bg-elevated);border:1px solid var(--border-default);border-radius:12px;overflow:hidden;transition:border-color 300ms var(--ease),box-shadow 300ms var(--ease)}
 .faq[open]{border-color:var(--gold);box-shadow:var(--glow-sm)}
-.faq summary{
-  padding:24px 32px;cursor:pointer;
-  font-family:var(--font-display);font-size:17px;font-weight:700;color:var(--text-primary);
-  display:flex;align-items:center;justify-content:space-between;
-  list-style:none;gap:24px;transition:color 250ms var(--ease);
-}
+.faq summary{padding:26px 34px;cursor:pointer;font-family:var(--font-display);font-size:17px;font-weight:700;color:var(--text-primary);display:flex;align-items:center;justify-content:space-between;list-style:none;gap:24px;transition:color 250ms var(--ease)}
 .faq summary::-webkit-details-marker{display:none}
 .faq summary::after{
-  content:'+';font-size:30px;color:var(--gold);font-weight:300;
-  transition:transform 0.4s var(--ease);flex-shrink:0;line-height:1;
+  content:'';width:18px;height:18px;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 18 18' fill='none'%3E%3Cpath d='M9 3 L9 15 M3 9 L15 9' stroke='%23CB9650' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-size:contain;background-repeat:no-repeat;
+  transition:transform 500ms var(--ease);flex-shrink:0;
 }
 .faq[open] summary::after{transform:rotate(135deg)}
 .faq summary:hover{color:var(--gold)}
-.faq-body{padding:0 32px 28px;font-size:15px;color:var(--text-secondary);line-height:1.85}
-.faq-body strong{color:var(--text-primary);font-weight:600}
+/* smoother accordion via wrapper */
+.faq-body{
+  display:grid;grid-template-rows:0fr;
+  transition:grid-template-rows 500ms var(--ease);
+}
+.faq[open] .faq-body{grid-template-rows:1fr}
+.faq-body > div{overflow:hidden}
+.faq-body-inner{padding:0 34px 28px;font-size:15px;color:var(--text-secondary);line-height:1.85}
+.faq-body-inner strong{color:var(--text-primary);font-weight:600}
 
-/* ═══ FINAL CTA ═══ */
+/* ═══ FINAL CTA — Image #5 split layout ═══ */
 .final{
-  padding:140px 0;text-align:center;position:relative;overflow:hidden;
+  padding:130px 0;position:relative;overflow:hidden;
   background:
-    radial-gradient(ellipse 90% 70% at 50% 50%,rgba(203,150,80,0.25),transparent 70%),
-    radial-gradient(ellipse 50% 40% at 20% 80%,rgba(106,58,48,0.4),transparent 70%),
-    radial-gradient(ellipse 60% 50% at 80% 20%,rgba(168,121,56,0.3),transparent 70%),
-    linear-gradient(180deg,var(--bg-base) 0%,var(--bg-deepest) 100%);
+    radial-gradient(ellipse 80% 60% at 80% 50%,rgba(203,150,80,0.2),transparent 70%),
+    radial-gradient(ellipse 40% 60% at 20% 80%,rgba(106,58,48,0.35),transparent 70%),
+    linear-gradient(160deg,var(--bg-deepest) 0%,var(--bg-base) 100%);
 }
-.final::before{
-  content:'';position:absolute;top:0;left:0;right:0;height:1px;
-  background:linear-gradient(90deg,transparent,var(--gold),transparent);
-}
-.final::after{
-  content:'';position:absolute;bottom:0;left:0;right:0;height:1px;
-  background:linear-gradient(90deg,transparent,var(--gold),transparent);
-}
+.final::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+.final::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
 .final .container{position:relative;z-index:1}
-.final h2{
-  font-size:clamp(42px,5.4vw,72px);color:var(--text-primary);
-  max-width:18ch;margin:0 auto 28px;font-weight:800;line-height:1.05;
+.final-grid{display:grid;grid-template-columns:1.05fr 0.95fr;gap:80px;align-items:center}
+.final-text h2{
+  font-size:clamp(40px,4.8vw,68px);color:var(--text-primary);
+  max-width:20ch;margin:18px 0 28px;font-weight:800;line-height:1.08;letter-spacing:-0.02em;
 }
-.final h2 .accent{color:var(--gold);font-style:italic}
-.final p{font-size:18px;color:var(--text-muted);max-width:600px;margin:0 auto 44px;line-height:1.85}
-.final .btn{font-size:14px;padding:24px 56px}
-.final-micro{margin-top:24px;font-size:12px;color:var(--text-faded);letter-spacing:0.3px}
+.final-text h2 .accent{color:var(--gold);font-style:italic}
+.final-text p{font-size:17px;color:var(--text-muted);max-width:540px;margin-bottom:18px;line-height:1.85}
+.final-text .final-cta-row{display:flex;gap:16px;align-items:center;flex-wrap:wrap;margin-top:36px}
+.final-micro{margin-top:18px;font-size:12px;color:var(--text-faded);letter-spacing:0.3px}
+.final-img-wrap{position:relative}
+.final-img{
+  aspect-ratio:4/5;border-radius:14px;overflow:hidden;
+  box-shadow:0 30px 80px rgba(0,0,0,0.8),var(--glow-md);
+  position:relative;
+}
+.final-img img{width:100%;height:100%;object-fit:cover;filter:contrast(1.05) brightness(0.92) saturate(1.1)}
+.final-img::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,transparent 50%,rgba(22,25,29,0.4) 100%);pointer-events:none}
+/* floating badges over final image */
+.float-badge{
+  position:absolute;background:rgba(22,25,29,0.92);
+  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+  border:1px solid var(--gold);border-radius:12px;
+  padding:16px 22px;display:flex;align-items:center;gap:14px;
+  box-shadow:var(--shadow-md),var(--glow-sm);
+  animation:float-badge 5s ease-in-out infinite;
+}
+.float-badge-1{top:18%;left:-30px;animation-delay:0s}
+.float-badge-2{bottom:22%;right:-30px;animation-delay:-2.5s}
+@keyframes float-badge{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+.float-badge-icon{
+  width:40px;height:40px;border-radius:10px;
+  background:var(--gold);color:var(--bg-deepest);
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+}
+.float-badge-icon svg{width:20px;height:20px}
+.float-badge-text{font-family:var(--font-display);font-size:13px;font-weight:700;color:var(--text-primary);line-height:1.2}
+.float-badge-text .sub{display:block;font-size:10px;font-weight:500;color:var(--text-muted);letter-spacing:0.5px;text-transform:uppercase;margin-top:4px;font-family:var(--font-body)}
 
 /* ═══ FOOTER ═══ */
 footer{background:var(--bg-deepest);color:var(--text-muted);padding:56px 0 36px;border-top:1px solid var(--border-warm)}
@@ -863,24 +738,34 @@ footer{background:var(--bg-deepest);color:var(--text-muted);padding:56px 0 36px;
 @media(max-width:1024px){
   .hero-grid{grid-template-columns:1fr;gap:64px}
   .hero-portrait{max-width:480px;margin:0 auto}
-  .promise-grid,.pillars,.inc-grid,.steps,.exam-grid{grid-template-columns:1fr 1fr}
-  .story-grid,.problem-grid{grid-template-columns:1fr;gap:48px}
+  .promise-grid,.inc-grid,.steps,.exam-grid{grid-template-columns:1fr 1fr}
+  .story-grid,.problem-grid,.final-grid{grid-template-columns:1fr;gap:48px}
   .story-img-wrap{position:static;max-width:420px;margin:0 auto}
   .problem-img{max-width:480px;margin:0 auto}
   .steps::before{display:none}
+  .bento{grid-template-columns:repeat(2,1fr)}
+  .bento-lg,.bento-wide{grid-column:span 2}
+  .bento-tall{grid-row:auto}
+  .final-img-wrap{max-width:480px;margin:0 auto}
+  .float-badge-1{left:-16px}.float-badge-2{right:-16px}
 }
 @media(max-width:720px){
   .nav-links{display:none}
   .nav-inner{padding:0 20px}
-  section.s,.test-section{padding:72px 0}
+  section.s,.test-section,.bonus-section,.exam-section,.pricing-section,.problem-section{padding:72px 0}
   .vsl{padding:64px 0}
   .container{padding:0 20px}
   .hero{padding:64px 0 80px}
-  .for-who-grid,.bonus-grid,.price-grid,.exam-grid{grid-template-columns:1fr}
-  .promise-grid,.pillars,.inc-grid,.steps,.modules{grid-template-columns:1fr}
+  .for-who-grid,.bonus-grid,.price-grid{grid-template-columns:1fr}
+  .promise-grid,.inc-grid,.steps,.exam-grid{grid-template-columns:1fr}
   .price-card{padding:40px 28px}
   .h2{max-width:none}
   .test{width:240px}
+  .bento{grid-template-columns:1fr}
+  .bento-lg,.bento-wide,.bento-tall{grid-column:span 1;grid-row:auto}
+  .method-wrap{padding-left:40px}
+  .method-item::before{left:-32px}
+  .float-badge{display:none}
 }
 @media(prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:0.01ms!important;transition-duration:0.01ms!important}
@@ -911,7 +796,7 @@ footer{background:var(--bg-deepest);color:var(--text-muted);padding:56px 0 36px;
     <div class="hero-grid">
       <div>
         <span class="badge">Próxima turma · 9 de Maio de 2026</span>
-        <h1>Torna-te treinador canino de elite — <span class="txt-gradient-animated">e factura €2.000 a €30.000 por mês.</span></h1>
+        <h1>Torna-te treinador canino de elite — <span class="txt-gradient-polaroid">e factura €2.000 a €30.000 por mês.</span></h1>
         <p class="hero-sub">Certificação em Coaching e Treino Canino. Seis meses, online, nos formatos Turma ou Individual. Ensinada pelo <strong>único treinador reconhecido em Portugal no Koehler Method</strong> — um dos apenas 4 na Europa.</p>
         <div class="hero-badges">
           <div class="hero-badge">1 de <strong>4 Koehler</strong> na Europa</div>
@@ -937,7 +822,7 @@ footer{background:var(--bg-deepest);color:var(--text-muted);padding:56px 0 36px;
   </div>
 </section>
 
-<!-- ═══ ANNOUNCEMENT MARQUEE ═══ -->
+<!-- ═══ ANNOUNCEMENT ═══ -->
 <div class="announce">
   <div class="announce-track">
     <span>Próxima turma <strong>9 de Maio de 2026</strong></span><span class="dot"></span>
@@ -958,7 +843,7 @@ footer{background:var(--bg-deepest);color:var(--text-muted);padding:56px 0 36px;
 <!-- ═══ VSL ═══ -->
 <section class="vsl" id="vsl">
   <div class="vsl-inner">
-    <span class="tag">Ouve do próprio Ricardo</span>
+    <span class="tag centered">Ouve do próprio Ricardo</span>
     <h2 class="reveal">Em 5 minutos, percebes <span class="accent">se isto é mesmo para ti.</span></h2>
     <p class="lead-vsl reveal">O Ricardo explica directamente quem é, o que fez, e porque a Certificação em Coaching e Treino Canino é diferente de tudo o que existe em Portugal.</p>
     <div class="vsl-video reveal">
@@ -968,7 +853,7 @@ footer{background:var(--bg-deepest);color:var(--text-muted);padding:56px 0 36px;
   </div>
 </section>
 
-<!-- ═══ FOR WHO ═══ -->
+<!-- ═══ FOR WHO — Image #2 layout ═══ -->
 <section class="s">
   <div class="container">
     <div class="tag reveal">Para Quem É</div>
@@ -977,37 +862,48 @@ footer{background:var(--bg-deepest);color:var(--text-muted);padding:56px 0 36px;
 
     <div class="for-who-grid">
       <div class="who-block reveal">
-        <div class="who-block-num">Perfil i</div>
-        <h3>Aspirante a treinador canino</h3>
-        <ul>
-          <li>Estás num trabalho que te esvazia e contas os cêntimos ao fim do mês</li>
-          <li>Adoras cães e queres transformar essa paixão numa carreira sólida</li>
-          <li>Queres acordar com propósito e controlar o teu próprio tempo</li>
-          <li>Queres construir reputação e independência financeira real</li>
-        </ul>
+        <div class="who-block-body">
+          <div class="who-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L13.09 8.26L20 9L15 14.74L16.18 22L12 18.77L7.82 22L9 14.74L4 9L10.91 8.26L12 2Z"/></svg>
+          </div>
+          <h3>Aspirante a treinador canino</h3>
+          <p class="sub">Para quem ainda está de fora — mas já sabe que é para ali que quer ir.</p>
+          <ul>
+            <li>Estás num trabalho que te esvazia e contas os cêntimos ao fim do mês</li>
+            <li>Adoras cães e queres transformar essa paixão numa carreira sólida</li>
+            <li>Queres acordar com propósito e controlar o teu próprio tempo</li>
+            <li>Queres construir reputação e independência financeira real</li>
+          </ul>
+        </div>
+        <div class="who-block-img">
+          <img src="img/promise.jpeg" alt="Ricardo Calheiros com a Jade">
+        </div>
       </div>
       <div class="who-block reveal delay-1">
-        <div class="who-block-num">Perfil ii</div>
-        <h3>Treinador canino em actividade</h3>
-        <ul>
-          <li>Já trabalhas com cães, mas a agenda é instável e a facturação não escala</li>
-          <li>Os casos difíceis — agressividade, ansiedade de separação — continuam a derrotar-te</li>
-          <li>Comparas-te com outros treinadores nas redes e sentes-te para trás</li>
-          <li>Queres posicionamento digital sólido e facturação mensal estável</li>
-        </ul>
+        <div class="who-block-body">
+          <div class="who-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 15L8 12L4 14L12 22L20 14L16 12L12 15Z"/><path d="M12 2L4 6V12C4 16 8 19 12 20C16 19 20 16 20 12V6L12 2Z"/></svg>
+          </div>
+          <h3>Treinador canino em actividade</h3>
+          <p class="sub">Para quem já trabalha no terreno — mas sente que pode (e deve) muito mais.</p>
+          <ul>
+            <li>Já trabalhas com cães, mas a agenda é instável e a facturação não escala</li>
+            <li>Os casos difíceis — agressividade, ansiedade de separação — continuam a derrotar-te</li>
+            <li>Comparas-te com outros treinadores nas redes e sentes-te para trás</li>
+            <li>Queres posicionamento digital sólido e facturação mensal estável</li>
+          </ul>
+        </div>
+        <div class="who-block-img">
+          <img src="img/who.jpeg" alt="Ricardo Calheiros treinando">
+        </div>
       </div>
     </div>
     <p class="for-fecho reveal"><strong>Se te revês em qualquer um destes dois perfis, continua a ler.</strong> O resto desta página foi escrito para ti.</p>
   </div>
 </section>
 
-<!-- ═══ DIVIDER decorativo ═══ -->
-<div class="divider-decorative">
-  <div class="icon">★</div>
-</div>
-
-<!-- ═══ PROBLEM ═══ -->
-<section class="s warm">
+<!-- ═══ PROBLEM — abstract bg + corner-bracket fecho ═══ -->
+<section class="problem-section">
   <div class="container">
     <div class="tag reveal">A Realidade do Mercado</div>
     <h2 class="h2 reveal">O treino canino em Portugal está <span class="accent">partido em dois.</span> E no meio ficam as famílias.</h2>
@@ -1030,8 +926,8 @@ footer{background:var(--bg-deepest);color:var(--text-muted);padding:56px 0 36px;
   </div>
 </section>
 
-<!-- ═══ PROMISE ═══ -->
-<section class="s mesh">
+<!-- ═══ PROMISE — cards com foto bg ═══ -->
+<section class="s">
   <div class="container">
     <div class="tag reveal">A Transformação</div>
     <h2 class="h2 reveal">Seis meses. <span class="accent">Três transformações reais.</span></h2>
@@ -1039,16 +935,19 @@ footer{background:var(--bg-deepest);color:var(--text-muted);padding:56px 0 36px;
 
     <div class="promise-grid">
       <div class="p-card reveal">
+        <div class="p-card-bg" style="background-image:url('img/hero.jpeg')"></div>
         <span class="p-num">i</span>
         <h3>Independência e propósito</h3>
         <p>Acordas a fazer o que amas. Escolhes os teus clientes. Defines o teu horário. Trabalhas com um sentido que o emprego antigo nunca te deu. Estás presente para a tua família — porque agora controlas o teu tempo.</p>
       </div>
       <div class="p-card reveal delay-1">
+        <div class="p-card-bg" style="background-image:url('img/method.jpeg')"></div>
         <span class="p-num">ii</span>
         <h3>Técnica com resultados reais</h3>
         <p>Aprendes a resolver os casos que outros treinadores dão por perdidos: agressividade, ansiedade de separação, medo, comportamentos obsessivo-compulsivos. Vais ver transformações que não pensavas serem possíveis.</p>
       </div>
       <div class="p-card reveal delay-2">
+        <div class="p-card-bg" style="background-image:url('img/promise.jpeg')"></div>
         <span class="p-num">iii</span>
         <h3>Projecção digital e facturação</h3>
         <p>Sais com um modelo de negócio pronto a executar, um posicionamento digital definido e um plano claro para facturares entre €2.000 e €30.000+ por mês — consoante o teu ritmo, o teu compromisso e a tua capacidade de escalar.</p>
@@ -1058,7 +957,7 @@ footer{background:var(--bg-deepest);color:var(--text-muted);padding:56px 0 36px;
   </div>
 </section>
 
-<!-- ═══ STORY ═══ -->
+<!-- ═══ STORY — efeito abstracto em volta da foto ═══ -->
 <section class="s deepest">
   <div class="container">
     <div class="tag reveal">A História</div>
@@ -1066,6 +965,8 @@ footer{background:var(--bg-deepest);color:var(--text-muted);padding:56px 0 36px;
 
     <div class="story-grid">
       <div class="story-img-wrap reveal">
+        <div class="story-deco-circle"></div>
+        <div class="story-deco-dots"></div>
         <div class="story-portrait">
           <img src="img/story.jpeg" alt="Ricardo abraçando a Jade">
         </div>
@@ -1086,27 +987,27 @@ footer{background:var(--bg-deepest);color:var(--text-muted);padding:56px 0 36px;
   </div>
 </section>
 
-<!-- ═══ METHOD ═══ -->
-<section class="s aurora" id="metodo">
+<!-- ═══ METHOD — timeline vertical alinhada à esquerda ═══ -->
+<section class="s" id="metodo">
   <div class="container">
     <div class="tag reveal">O Método</div>
     <h2 class="h2 reveal">Porque os problemas do cão <span class="accent">raramente são só do cão.</span></h2>
     <p class="lead reveal">Treinar o cão isoladamente não resolve. O cão vive inserido num sistema familiar — e esse sistema é metade do problema e praticamente toda a solução. Esta certificação ensina-te a trabalhar as três dimensões ao mesmo tempo.</p>
 
-    <div class="pillars">
-      <div class="pillar reveal">
-        <span class="pillar-num">i · Ciência do comportamento canino</span>
-        <h3>Base técnica rigorosa</h3>
+    <div class="method-wrap">
+      <div class="method-item reveal">
+        <span class="meta">Dimensão i</span>
+        <h3>Ciência do comportamento canino</h3>
         <p>Fundamentos sólidos de como o cão aprende, do que responde e como comunica. Base técnica rigorosa — incluindo o Koehler Method of Dog Training ensinado pelo único formador reconhecido em Portugal.</p>
       </div>
-      <div class="pillar reveal delay-1">
-        <span class="pillar-num">ii · Psicologia humana aplicada</span>
-        <h3>A causa raiz dos casos difíceis</h3>
+      <div class="method-item reveal">
+        <span class="meta">Dimensão ii</span>
+        <h3>Psicologia humana aplicada</h3>
         <p>Como os padrões emocionais dos donos criam, perpetuam ou agravam os problemas do cão. Como ler esses padrões e como intervires sem ferir a relação. É aqui que mora a causa raiz da maioria dos casos difíceis.</p>
       </div>
-      <div class="pillar reveal delay-2">
-        <span class="pillar-num">iii · Dinâmica do sistema familiar</span>
-        <h3>A peça que quase ninguém ensina</h3>
+      <div class="method-item reveal">
+        <span class="meta">Dimensão iii</span>
+        <h3>Dinâmica do sistema familiar</h3>
         <p>Reorganizar a rotina, os limites e os papéis dentro de casa para que o trabalho com o cão segure na vida real — e não só durante a sessão. Esta é a peça que quase nenhuma formação em Portugal ensina.</p>
       </div>
     </div>
@@ -1117,34 +1018,68 @@ footer{background:var(--bg-deepest);color:var(--text-muted);padding:56px 0 36px;
   </div>
 </section>
 
-<!-- ═══ FULL-BLEED IMAGE BREAK ═══ -->
-<div class="img-break" style="background-image:url('img/method.jpeg');">
-  <div class="img-break-content">
+<!-- ═══ VIDEO BREAK ═══ -->
+<div class="video-break">
+  <div class="video-break-bg"></div>
+  <div class="video-break-content">
+    <div class="tag centered">Em campo</div>
     <h3>Não se aprende em vídeos. <span class="accent">Aprende-se em campo.</span></h3>
   </div>
 </div>
 
-<!-- ═══ LEARN — currículo ═══ -->
+<!-- ═══ LEARN — bento grid assimétrico ═══ -->
 <section class="s deepest" id="curriculo">
   <div class="container">
     <div class="tag reveal">Currículo</div>
     <h2 class="h2 reveal">O que vais dominar ao longo dos <span class="accent">6 meses.</span></h2>
     <p class="lead reveal">O currículo foi desenhado para cobrir tudo aquilo que um treinador canino de elite precisa de dominar — da técnica mais rigorosa ao modelo de negócio que sustenta a carreira.</p>
 
-    <div class="modules">
-      <div class="mod reveal"><div class="mod-n">i</div><h4>Comportamento canino a fundo</h4><p>Leitura, comunicação e aprendizagem do cão. Base científica sólida para que cada decisão técnica tenha um porquê claro.</p></div>
-      <div class="mod reveal delay-1"><div class="mod-n">ii</div><h4>Padrões emocionais dos donos</h4><p>Identificação e intervenção na peça humana do problema. Como a ansiedade, o medo ou a impulsividade do dono moldam o comportamento do cão — e como lidar com isso.</p></div>
-      <div class="mod reveal"><div class="mod-n">iii</div><h4>Estruturas de treino equilibradas</h4><p>Protocolos que funcionam fora da sessão, no quotidiano real da família. Obediência sólida que se mantém quando ninguém está a ver.</p></div>
-      <div class="mod reveal delay-1"><div class="mod-n">iv</div><h4>Casos complexos</h4><p>Agressividade, ansiedade de separação, medo, comportamentos obsessivo-compulsivos. Os casos onde a maioria dos treinadores desiste e que aqui vais aprender a ler e a resolver.</p></div>
-      <div class="mod reveal"><div class="mod-n">v</div><h4>Koehler Method of Dog Training</h4><p>O método de preferência do Ricardo, ensinado pelo único formador reconhecido em Portugal e um dos apenas 4 na Europa.</p></div>
-      <div class="mod reveal delay-1"><div class="mod-n">vi</div><h4>Coaching aplicado ao sistema familiar</h4><p>Ferramentas de intervenção no ambiente humano do cão. Como fazer a família toda caminhar na mesma direcção — sem a qual nenhum treino aguenta.</p></div>
-      <div class="mod reveal"><div class="mod-n">vii</div><h4>Modelo de negócio para treinador canino</h4><p>Preços, serviços, funil de clientes, margens. Tudo o que precisas para transformar a tua prática numa operação rentável e estável.</p></div>
-      <div class="mod reveal delay-1"><div class="mod-n">viii</div><h4>Posicionamento digital e conteúdo</h4><p>Como construíres uma presença online que te traz clientes e te permite facturar €2.000 a €30.000+/mês. O lado do negócio que distingue quem sobrevive de quem escala.</p></div>
+    <div class="bento">
+      <div class="bento-item bento-lg reveal">
+        <span class="bento-num">i</span>
+        <h4>Comportamento canino a fundo</h4>
+        <p>Leitura, comunicação e aprendizagem do cão. Base científica sólida para que cada decisão técnica tenha um porquê claro — sem achismos, sem modismos.</p>
+      </div>
+      <div class="bento-item reveal delay-1">
+        <span class="bento-num">ii</span>
+        <h4>Padrões emocionais dos donos</h4>
+        <p>Como o humano cria ou perpetua o problema — e como lidar.</p>
+      </div>
+      <div class="bento-item reveal delay-2">
+        <span class="bento-num">iii</span>
+        <h4>Estruturas de treino</h4>
+        <p>Protocolos que aguentam fora da sessão.</p>
+      </div>
+      <div class="bento-item bento-wide reveal">
+        <span class="bento-num">iv</span>
+        <h4>Casos complexos</h4>
+        <p>Agressividade, ansiedade de separação, medo, comportamentos obsessivo-compulsivos. Os casos onde a maioria dos treinadores desiste e que aqui vais aprender a ler e a resolver.</p>
+      </div>
+      <div class="bento-item bento-tall reveal delay-1">
+        <span class="bento-num">v</span>
+        <h4>Koehler Method</h4>
+        <p>O método de preferência do Ricardo, ensinado pelo único formador reconhecido em Portugal e um dos apenas 4 na Europa.</p>
+      </div>
+      <div class="bento-item reveal delay-2">
+        <span class="bento-num">vi</span>
+        <h4>Coaching familiar</h4>
+        <p>Família toda na mesma direcção.</p>
+      </div>
+      <div class="bento-item reveal">
+        <span class="bento-num">vii</span>
+        <h4>Modelo de negócio</h4>
+        <p>Preços, serviços, funil, margens.</p>
+      </div>
+      <div class="bento-item bento-wide reveal delay-1">
+        <span class="bento-num">viii</span>
+        <h4>Posicionamento digital e conteúdo</h4>
+        <p>Como construíres uma presença online que te traz clientes e te permite facturar €2.000 a €30.000+/mês. O lado do negócio que distingue quem sobrevive de quem escala.</p>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ═══ INCLUDES ═══ -->
+<!-- ═══ INCLUDES — border-trace premium ═══ -->
 <section class="s">
   <div class="container">
     <div class="tag reveal">Incluído</div>
@@ -1161,8 +1096,8 @@ footer{background:var(--bg-deepest);color:var(--text-muted);padding:56px 0 36px;
   </div>
 </section>
 
-<!-- ═══ BONUS ═══ -->
-<section class="s warm">
+<!-- ═══ BONUS — Image #3 layout ═══ -->
+<section class="bonus-section">
   <div class="container">
     <div class="tag reveal">Bónus</div>
     <h2 class="h2 reveal">Dois dias de imersão — <span class="accent">gravados e teus para sempre.</span></h2>
@@ -1170,22 +1105,64 @@ footer{background:var(--bg-deepest);color:var(--text-muted);padding:56px 0 36px;
 
     <div class="bonus-grid">
       <div class="bonus reveal">
-        <span class="bonus-tag">Bónus i</span>
+        <div class="bonus-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L4 6V12C4 17 7 21 12 22C17 21 20 17 20 12V6L12 2Z"/><path d="M9 12L11 14L15 10"/></svg>
+        </div>
         <h3>Imersão em Agressividade</h3>
         <p>Um dia completo dedicado a um dos temas mais difíceis e mais procurados do mercado. Agressividade a pessoas, a outros cães, por recurso, por medo. O Ricardo é especialista nesta área e é por aqui que muitos alunos começam a diferenciar-se no mercado.</p>
+        <div class="bonus-illust">
+          <svg viewBox="0 0 200 150" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="shield-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stop-color="#DDA968"/>
+                <stop offset="100%" stop-color="#A87938"/>
+              </linearGradient>
+            </defs>
+            <path d="M100 20 L140 35 L140 80 Q140 115 100 135 Q60 115 60 80 L60 35 Z" fill="url(#shield-grad)" stroke="#CB9650" stroke-width="2"/>
+            <circle cx="100" cy="70" r="18" fill="#16191D" opacity="0.4"/>
+            <path d="M85 82 Q100 95 115 82" stroke="#16191D" stroke-width="3" fill="none" stroke-linecap="round"/>
+            <circle cx="92" cy="68" r="3" fill="#16191D"/>
+            <circle cx="108" cy="68" r="3" fill="#16191D"/>
+            <path d="M83 60 L92 65 M108 65 L117 60" stroke="#16191D" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
       </div>
       <div class="bonus reveal delay-1">
-        <span class="bonus-tag">Bónus ii</span>
-        <h3>Imersão em Marketing e Estratégia de Negócio</h3>
+        <div class="bonus-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18V6M3 18L9 12L13 16L21 8"/><path d="M15 8H21V14"/></svg>
+        </div>
+        <h3>Imersão em Marketing e Negócio</h3>
         <p>Um dia completo sobre como montar o teu negócio, posicionar-te no digital, cobrar o que vales e construir uma agenda estável. O atalho directo para transformares o que aprendes em facturação real.</p>
+        <div class="bonus-illust">
+          <svg viewBox="0 0 200 150" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="chart-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#A87938"/>
+                <stop offset="100%" stop-color="#DDA968"/>
+              </linearGradient>
+            </defs>
+            <rect x="20" y="110" width="25" height="20" fill="url(#chart-grad)" opacity="0.6" rx="2"/>
+            <rect x="55" y="90" width="25" height="40" fill="url(#chart-grad)" opacity="0.7" rx="2"/>
+            <rect x="90" y="65" width="25" height="65" fill="url(#chart-grad)" opacity="0.85" rx="2"/>
+            <rect x="125" y="40" width="25" height="90" fill="url(#chart-grad)" rx="2"/>
+            <rect x="160" y="20" width="25" height="110" fill="#DDA968" rx="2"/>
+            <path d="M32 100 L67 80 L102 55 L137 30 L172 12" stroke="#ECE1AB" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+            <circle cx="32" cy="100" r="3" fill="#ECE1AB"/>
+            <circle cx="67" cy="80" r="3" fill="#ECE1AB"/>
+            <circle cx="102" cy="55" r="3" fill="#ECE1AB"/>
+            <circle cx="137" cy="30" r="3" fill="#ECE1AB"/>
+            <circle cx="172" cy="12" r="4" fill="#ECE1AB"/>
+            <text x="100" y="148" font-family="Manrope,sans-serif" font-weight="900" font-size="14" fill="#ECE1AB" text-anchor="middle">€2k → €30k+</text>
+          </svg>
+        </div>
       </div>
     </div>
     <p class="bonus-note reveal">Ambos os bónus são entregues logo no início da certificação. Não estão dependentes de progressão nem de upgrade.</p>
   </div>
 </section>
 
-<!-- ═══ EXAME FINAL — 4 vídeos ═══ -->
-<section class="s deepest" id="exame">
+<!-- ═══ EXAME FINAL — abstract bg ═══ -->
+<section class="exam-section" id="exame">
   <div class="container">
     <div class="tag reveal">Exame Final</div>
     <h2 class="h2 reveal">A prova com cão real. <span class="accent">Vê alunos reais a fazê-la.</span></h2>
@@ -1193,64 +1170,32 @@ footer{background:var(--bg-deepest);color:var(--text-muted);padding:56px 0 36px;
 
     <div class="exam-grid">
       <div class="exam reveal">
-        <div class="exam-video">
-          <iframe src="https://www.youtube.com/embed/jlf0C_tKlFg" title="Exame Final Pedro Monteiro" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
-        <div class="exam-info">
-          <div>
-            <h4>Pedro Monteiro</h4>
-            <div class="role">Exame Final</div>
-          </div>
-          <div class="stars">★★★★★</div>
-        </div>
+        <div class="exam-video"><iframe src="https://www.youtube.com/embed/jlf0C_tKlFg" title="Exame Final Pedro Monteiro" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+        <div class="exam-info"><div><h4>Pedro Monteiro</h4><div class="role">Exame Final</div></div><div class="stars">★★★★★</div></div>
       </div>
       <div class="exam reveal delay-1">
-        <div class="exam-video">
-          <iframe src="https://www.youtube.com/embed/QQhzYMbO6PQ" title="Exame Final Margarida Gama" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
-        <div class="exam-info">
-          <div>
-            <h4>Margarida Gama</h4>
-            <div class="role">Exame Final</div>
-          </div>
-          <div class="stars">★★★★★</div>
-        </div>
+        <div class="exam-video"><iframe src="https://www.youtube.com/embed/QQhzYMbO6PQ" title="Exame Final Margarida Gama" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+        <div class="exam-info"><div><h4>Margarida Gama</h4><div class="role">Exame Final</div></div><div class="stars">★★★★★</div></div>
       </div>
       <div class="exam reveal">
-        <div class="exam-video">
-          <iframe src="https://www.youtube.com/embed/JY3Q9kppseI" title="Exame Final Célia" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
-        <div class="exam-info">
-          <div>
-            <h4>Célia</h4>
-            <div class="role">Exame Final</div>
-          </div>
-          <div class="stars">★★★★★</div>
-        </div>
+        <div class="exam-video"><iframe src="https://www.youtube.com/embed/JY3Q9kppseI" title="Exame Final Célia" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+        <div class="exam-info"><div><h4>Célia</h4><div class="role">Exame Final</div></div><div class="stars">★★★★★</div></div>
       </div>
       <div class="exam reveal delay-1">
-        <div class="exam-video">
-          <iframe src="https://www.youtube.com/embed/clceGdmFfYc" title="Exame Final João" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
-        <div class="exam-info">
-          <div>
-            <h4>João</h4>
-            <div class="role">Exame Final</div>
-          </div>
-          <div class="stars">★★★★★</div>
-        </div>
+        <div class="exam-video"><iframe src="https://www.youtube.com/embed/clceGdmFfYc" title="Exame Final João" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+        <div class="exam-info"><div><h4>João</h4><div class="role">Exame Final</div></div><div class="stars">★★★★★</div></div>
       </div>
     </div>
     <p class="exam-note">Cada aluno é avaliado pelo Ricardo. Sem cunhas. Sem facilitismo.</p>
   </div>
 </section>
 
-<!-- ═══ TESTEMUNHOS — carrossel infinito ═══ -->
+<!-- ═══ TESTEMUNHOS — centered + perfect loop ═══ -->
 <section class="test-section">
-  <div class="container">
-    <div class="tag reveal">Alunas</div>
-    <h2 class="h2 reveal">O que dizem quem <span class="accent">já passou por aqui.</span></h2>
-    <p class="lead reveal">Carrega para ouvires directamente delas. As laterais continuam a rodar — passa o cursor para parar.</p>
+  <div class="test-header reveal">
+    <div class="tag">Alunas</div>
+    <h2 class="h2">O que dizem quem <span class="accent">já passou por aqui.</span></h2>
+    <p class="lead">Carrega para ouvires directamente delas. Passa o cursor para parar o carrossel.</p>
   </div>
   <div class="test-marquee">
     <div class="test-track">
@@ -1270,7 +1215,7 @@ footer{background:var(--bg-deepest);color:var(--text-muted);padding:56px 0 36px;
         <div class="test-video"><a href="https://www.instagram.com/reel/DWXr46_ofLT/" target="_blank" rel="noopener" class="test-link">Ver depoimento<br>no Instagram</a></div>
         <div class="test-info"><div class="stars">★★★★★</div><h4>Joana Araújo</h4><p>Aluna da Certificação</p></div>
       </div>
-      <!-- Duplicado para loop infinito -->
+      <!-- loop duplicate -->
       <div class="test">
         <div class="test-video"><iframe src="https://www.youtube.com/embed/B53oZPLqhu0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
         <div class="test-info"><div class="stars">★★★★★</div><h4>Margarida Castro</h4><p>Aluna da Certificação</p></div>
@@ -1291,8 +1236,8 @@ footer{background:var(--bg-deepest);color:var(--text-muted);padding:56px 0 36px;
   </div>
 </section>
 
-<!-- ═══ PRICING ═══ -->
-<section class="s aurora" id="investimento">
+<!-- ═══ PRICING — Image #4 premium style ═══ -->
+<section class="pricing-section" id="investimento">
   <div class="container">
     <div class="tag reveal">Investimento</div>
     <h2 class="h2 reveal">Dois formatos. <span class="accent">Um compromisso.</span></h2>
@@ -1304,12 +1249,13 @@ footer{background:var(--bg-deepest);color:var(--text-muted);padding:56px 0 36px;
 
     <div class="price-grid">
       <div class="price-card reveal">
+        <div class="price-signature">Acompanhamento em grupo</div>
         <div class="plan-tag">Plano i</div>
         <div class="plan-name">Turma</div>
-        <div class="price-now"><sup>€</sup>370</div>
-        <div class="price-freq">/mês · 6 meses · acompanhamento em grupo</div>
+        <div class="price-row"><span class="price-now"><sup>€</sup>370</span></div>
+        <div class="price-freq">/mês · 6 meses</div>
         <div class="price-total">Total: <strong>€2.220</strong></div>
-        <div class="price-save">À vista €2.000 · poupas €220</div>
+        <div class="price-save-wrap"><div class="price-save">À vista €2.000 · poupas €220</div></div>
         <ul>
           <li>Aulas ao vivo semanais (Zoom, sextas às 9h)</li>
           <li>Gravações de todas as aulas, sem limite de tempo</li>
@@ -1321,13 +1267,14 @@ footer{background:var(--bg-deepest);color:var(--text-muted);padding:56px 0 36px;
         <a href="#" class="btn btn-ghost">Candidatar-me ao Grupo →</a>
       </div>
       <div class="price-card featured reveal delay-1">
-        <div class="price-badge-top">★ Mais Completo</div>
+        <div class="price-signature">Experiência individual</div>
+        <div style="text-align:center"><div class="price-badge-top">★ Mais Completo</div></div>
         <div class="plan-tag">Plano ii</div>
         <div class="plan-name">Individual</div>
-        <div class="price-now"><sup>€</sup>470</div>
-        <div class="price-freq">/mês · 6 meses · acompanhamento individual</div>
+        <div class="price-row"><span class="price-now"><sup>€</sup>470</span></div>
+        <div class="price-freq">/mês · 6 meses</div>
         <div class="price-total">Total: <strong>€2.820</strong></div>
-        <div class="price-save">À vista €2.400 · poupas €420 · 15% desconto</div>
+        <div class="price-save-wrap"><div class="price-save">À vista €2.400 · poupas €420 · 15% desconto</div></div>
         <ul>
           <li><strong>Tudo o que está no plano Turma</strong></li>
           <li><strong>Acompanhamento individual</strong> — ritmo e foco adaptados</li>
@@ -1339,7 +1286,26 @@ footer{background:var(--bg-deepest);color:var(--text-muted);padding:56px 0 36px;
       </div>
     </div>
 
-    <p class="pricing-note"><strong>A inscrição conta como primeira mensalidade.</strong> Duração: 6 meses (prazo máximo 12 meses). Não há garantia de resultado — o sucesso depende do compromisso e da entrega de cada aluno.</p>
+    <p class="pricing-note reveal"><strong>A inscrição conta como primeira mensalidade.</strong> Duração: 6 meses (prazo máximo 12 meses). Não há garantia de resultado — o sucesso depende do compromisso e da entrega de cada aluno.</p>
+
+    <div class="pricing-seal-wrap reveal">
+      <div class="pricing-seal">
+        <svg class="seal-text" viewBox="0 0 160 160">
+          <defs>
+            <path id="circlePath" d="M 80, 80 m -68, 0 a 68,68 0 1,1 136,0 a 68,68 0 1,1 -136,0"/>
+          </defs>
+          <text fill="#CB9650" font-family="Manrope,sans-serif" font-size="11" font-weight="700" letter-spacing="3">
+            <textPath href="#circlePath">CERTIFICAÇÃO OFICIAL · 6 MESES · CERTIFICAÇÃO OFICIAL · 6 MESES · </textPath>
+          </text>
+        </svg>
+        <div class="seal-inner">
+          <div class="num">6</div>
+          <div class="label">meses</div>
+        </div>
+      </div>
+      <div class="pricing-seal-title">Formação completa e certificada</div>
+      <div class="pricing-seal-desc">Seis meses de formação séria, exame prático final com cão real e certificado oficial de conclusão — pela mão do único treinador reconhecido em Portugal no Koehler Method.</div>
+    </div>
   </div>
 </section>
 
@@ -1360,52 +1326,77 @@ footer{background:var(--bg-deepest);color:var(--text-muted);padding:56px 0 36px;
   </div>
 </section>
 
-<!-- ═══ FAQ ═══ -->
-<section class="s deepest" id="faq">
+<!-- ═══ FAQ — centralizado + smoother accordion ═══ -->
+<section class="s deepest faq-section" id="faq">
   <div class="container">
-    <div class="tag reveal">Perguntas Frequentes</div>
-    <h2 class="h2 reveal">As perguntas que recebo <span class="accent">antes de cada turma.</span></h2>
+    <div class="tag reveal centered">Perguntas Frequentes</div>
+    <h2 class="h2 reveal centered">As perguntas que recebo <span class="accent">antes de cada turma.</span></h2>
 
     <div class="faq-list">
       <details class="faq reveal">
         <summary>O curso é online ou presencial?</summary>
-        <div class="faq-body">As aulas ao vivo são online, via Zoom, às sextas-feiras às 9h. Todas ficam gravadas e disponíveis sem limite de tempo. No plano Individual existe a possibilidade de sessões presenciais combinadas directamente com o Ricardo.</div>
+        <div class="faq-body"><div><div class="faq-body-inner">As aulas ao vivo são online, via Zoom, às sextas-feiras às 9h. Todas ficam gravadas e disponíveis sem limite de tempo. No plano Individual existe a possibilidade de sessões presenciais combinadas directamente com o Ricardo.</div></div></div>
       </details>
       <details class="faq reveal">
         <summary>Ficam-me as gravações das aulas?</summary>
-        <div class="faq-body">Sim. Cada aula fica gravada e fica contigo para sempre. Podes rever antes, durante e depois da certificação — quantas vezes precisares.</div>
+        <div class="faq-body"><div><div class="faq-body-inner">Sim. Cada aula fica gravada e fica contigo para sempre. Podes rever antes, durante e depois da certificação — quantas vezes precisares.</div></div></div>
       </details>
       <details class="faq reveal">
         <summary>Há garantia de resultado?</summary>
-        <div class="faq-body">Não. Não há garantia e quem promete garantias nesta área, mente. O sucesso depende do compromisso e da entrega de cada aluno. O que <strong>nós</strong> garantimos é o conteúdo, a metodologia, o acompanhamento e o nível de exigência. O resto está nas tuas mãos.</div>
+        <div class="faq-body"><div><div class="faq-body-inner">Não. Não há garantia e quem promete garantias nesta área, mente. O sucesso depende do compromisso e da entrega de cada aluno. O que <strong>nós</strong> garantimos é o conteúdo, a metodologia, o acompanhamento e o nível de exigência. O resto está nas tuas mãos.</div></div></div>
       </details>
       <details class="faq reveal">
         <summary>Qual é a diferença real entre o plano Turma e o Individual?</summary>
-        <div class="faq-body">O currículo, os bónus, o exame final e o certificado são exactamente os mesmos. A diferença está no nível de atenção directa do Ricardo, no ritmo, no feedback personalizado e na possibilidade de sessões presenciais. Se queres o acompanhamento mais próximo possível, é o Individual. Se queres um excelente acompanhamento em grupo a um investimento mais leve, é a Turma.</div>
+        <div class="faq-body"><div><div class="faq-body-inner">O currículo, os bónus, o exame final e o certificado são exactamente os mesmos. A diferença está no nível de atenção directa do Ricardo, no ritmo, no feedback personalizado e na possibilidade de sessões presenciais. Se queres o acompanhamento mais próximo possível, é o Individual. Se queres um excelente acompanhamento em grupo a um investimento mais leve, é a Turma.</div></div></div>
       </details>
       <details class="faq reveal">
         <summary>Já sou treinador há alguns anos — isto é para mim?</summary>
-        <div class="faq-body">Sim. Uma parte significativa dos alunos chega já com prática no terreno e quer elevar a técnica, resolver casos difíceis e construir um modelo de negócio e posicionamento digital sérios. A certificação foi desenhada precisamente para também responder a esse perfil.</div>
+        <div class="faq-body"><div><div class="faq-body-inner">Sim. Uma parte significativa dos alunos chega já com prática no terreno e quer elevar a técnica, resolver casos difíceis e construir um modelo de negócio e posicionamento digital sérios. A certificação foi desenhada precisamente para também responder a esse perfil.</div></div></div>
       </details>
       <details class="faq reveal">
         <summary>Vou mesmo conseguir facturar entre €2.000 e €30.000 por mês?</summary>
-        <div class="faq-body">Estes são os valores reportados por alunos reais. €2.000/mês é o que um treinador recém-formado consegue atingir em ritmo normal nos primeiros meses. Os €30.000+/mês são para quem aplica a fundo o lado de negócio e posicionamento e escala a sério. A certificação dá-te as ferramentas completas — o resultado depende da aplicação.</div>
+        <div class="faq-body"><div><div class="faq-body-inner">Estes são os valores reportados por alunos reais. €2.000/mês é o que um treinador recém-formado consegue atingir em ritmo normal nos primeiros meses. Os €30.000+/mês são para quem aplica a fundo o lado de negócio e posicionamento e escala a sério. A certificação dá-te as ferramentas completas — o resultado depende da aplicação.</div></div></div>
       </details>
       <details class="faq reveal">
         <summary>Posso pagar só em prestações?</summary>
-        <div class="faq-body">Sim. Tens duas opções em qualquer dos formatos: pagamento integral com desconto ou pagamento em 6 mensalidades sem desconto. A inscrição conta como primeira mensalidade.</div>
+        <div class="faq-body"><div><div class="faq-body-inner">Sim. Tens duas opções em qualquer dos formatos: pagamento integral com desconto ou pagamento em 6 mensalidades sem desconto. A inscrição conta como primeira mensalidade.</div></div></div>
       </details>
     </div>
   </div>
 </section>
 
-<!-- ═══ FINAL CTA ═══ -->
+<!-- ═══ FINAL CTA — Image #5 split ═══ -->
 <section class="final">
   <div class="container">
-    <h2>A tua próxima vida começa a <span class="accent">9 de Maio.</span></h2>
-    <p>A próxima turma é limitada e a candidatura prévia é obrigatória. Quando fecha, fecha — e a seguinte fica para daqui a alguns meses.</p>
-    <a href="#investimento" class="btn btn-lg btn-pulse">Candidatar-me Agora →</a>
-    <p class="final-micro">Após a candidatura, o Ricardo entra em contacto pessoalmente. Sem pressão, sem truques — só uma conversa directa.</p>
+    <div class="final-grid">
+      <div class="final-text reveal">
+        <span class="tag">Próximo Passo</span>
+        <h2>A tua próxima vida começa a <span class="accent">9 de Maio.</span></h2>
+        <p>A próxima turma é limitada e a candidatura prévia é obrigatória. Quando fecha, fecha — e a seguinte fica para daqui a alguns meses.</p>
+        <p>Após a candidatura, o Ricardo entra em contacto pessoalmente para agendar a chamada de avaliação. Sem pressão, sem truques — só uma conversa directa.</p>
+        <div class="final-cta-row">
+          <a href="#investimento" class="btn btn-lg btn-pulse">Candidatar-me Agora →</a>
+        </div>
+        <p class="final-micro">Candidatura prévia obrigatória · vagas limitadas</p>
+      </div>
+      <div class="final-img-wrap reveal delay-1">
+        <div class="final-img">
+          <img src="img/final.jpeg" alt="Ricardo Calheiros">
+        </div>
+        <div class="float-badge float-badge-1">
+          <div class="float-badge-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+          </div>
+          <div class="float-badge-text">9 de Maio 2026<span class="sub">Próxima turma</span></div>
+        </div>
+        <div class="float-badge float-badge-2">
+          <div class="float-badge-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          </div>
+          <div class="float-badge-text">Vagas limitadas<span class="sub">Candidaturas abertas</span></div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -1423,7 +1414,6 @@ footer{background:var(--bg-deepest);color:var(--text-muted);padding:56px 0 36px;
 </footer>
 
 <script>
-  // Reveal on scroll
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if(entry.isIntersecting){
@@ -1434,7 +1424,6 @@ footer{background:var(--bg-deepest);color:var(--text-muted);padding:56px 0 36px;
   }, { threshold: 0.12 });
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-  // Nav scrolled state
   const nav = document.querySelector('.nav');
   window.addEventListener('scroll', () => {
     if(window.scrollY > 50) nav.classList.add('scrolled');
