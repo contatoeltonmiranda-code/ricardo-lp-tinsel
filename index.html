@@ -155,7 +155,7 @@ img{max-width:100%;display:block}
 .vsl-bottom{margin-top:32px;font-size:13px;color:var(--text-muted)}
 
 /* ═══ SECTION COMMON ═══ */
-section.s{padding:110px 0;position:relative;background:var(--bg-base)}
+section.s{padding:55px 0;position:relative;background:var(--bg-base)}
 section.s.deepest{background:var(--bg-deepest)}
 .h2{font-size:clamp(32px,3.6vw,52px);font-weight:800;color:var(--text-primary);margin-bottom:24px;max-width:24ch;line-height:1.15}
 .h2.centered{margin-left:auto;margin-right:auto;text-align:center}
@@ -190,7 +190,7 @@ section.s.deepest{background:var(--bg-deepest)}
 .for-fecho strong{color:var(--text-primary);font-weight:700;font-style:normal}
 
 /* ═══ PROBLEM — gold bg + diagonal cut photo (full-bleed igual story) ═══ */
-.problem-section{position:relative;overflow:hidden;padding:110px 0;background:var(--bg-deepest);border-radius:48px;margin:48px 0;isolation:isolate}
+.problem-section{position:relative;overflow:hidden;padding:55px 0;background:var(--bg-deepest);border-radius:48px;margin:48px 0;isolation:isolate}
 .problem-section::before{
   content:'';position:absolute;inset:0;opacity:0.6;pointer-events:none;z-index:0;
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='800' viewBox='0 0 1200 800'%3E%3Cg fill='none' stroke='%23CB9650' stroke-width='0.4' opacity='0.25'%3E%3Cpath d='M0,400 Q300,200 600,400 T1200,400'/%3E%3Cpath d='M0,450 Q300,250 600,450 T1200,450'/%3E%3Cpath d='M0,350 Q300,150 600,350 T1200,350'/%3E%3C/g%3E%3Cg fill='%23CB9650' opacity='0.12'%3E%3Ccircle cx='100' cy='100' r='2'/%3E%3Ccircle cx='300' cy='200' r='2'/%3E%3Ccircle cx='500' cy='150' r='2'/%3E%3Ccircle cx='700' cy='250' r='2'/%3E%3Ccircle cx='900' cy='100' r='2'/%3E%3Ccircle cx='1100' cy='200' r='2'/%3E%3Ccircle cx='200' cy='600' r='2'/%3E%3Ccircle cx='400' cy='700' r='2'/%3E%3Ccircle cx='600' cy='650' r='2'/%3E%3Ccircle cx='800' cy='700' r='2'/%3E%3Ccircle cx='1000' cy='600' r='2'/%3E%3C/g%3E%3C/svg%3E");
@@ -210,15 +210,23 @@ section.s.deepest{background:var(--bg-deepest)}
   margin-left:calc(-1 * ((100vw - 100%) / 2 - 0px));
   width:calc(100% + ((100vw - 100%) / 2));
   clip-path:polygon(0 0,100% 0,calc(100% - 70px) 100%,0 100%);
+  background:var(--bg-deepest);
 }
-.problem-img img{width:100%;height:100%;object-fit:cover;object-position:center center;filter:contrast(1.1) brightness(0.85)}
+.problem-img-bg{
+  position:absolute;inset:0;z-index:0;
+  background-image:url('img/jade-closeup.jpeg');
+  background-size:cover;background-position:center;
+  filter:blur(32px) brightness(0.42) saturate(1.1);
+  transform:scale(1.18);
+}
+.problem-img img{position:relative;z-index:1;width:100%;height:100%;object-fit:contain;object-position:center center;filter:contrast(1.08) brightness(0.95)}
 .problem-img::before{
-  content:'';position:absolute;top:0;right:0;bottom:0;width:70px;z-index:3;
-  background:linear-gradient(135deg,transparent 0%,transparent 40%,var(--gold-deep) 46%,var(--gold-bright) 50%,var(--gold) 54%,transparent 60%);
-  clip-path:polygon(100% 0,100% 100%,0 100%,calc(100% - 60px) 0);
+  content:'';position:absolute;inset:0;z-index:3;
+  background:linear-gradient(180deg,var(--gold-bright) 0%,var(--gold) 50%,var(--gold-bright) 100%);
+  clip-path:polygon(calc(100% - 5px) 0,100% 0,calc(100% - 70px) 100%,calc(100% - 75px) 100%);
   pointer-events:none;
 }
-.problem-img::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(22,25,29,0.5) 100%);pointer-events:none}
+.problem-img::after{content:'';position:absolute;inset:0;z-index:2;background:linear-gradient(180deg,transparent 70%,rgba(22,25,29,0.45) 100%);pointer-events:none}
 .problem-text{padding-left:64px}
 .problem-text p{font-size:16px;color:var(--text-secondary);line-height:1.85;margin-bottom:20px}
 .problem-text p strong{color:var(--text-primary);font-weight:600}
@@ -301,21 +309,69 @@ section.s.deepest{background:var(--bg-deepest)}
   margin-left:calc(-1 * ((100vw - 100%) / 2 - 0px));
   width:calc(100% + ((100vw - 100%) / 2));
   clip-path:polygon(0 0,100% 0,calc(100% - 70px) 100%,0 100%);
+  background:var(--bg-deepest);
 }
 .story-text{padding-left:64px}
+.story-portrait-bg{
+  position:absolute;inset:0;z-index:0;
+  background-image:url('img/story.jpeg');
+  background-size:cover;background-position:center;
+  filter:blur(32px) brightness(0.42) saturate(1.1);
+  transform:scale(1.18);
+}
 .story-portrait::before{
-  content:'';position:absolute;top:0;right:0;bottom:0;width:70px;z-index:3;
-  background:linear-gradient(135deg,transparent 0%,transparent 40%,var(--gold-deep) 46%,var(--gold-bright) 50%,var(--gold) 54%,transparent 60%);
-  clip-path:polygon(100% 0,100% 100%,0 100%,calc(100% - 60px) 0);
+  content:'';position:absolute;inset:0;z-index:3;
+  background:linear-gradient(180deg,var(--gold-bright) 0%,var(--gold) 50%,var(--gold-bright) 100%);
+  clip-path:polygon(calc(100% - 5px) 0,100% 0,calc(100% - 70px) 100%,calc(100% - 75px) 100%);
   pointer-events:none;
 }
-.story-portrait img{width:100%;height:100%;object-fit:cover;object-position:center center;filter:sepia(0.12) contrast(1.05) brightness(0.95)}
-.story-portrait::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(22,25,29,0.5) 100%);pointer-events:none}
+.story-portrait img{position:relative;z-index:1;width:100%;height:100%;object-fit:contain;object-position:center center;filter:sepia(0.08) contrast(1.05) brightness(1)}
+.story-portrait::after{content:'';position:absolute;inset:0;z-index:2;background:linear-gradient(180deg,transparent 70%,rgba(22,25,29,0.45) 100%);pointer-events:none}
 .story-deco-circle,.story-deco-dots{display:none}
 @keyframes spin{to{transform:rotate(360deg)}}
-.story-badge{margin-top:32px;background:var(--bg-elevated);border:1px solid var(--gold);padding:18px 22px;border-radius:8px;font-size:12px;font-weight:600;color:var(--gold);text-align:center;letter-spacing:0.4px;line-height:1.6;position:relative;z-index:2}
-.story-badge strong{display:block;color:var(--text-primary);font-weight:700;margin-bottom:4px;font-size:13px}
-.story-badge::before{content:'★ ';color:var(--gold-bright)}
+.story-badge{
+  margin-top:36px;
+  background:linear-gradient(135deg,rgba(45,48,55,0.96) 0%,rgba(35,38,43,0.98) 100%);
+  border:1px solid rgba(203,150,80,0.35);
+  border-radius:14px;padding:22px 28px;
+  display:flex;align-items:center;gap:22px;
+  position:relative;z-index:2;overflow:hidden;
+  box-shadow:0 14px 40px rgba(0,0,0,0.5),inset 0 0 0 1px rgba(203,150,80,0.06);
+  transition:all 600ms cubic-bezier(0.16,1,0.3,1);
+}
+.story-badge::before{
+  content:'';position:absolute;top:0;left:0;width:3px;height:100%;
+  background:linear-gradient(180deg,var(--gold-deep) 0%,var(--gold-bright) 50%,var(--gold-deep) 100%);
+  box-shadow:0 0 14px rgba(203,150,80,0.4);
+}
+.story-badge::after{
+  content:'';position:absolute;inset:0;border-radius:inherit;pointer-events:none;
+  background:radial-gradient(ellipse 60% 100% at 0% 50%,rgba(203,150,80,0.16),transparent 70%);
+}
+.story-badge:hover{
+  border-color:rgba(203,150,80,0.6);
+  transform:translateY(-3px);
+  box-shadow:0 18px 50px rgba(0,0,0,0.6),0 0 36px rgba(203,150,80,0.18),inset 0 0 0 1px rgba(203,150,80,0.15);
+}
+.story-badge-icon{
+  flex-shrink:0;width:54px;height:54px;
+  background:linear-gradient(135deg,var(--gold-bright) 0%,var(--gold-deep) 100%);
+  border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 6px 22px rgba(203,150,80,0.45),inset 0 -3px 8px rgba(0,0,0,0.2);
+  position:relative;z-index:1;
+}
+.story-badge-icon svg{width:28px;height:28px;color:var(--bg-deepest);stroke:currentColor;fill:none;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.story-badge-text{display:flex;flex-direction:column;text-align:left;position:relative;z-index:1;flex:1}
+.story-badge-text strong{
+  display:block;color:var(--text-primary);
+  font-family:var(--font-display);font-size:15px;font-weight:800;
+  letter-spacing:0.02em;margin-bottom:4px;line-height:1.2;
+}
+.story-badge-text span{
+  color:var(--gold);font-size:12px;font-weight:600;
+  letter-spacing:0.4px;line-height:1.4;
+}
 .story-text p{font-size:16px;color:var(--text-secondary);line-height:1.85;margin-bottom:22px}
 .story-text p strong{color:var(--text-primary);font-weight:600}
 .story-quote{background:rgba(203,150,80,0.06);border-left:4px solid var(--gold);padding:32px 38px;margin:32px 0;border-radius:0 8px 8px 0;font-family:var(--font-display);font-style:italic;font-size:21px;color:var(--text-primary);line-height:1.55;font-weight:500}
@@ -335,20 +391,20 @@ section.s.deepest{background:var(--bg-deepest)}
   width:20px;height:20px;border-radius:50%;box-sizing:border-box;
   background:var(--bg-deepest);border:2px solid var(--gold);
   box-shadow:0 0 0 4px rgba(203,150,80,0.15),var(--glow-sm);
-  transition:all 400ms var(--ease);
+  transition:all 700ms cubic-bezier(0.16,1,0.3,1);
 }
 .method-item:hover::before{background:var(--gold);transform:scale(1.2);box-shadow:0 0 0 6px rgba(203,150,80,0.2),var(--glow)}
 .method-item::after{
   content:'';position:absolute;left:-44px;top:10px;
   width:8px;height:8px;border-radius:50%;
   background:var(--gold);opacity:0;
-  transition:opacity 400ms var(--ease);
+  transition:opacity 700ms cubic-bezier(0.16,1,0.3,1);
 }
 .method-item:hover::after{opacity:1}
 .method-item .meta{font-family:var(--font-display);font-style:italic;font-size:12px;font-weight:600;color:var(--gold);letter-spacing:1px;text-transform:uppercase;margin-bottom:6px;display:block}
 .method-item h3{font-size:24px;font-weight:800;color:var(--text-primary);margin-bottom:10px;line-height:1.2;letter-spacing:-0.01em}
 .method-item p{font-size:16px;color:var(--text-secondary);line-height:1.75;max-width:65ch}
-.method-note{margin-top:56px;background:var(--bg-elevated);border:1px solid var(--gold);border-left:4px solid var(--gold);padding:32px 38px;border-radius:0 8px 8px 0;font-size:15px;color:var(--text-secondary);line-height:1.85}
+.method-note{margin-top:56px;background:linear-gradient(90deg,var(--bg-elevated) 0%,var(--bg-elevated) 55%,rgba(45,48,55,0.4) 80%,transparent 100%);border-left:4px solid var(--gold);padding:32px 38px;border-radius:0 8px 8px 0;font-size:15px;color:var(--text-secondary);line-height:1.85}
 .method-note strong{color:var(--gold);font-weight:700}
 
 /* ═══ VIDEO BREAK — real YouTube embed ═══ */
@@ -460,14 +516,35 @@ section.s.deepest{background:var(--bg-deepest)}
   transform:translateY(-6px) scale(1.02);
   box-shadow:var(--shadow-md),var(--glow);
 }
-.inc-icon{width:54px;height:54px;background:var(--gold-tint);border:1px solid var(--gold);color:var(--gold);border-radius:8px;display:flex;align-items:center;justify-content:center;margin-bottom:22px;transition:all 400ms var(--ease)}
-.inc-icon svg{width:26px;height:26px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
-.inc:hover .inc-icon{background:var(--gold);color:var(--bg-deepest);transform:rotate(-6deg) scale(1.1)}
+.inc-icon{
+  width:60px;height:60px;
+  background:linear-gradient(135deg,rgba(203,150,80,0.18) 0%,rgba(203,150,80,0.06) 100%);
+  border:1px solid rgba(203,150,80,0.45);
+  color:var(--gold);border-radius:14px;
+  display:flex;align-items:center;justify-content:center;margin-bottom:24px;
+  transition:all 700ms cubic-bezier(0.16,1,0.3,1);
+  position:relative;overflow:hidden;
+  box-shadow:0 4px 18px rgba(0,0,0,0.25),inset 0 1px 0 rgba(255,255,255,0.04);
+}
+.inc-icon::before{
+  content:'';position:absolute;inset:0;border-radius:inherit;
+  background:radial-gradient(circle at 30% 30%,rgba(203,150,80,0.25),transparent 65%);
+  opacity:0;transition:opacity 700ms cubic-bezier(0.16,1,0.3,1);
+}
+.inc-icon svg{width:28px;height:28px;position:relative;z-index:1;transition:transform 700ms cubic-bezier(0.16,1,0.3,1)}
+.inc:hover .inc-icon{
+  background:linear-gradient(135deg,var(--gold) 0%,var(--gold-deep) 100%);
+  border-color:var(--gold-bright);color:var(--bg-deepest);
+  transform:translateY(-2px);
+  box-shadow:0 10px 30px rgba(203,150,80,0.35),inset 0 1px 0 rgba(255,255,255,0.15);
+}
+.inc:hover .inc-icon::before{opacity:1}
+.inc:hover .inc-icon svg{transform:scale(1.05)}
 .inc h4{font-size:17px;color:var(--text-primary);margin-bottom:10px;font-weight:700}
 .inc p{font-size:14px;color:var(--text-secondary);line-height:1.7}
 
 /* ═══ BONUS — Image #3 style (large cards with icon + big title + illustration) ═══ */
-.bonus-section{padding:110px 0;position:relative;background:radial-gradient(ellipse at top right,rgba(203,150,80,0.22),transparent 60%),var(--bg-deepest)}
+.bonus-section{padding:55px 0;position:relative;background:radial-gradient(ellipse at top right,rgba(203,150,80,0.22),transparent 60%),var(--bg-deepest)}
 .bonus-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:32px}
 .bonus{
   background:var(--bg-elevated);
@@ -512,7 +589,7 @@ section.s.deepest{background:var(--bg-deepest)}
 .bonus-note{margin-top:48px;font-family:var(--font-display);font-style:italic;font-size:13px;color:var(--text-muted);text-align:center}
 
 /* ═══ EXAME — animated abstract bg ═══ */
-.exam-section{padding:110px 0;position:relative;background:var(--bg-base);overflow:hidden}
+.exam-section{padding:55px 0;position:relative;background:var(--bg-base);overflow:hidden}
 .exam-section::before{
   content:'';position:absolute;inset:0;opacity:0.4;pointer-events:none;z-index:0;
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='800' viewBox='0 0 1200 800'%3E%3Cg fill='none' stroke='%23CB9650' stroke-width='0.5'%3E%3Cpath d='M0,100 L1200,100' opacity='0.15'/%3E%3Cpath d='M0,200 L1200,200' opacity='0.1'/%3E%3Cpath d='M0,500 L1200,500' opacity='0.1'/%3E%3Cpath d='M0,600 L1200,600' opacity='0.15'/%3E%3C/g%3E%3Cg fill='%23CB9650' opacity='0.2'%3E%3Ccircle cx='150' cy='150' r='3'/%3E%3Ccircle cx='400' cy='100' r='2'/%3E%3Ccircle cx='750' cy='200' r='3'/%3E%3Ccircle cx='1000' cy='150' r='2'/%3E%3Ccircle cx='250' cy='550' r='2'/%3E%3Ccircle cx='550' cy='650' r='3'/%3E%3Ccircle cx='850' cy='600' r='2'/%3E%3C/g%3E%3C/svg%3E");
@@ -579,7 +656,7 @@ section.s.deepest{background:var(--bg-deepest)}
 
 /* ═══ PRICING — Image #4 premium style (diagonal rays + central cards) ═══ */
 .pricing-section{
-  padding:65px 0 120px;position:relative;overflow:hidden;
+  padding:33px 0 60px;position:relative;overflow:hidden;
   background:linear-gradient(180deg,var(--bg-deepest) 0%,#0A0C10 100%);
 }
 .pricing-section::before{
@@ -603,7 +680,7 @@ section.s.deepest{background:var(--bg-deepest)}
 .pricing-section .h2{text-align:center;margin-left:auto;margin-right:auto;max-width:22ch}
 .pricing-section .lead{text-align:center;margin-left:auto;margin-right:auto}
 .pricing-intro,.price-grid{text-align:left}
-.pricing-intro{background:var(--bg-elevated);border-left:4px solid var(--gold);padding:30px 40px;border-radius:0 8px 8px 0;font-family:var(--font-display);font-style:italic;font-size:18px;color:var(--text-primary);line-height:1.65;margin:0 auto 56px;font-weight:500;max-width:820px;text-align:left}
+.pricing-intro{background:linear-gradient(90deg,var(--bg-elevated) 0%,var(--bg-elevated) 55%,rgba(45,48,55,0.4) 80%,transparent 100%);border-left:4px solid var(--gold);padding:30px 40px;border-radius:0 8px 8px 0;font-family:var(--font-display);font-style:italic;font-size:18px;color:var(--text-primary);line-height:1.65;margin:0 auto 56px;font-weight:500;max-width:820px;text-align:left}
 .pricing-intro strong{font-weight:700;font-style:normal;color:var(--gold);font-family:var(--font-body);font-size:16px}
 .price-grid{display:grid;grid-template-columns:1fr 1fr;gap:36px;max-width:1100px;margin:0 auto}
 .price-card{
@@ -639,7 +716,7 @@ section.s.deepest{background:var(--bg-deepest)}
   box-shadow:var(--glow);margin-bottom:24px;
 }
 .plan-tag{font-family:var(--font-display);font-style:italic;font-size:14px;font-weight:600;color:var(--gold);margin-bottom:6px;text-align:center}
-.plan-name{font-family:var(--font-display);font-size:38px;font-weight:800;color:var(--text-primary);margin-bottom:32px;text-align:center;letter-spacing:-0.02em}
+.plan-name{font-family:var(--font-body);font-size:32px;font-weight:700;color:var(--text-primary);margin-bottom:32px;text-align:center;letter-spacing:-0.01em;font-style:normal}
 .price-row{text-align:center;margin-bottom:6px}
 .price-now{font-family:var(--font-display);font-size:72px;font-weight:900;color:var(--text-primary);line-height:1;letter-spacing:-0.03em}
 .price-now sup{font-size:26px;font-weight:600;color:var(--gold);vertical-align:super}
@@ -695,7 +772,7 @@ section.s.deepest{background:var(--bg-deepest)}
 .how-section .container{position:relative;z-index:1}
 .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:32px;position:relative}
 .steps::before{content:'';position:absolute;top:38px;left:5%;right:5%;height:1px;background:linear-gradient(90deg,transparent,var(--gold),var(--gold-bright),var(--gold),transparent);z-index:0}
-.step{background:var(--bg-elevated);border:1px solid var(--border-default);border-radius:8px;padding:28px;position:relative;z-index:1;transition:all 350ms var(--ease);isolation:isolate}
+.step{background:linear-gradient(180deg,var(--bg-elevated) 0%,var(--bg-elevated) 55%,rgba(45,48,55,0.35) 85%,transparent 100%);border:1px solid var(--border-default);border-bottom:none;border-radius:8px 8px 0 0;padding:28px 28px 40px;position:relative;z-index:1;transition:all 700ms cubic-bezier(0.16,1,0.3,1);isolation:isolate}
 .step::after{
   content:'';position:absolute;inset:0;padding:1.5px;border-radius:inherit;
   background:conic-gradient(from var(--rot,0deg),transparent 0%,transparent 60%,var(--gold-bright) 78%,var(--gold) 85%,var(--gold-bright) 92%,transparent 100%);
@@ -959,6 +1036,7 @@ footer{background:var(--bg-deepest);color:var(--text-muted);padding:56px 0 36px;
 
     <div class="problem-grid">
       <div class="problem-img reveal">
+        <div class="problem-img-bg"></div>
         <img src="img/jade-closeup.jpeg" alt="Close-up da Jade">
       </div>
       <div class="problem-text reveal delay-1">
@@ -1026,11 +1104,17 @@ footer{background:var(--bg-deepest);color:var(--text-muted);padding:56px 0 36px;
         <div class="story-deco-circle"></div>
         <div class="story-deco-dots"></div>
         <div class="story-portrait">
+          <div class="story-portrait-bg"></div>
           <img src="img/story.jpeg" alt="Ricardo abraçando a Jade">
         </div>
         <div class="story-badge">
-          <strong>Koehler Method of Dog Training</strong>
-          1 dos 4 treinadores reconhecidos na Europa
+          <div class="story-badge-icon">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="9" r="6"/><path d="M8.5 14L7 22l5-3 5 3-1.5-8"/><path d="M9 9l2 2 4-4"/></svg>
+          </div>
+          <div class="story-badge-text">
+            <strong>KOEHLER METHOD OF DOG TRAINING</strong>
+            <span>1 dos 4 treinadores reconhecidos na Europa</span>
+          </div>
         </div>
       </div>
       <div class="story-text reveal delay-1">
@@ -1115,12 +1199,12 @@ footer{background:var(--bg-deepest);color:var(--text-muted);padding:56px 0 36px;
     <h2 class="h2 reveal">Tudo o que precisas para saíres daqui como <span class="accent">profissional de elite.</span></h2>
 
     <div class="inc-grid">
-      <div class="inc reveal"><div class="inc-icon"><svg viewBox="0 0 24 24"><rect x="2" y="6" width="14" height="12" rx="2"/><path d="M22 8l-6 4 6 4V8z"/></svg></div><h4>Aulas ao vivo · Zoom</h4><p>Sessões semanais com o Ricardo às sextas-feiras, às 9h. Em tempo real e com interacção directa.</p></div>
-      <div class="inc reveal delay-1"><div class="inc-icon"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="18" rx="2"/><path d="M7 3v18M17 3v18M2 8h5M2 16h5M17 8h5M17 16h5M2 12h20"/></svg></div><h4>Gravações sem limite</h4><p>Revês cada aula quando quiseres e as vezes que quiseres. Ficam contigo antes, durante e depois da certificação.</p></div>
-      <div class="inc reveal delay-2"><div class="inc-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><h4>Acompanhamento semanal</h4><p>Comunidade privada com feedback contínuo, partilha de casos e correcção permanente entre aulas.</p></div>
-      <div class="inc reveal"><div class="inc-icon"><svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div><h4>Análise do teu trabalho</h4><p>Envias vídeos do teu trabalho com o cão, o Ricardo vê, comenta e corrige. Aprendes com erros reais — os teus.</p></div>
-      <div class="inc reveal delay-1"><div class="inc-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="7"/><path d="M8.21 13.89L7 23l5-3 5 3-1.21-9.12"/></svg></div><h4>Exame prático final</h4><p>Avaliação com cão em contexto real — controlo com e sem trela. Não passas porque pagaste. Passas porque sabes.</p></div>
-      <div class="inc reveal delay-2"><div class="inc-icon"><svg viewBox="0 0 24 24"><path d="M12 15c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4z"/><path d="M8.21 13.89L7 23l5-3 5 3-1.21-9.11"/><circle cx="12" cy="11" r="7"/></svg></div><h4>Certificado oficial</h4><p>A tua credencial formal da Certificação em Coaching e Treino Canino. A prova visível de quem és e de onde vens.</p></div>
+      <div class="inc reveal"><div class="inc-icon"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="20" height="16" rx="3"/><path d="M23 14l6-3v10l-6-3z" fill="currentColor" fill-opacity="0.18"/><circle cx="13" cy="16" r="3.2" fill="currentColor" fill-opacity="0.25"/><circle cx="13" cy="16" r="1.2" fill="currentColor"/></svg></div><h4>Aulas ao vivo · Zoom</h4><p>Sessões semanais com o Ricardo às sextas-feiras, às 9h. Em tempo real e com interacção directa.</p></div>
+      <div class="inc reveal delay-1"><div class="inc-icon"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="6" width="24" height="20" rx="2.5" fill="currentColor" fill-opacity="0.08"/><path d="M4 11h24M4 21h24"/><path d="M9 6v5M9 21v5M16 6v5M16 21v5M23 6v5M23 21v5"/><path d="M13 13.5l6 2.5-6 2.5z" fill="currentColor"/></svg></div><h4>Gravações sem limite</h4><p>Revês cada aula quando quiseres e as vezes que quiseres. Ficam contigo antes, durante e depois da certificação.</p></div>
+      <div class="inc reveal delay-2"><div class="inc-icon"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="4.5" fill="currentColor" fill-opacity="0.18"/><circle cx="22" cy="13" r="3.5" fill="currentColor" fill-opacity="0.12"/><path d="M3 26v-2a5 5 0 0 1 5-5h6a5 5 0 0 1 5 5v2"/><path d="M19 26v-1.5a4 4 0 0 1 4-4h2a4 4 0 0 1 4 4V26"/></svg></div><h4>Acompanhamento semanal</h4><p>Comunidade privada com feedback contínuo, partilha de casos e correcção permanente entre aulas.</p></div>
+      <div class="inc reveal"><div class="inc-icon"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="5" width="20" height="22" rx="2" fill="currentColor" fill-opacity="0.08"/><rect x="11" y="3" width="10" height="4" rx="1.2" fill="currentColor" fill-opacity="0.18"/><path d="M11 15l3 3 6-6"/><path d="M11 22h10"/></svg></div><h4>Análise do teu trabalho</h4><p>Envias vídeos do teu trabalho com o cão, o Ricardo vê, comenta e corrige. Aprendes com erros reais — os teus.</p></div>
+      <div class="inc reveal delay-1"><div class="inc-icon"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="16" cy="16" r="12" fill="currentColor" fill-opacity="0.06"/><circle cx="16" cy="16" r="8"/><circle cx="16" cy="16" r="4" fill="currentColor" fill-opacity="0.18"/><circle cx="16" cy="16" r="1.5" fill="currentColor"/><path d="M16 4v3M16 25v3M4 16h3M25 16h3"/></svg></div><h4>Exame prático final</h4><p>Avaliação com cão em contexto real — controlo com e sem trela. Não passas porque pagaste. Passas porque sabes.</p></div>
+      <div class="inc reveal delay-2"><div class="inc-icon"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="16" cy="13" r="7" fill="currentColor" fill-opacity="0.12"/><circle cx="16" cy="13" r="4.5"/><path d="M11.5 18.5L9 29l7-4 7 4-2.5-10.5"/><path d="M14 13l1.6 1.6L18.5 11.5"/></svg></div><h4>Certificado oficial</h4><p>A tua credencial formal da Certificação em Coaching e Treino Canino. A prova visível de quem és e de onde vens.</p></div>
     </div>
   </div>
 </section>
