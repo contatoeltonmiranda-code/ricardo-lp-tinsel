@@ -105,7 +105,7 @@ img{max-width:100%;display:block}
   content:'';position:absolute;inset:0;opacity:0.35;pointer-events:none;z-index:0;
   background-image:
     radial-gradient(circle at 15% 25%,rgba(203,150,80,0.12) 0,transparent 50%),
-    radial-gradient(circle at 85% 70%,rgba(106,58,48,0.18) 0,transparent 50%),
+    radial-gradient(circle at 85% 70%,rgba(203,150,80,0.18) 0,transparent 50%),
     url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600' viewBox='0 0 600 600'%3E%3Cg fill='none' stroke='%23CB9650' stroke-width='0.5' opacity='0.35'%3E%3Ccircle cx='300' cy='300' r='80'/%3E%3Ccircle cx='300' cy='300' r='150'/%3E%3Ccircle cx='300' cy='300' r='220'/%3E%3Ccircle cx='300' cy='300' r='290'/%3E%3Cpath d='M0,300 L600,300 M300,0 L300,600'/%3E%3Cpath d='M87,87 L513,513 M513,87 L87,513'/%3E%3C/g%3E%3C/svg%3E");
   background-size:auto,auto,800px 800px;
   background-position:center,center,center;
@@ -189,15 +189,8 @@ section.s.deepest{background:var(--bg-deepest)}
 .for-fecho{text-align:center;margin-top:48px;font-family:var(--font-display);font-style:italic;font-size:20px;color:var(--text-secondary);font-weight:500}
 .for-fecho strong{color:var(--text-primary);font-weight:700;font-style:normal}
 
-/* ═══ FOR WHO TOP CURVE DIVIDER ═══ */
-.for-who-divider{
-  position:relative;height:80px;background:var(--bg-base);overflow:hidden;
-}
-.for-who-divider svg{position:absolute;top:0;left:0;width:100%;height:100%;display:block}
-.for-who-divider .curve-line{stroke:var(--gold);stroke-width:2;fill:none;filter:drop-shadow(0 0 8px rgba(203,150,80,0.5))}
-
 /* ═══ PROBLEM — gold bg + diagonal cut photo + rounded corners ═══ */
-.problem-section{position:relative;overflow:hidden;padding:110px 0;background:var(--bg-deepest);border-radius:48px;margin:48px 24px}
+.problem-section{position:relative;overflow:hidden;padding:110px 0;background:var(--bg-deepest);border-radius:48px;margin:48px 24px;isolation:isolate}
 .problem-section::before{
   content:'';position:absolute;inset:0;opacity:0.6;pointer-events:none;z-index:0;
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='800' viewBox='0 0 1200 800'%3E%3Cg fill='none' stroke='%23CB9650' stroke-width='0.4' opacity='0.25'%3E%3Cpath d='M0,400 Q300,200 600,400 T1200,400'/%3E%3Cpath d='M0,450 Q300,250 600,450 T1200,450'/%3E%3Cpath d='M0,350 Q300,150 600,350 T1200,350'/%3E%3C/g%3E%3Cg fill='%23CB9650' opacity='0.12'%3E%3Ccircle cx='100' cy='100' r='2'/%3E%3Ccircle cx='300' cy='200' r='2'/%3E%3Ccircle cx='500' cy='150' r='2'/%3E%3Ccircle cx='700' cy='250' r='2'/%3E%3Ccircle cx='900' cy='100' r='2'/%3E%3Ccircle cx='1100' cy='200' r='2'/%3E%3Ccircle cx='200' cy='600' r='2'/%3E%3Ccircle cx='400' cy='700' r='2'/%3E%3Ccircle cx='600' cy='650' r='2'/%3E%3Ccircle cx='800' cy='700' r='2'/%3E%3Ccircle cx='1000' cy='600' r='2'/%3E%3C/g%3E%3C/svg%3E");
@@ -213,8 +206,8 @@ section.s.deepest{background:var(--bg-deepest)}
 .problem-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:0;align-items:center;margin-top:32px}
 .problem-img{
   position:relative;aspect-ratio:4/5;overflow:hidden;
-  margin-left:calc(-1 * ((100vw - 100%) / 2 - 0px));
-  width:calc(100% + ((100vw - 100%) / 2));max-width:none;
+  margin-left:-32px;
+  width:calc(100% + 32px);max-width:none;
   clip-path:polygon(0 0,100% 0,calc(100% - 70px) 100%,0 100%);
 }
 .problem-img img{width:100%;height:100%;object-fit:cover;filter:contrast(1.1) brightness(0.85)}
@@ -482,10 +475,10 @@ section.s.deepest{background:var(--bg-deepest)}
   pointer-events:none;animation:rot-conic 5s linear infinite;
 }
 .bonus:hover{transform:translateY(-8px);box-shadow:var(--shadow-lg),var(--glow-md)}
-.bonus::before{
+.bonus::after{
   content:'';position:absolute;top:-60%;right:-40%;width:100%;height:200%;
   background:radial-gradient(circle,rgba(203,150,80,0.1),transparent 60%);
-  pointer-events:none;
+  pointer-events:none;z-index:0;
 }
 .bonus-icon{
   width:64px;height:64px;border-radius:14px;
@@ -501,7 +494,7 @@ section.s.deepest{background:var(--bg-deepest)}
 .bonus-illust{
   margin-top:40px;aspect-ratio:16/10;
   border-radius:14px;overflow:hidden;position:relative;
-  background:linear-gradient(135deg,var(--bg-deepest) 0%,var(--bg-warm-tint) 100%);
+  background:linear-gradient(135deg,var(--bg-deepest) 0%,var(--gold-deep) 100%);
   display:flex;align-items:center;justify-content:center;
   border:1px solid var(--border-warm);
 }
@@ -558,7 +551,7 @@ section.s.deepest{background:var(--bg-deepest)}
   padding:24px 0;width:max-content;
 }
 .test-marquee:hover .test-track{animation-play-state:paused}
-/* 4 cards de 280 + 24 margin = 304 each. 1 set = 1216px */
+/* 4 cards × 304px (280 + 24 margin) = 1216px = 1 set. Track has 3 sets (12 cards) so viewport stays filled. */
 @keyframes test-marquee{
   from{transform:translate3d(0,0,0)}
   to{transform:translate3d(-1216px,0,0)}
@@ -583,9 +576,9 @@ section.s.deepest{background:var(--bg-deepest)}
   content:'';position:absolute;inset:0;pointer-events:none;z-index:0;opacity:0.65;
   background-image:
     linear-gradient(60deg,transparent 42%,rgba(203,150,80,0.45) 44%,rgba(221,169,104,0.55) 46%,rgba(203,150,80,0.3) 47%,transparent 49%),
-    linear-gradient(60deg,transparent 45%,rgba(106,58,48,0.5) 47%,transparent 50%),
+    linear-gradient(60deg,transparent 45%,rgba(203,150,80,0.35) 47%,transparent 50%),
     linear-gradient(120deg,transparent 92%,rgba(203,150,80,0.4) 94%,rgba(221,169,104,0.5) 96%,transparent 98%),
-    linear-gradient(120deg,transparent 50%,rgba(106,58,48,0.4) 52%,transparent 55%);
+    linear-gradient(120deg,transparent 50%,rgba(203,150,80,0.28) 52%,transparent 55%);
   filter:blur(1.5px);
 }
 .pricing-section::after{
@@ -613,7 +606,7 @@ section.s.deepest{background:var(--bg-deepest)}
 }
 .price-card:hover{transform:translateY(-8px);border-color:var(--gold);box-shadow:var(--shadow-lg),var(--glow)}
 .price-card.featured{
-  background:linear-gradient(180deg,rgba(45,48,55,0.98) 0%,rgba(106,58,48,0.25) 100%);
+  background:linear-gradient(180deg,rgba(45,48,55,0.98) 0%,rgba(203,150,80,0.18) 100%);
   isolation:isolate;
 }
 .price-card.featured::before{
@@ -742,8 +735,8 @@ section.s.deepest{background:var(--bg-deepest)}
 .final{
   padding:130px 0;position:relative;overflow:hidden;
   background:
-    radial-gradient(ellipse 80% 60% at 80% 50%,rgba(203,150,80,0.2),transparent 70%),
-    radial-gradient(ellipse 40% 60% at 20% 80%,rgba(106,58,48,0.35),transparent 70%),
+    radial-gradient(ellipse 80% 60% at 80% 50%,rgba(203,150,80,0.22),transparent 70%),
+    radial-gradient(ellipse 40% 60% at 20% 80%,rgba(203,150,80,0.25),transparent 70%),
     linear-gradient(160deg,var(--bg-deepest) 0%,var(--bg-base) 100%);
 }
 .final::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
@@ -965,14 +958,7 @@ footer{background:var(--bg-deepest);color:var(--text-muted);padding:56px 0 36px;
   </div>
 </section>
 
-<!-- ═══ FOR WHO → PROBLEM curve divider ═══ -->
-<div class="for-who-divider">
-  <svg viewBox="0 0 1200 80" preserveAspectRatio="none">
-    <path class="curve-line" d="M0,0 L520,0 Q600,0 600,40 Q600,80 680,80 L1200,80 L1200,0 Z" fill="var(--bg-deepest)"/>
-    <path class="curve-line" d="M0,2 L520,2 Q600,2 600,42 Q600,82 680,82 L1200,82" stroke="url(#gold-grad-curve)" fill="none"/>
-    <defs><linearGradient id="gold-grad-curve" x1="0" x2="1200" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="rgba(203,150,80,0)"/><stop offset="50%" stop-color="rgba(203,150,80,1)"/><stop offset="100%" stop-color="rgba(203,150,80,0)"/></linearGradient></defs>
-  </svg>
-</div>
+<!-- (for-who→problem divider removed: rounded floating problem card already separates) -->
 
 <!-- ═══ PROBLEM — abstract bg + rounded corners ═══ -->
 <section class="problem-section">
@@ -1123,7 +1109,7 @@ footer{background:var(--bg-deepest);color:var(--text-muted);padding:56px 0 36px;
       <div class="bento-item reveal delay-1"><span class="bento-num">ii</span><h4>Padrões emocionais dos donos</h4><p>Como o humano cria ou perpetua o problema.</p></div>
       <div class="bento-item reveal delay-2"><span class="bento-num">iii</span><h4>Estruturas de treino</h4><p>Protocolos que aguentam fora da sessão.</p></div>
       <div class="bento-item bento-wide reveal"><span class="bento-num">iv</span><h4>Casos complexos</h4><p>Agressividade, ansiedade de separação, medo, comportamentos obsessivo-compulsivos. Os casos onde a maioria desiste.</p></div>
-      <div class="bento-item bento-tall reveal delay-1"><span class="bento-num">v</span><h4>Koehler Method</h4><p>O método de preferência do Ricardo, ensinado pelo único formador reconhecido em Portugal e um dos apenas 4 na Europa.</p></div>
+      <div class="bento-item bento-lg reveal delay-1"><span class="bento-num">v</span><h4>Koehler Method</h4><p>O método de preferência do Ricardo, ensinado pelo único formador reconhecido em Portugal e um dos apenas 4 na Europa.</p></div>
       <div class="bento-item reveal delay-2"><span class="bento-num">vi</span><h4>Coaching familiar</h4><p>Família toda na mesma direcção.</p></div>
       <div class="bento-item reveal"><span class="bento-num">vii</span><h4>Modelo de negócio</h4><p>Preços, serviços, funil, margens.</p></div>
       <div class="bento-item bento-wide reveal delay-1"><span class="bento-num">viii</span><h4>Posicionamento digital e conteúdo</h4><p>Como construíres uma presença online que te traz clientes e te permite facturar €2.000 a €30.000+/mês.</p></div>
@@ -1267,20 +1253,37 @@ footer{background:var(--bg-deepest);color:var(--text-muted);padding:56px 0 36px;
         <div class="test-video"><a href="https://www.instagram.com/reel/DWXr46_ofLT/" target="_blank" rel="noopener" class="test-link">Ver depoimento<br>no Instagram</a></div>
         <div class="test-info"><div class="stars">★★★★★</div><h4>Joana Araújo</h4><p>Aluna da Certificação</p></div>
       </div>
-      <!-- loop duplicate -->
-      <div class="test">
+      <!-- loop duplicate set 2 -->
+      <div class="test" aria-hidden="true">
         <div class="test-video"><iframe src="https://www.youtube.com/embed/B53oZPLqhu0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
         <div class="test-info"><div class="stars">★★★★★</div><h4>Margarida Castro</h4><p>Aluna da Certificação</p></div>
       </div>
-      <div class="test">
+      <div class="test" aria-hidden="true">
         <div class="test-video"><iframe src="https://www.youtube.com/embed/n5vwrjdGQOg" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
         <div class="test-info"><div class="stars">★★★★★</div><h4>Célia Arraiolos</h4><p>Aluna da Certificação</p></div>
       </div>
-      <div class="test">
+      <div class="test" aria-hidden="true">
         <div class="test-video"><iframe src="https://www.youtube.com/embed/GrMwby6WDPE" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
         <div class="test-info"><div class="stars">★★★★★</div><h4>Cintia Silva</h4><p>Aluna da Certificação</p></div>
       </div>
-      <div class="test">
+      <div class="test" aria-hidden="true">
+        <div class="test-video"><a href="https://www.instagram.com/reel/DWXr46_ofLT/" target="_blank" rel="noopener" class="test-link">Ver depoimento<br>no Instagram</a></div>
+        <div class="test-info"><div class="stars">★★★★★</div><h4>Joana Araújo</h4><p>Aluna da Certificação</p></div>
+      </div>
+      <!-- loop duplicate set 3 (ensures viewport always filled) -->
+      <div class="test" aria-hidden="true">
+        <div class="test-video"><iframe src="https://www.youtube.com/embed/B53oZPLqhu0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+        <div class="test-info"><div class="stars">★★★★★</div><h4>Margarida Castro</h4><p>Aluna da Certificação</p></div>
+      </div>
+      <div class="test" aria-hidden="true">
+        <div class="test-video"><iframe src="https://www.youtube.com/embed/n5vwrjdGQOg" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+        <div class="test-info"><div class="stars">★★★★★</div><h4>Célia Arraiolos</h4><p>Aluna da Certificação</p></div>
+      </div>
+      <div class="test" aria-hidden="true">
+        <div class="test-video"><iframe src="https://www.youtube.com/embed/GrMwby6WDPE" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+        <div class="test-info"><div class="stars">★★★★★</div><h4>Cintia Silva</h4><p>Aluna da Certificação</p></div>
+      </div>
+      <div class="test" aria-hidden="true">
         <div class="test-video"><a href="https://www.instagram.com/reel/DWXr46_ofLT/" target="_blank" rel="noopener" class="test-link">Ver depoimento<br>no Instagram</a></div>
         <div class="test-info"><div class="stars">★★★★★</div><h4>Joana Araújo</h4><p>Aluna da Certificação</p></div>
       </div>
