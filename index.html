@@ -190,7 +190,7 @@ section.s.deepest{background:var(--bg-deepest)}
 .for-fecho strong{color:var(--text-primary);font-weight:700;font-style:normal}
 
 /* ═══ PROBLEM — gold bg + diagonal cut photo (full-bleed igual story) ═══ */
-.problem-section{position:relative;overflow:hidden;padding:110px 0;background:var(--bg-deepest);isolation:isolate}
+.problem-section{position:relative;overflow:hidden;padding:110px 0;background:var(--bg-deepest);border-radius:48px;margin:48px 0;isolation:isolate}
 .problem-section::before{
   content:'';position:absolute;inset:0;opacity:0.6;pointer-events:none;z-index:0;
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='800' viewBox='0 0 1200 800'%3E%3Cg fill='none' stroke='%23CB9650' stroke-width='0.4' opacity='0.25'%3E%3Cpath d='M0,400 Q300,200 600,400 T1200,400'/%3E%3Cpath d='M0,450 Q300,250 600,450 T1200,450'/%3E%3Cpath d='M0,350 Q300,150 600,350 T1200,350'/%3E%3C/g%3E%3Cg fill='%23CB9650' opacity='0.12'%3E%3Ccircle cx='100' cy='100' r='2'/%3E%3Ccircle cx='300' cy='200' r='2'/%3E%3Ccircle cx='500' cy='150' r='2'/%3E%3Ccircle cx='700' cy='250' r='2'/%3E%3Ccircle cx='900' cy='100' r='2'/%3E%3Ccircle cx='1100' cy='200' r='2'/%3E%3Ccircle cx='200' cy='600' r='2'/%3E%3Ccircle cx='400' cy='700' r='2'/%3E%3Ccircle cx='600' cy='650' r='2'/%3E%3Ccircle cx='800' cy='700' r='2'/%3E%3Ccircle cx='1000' cy='600' r='2'/%3E%3C/g%3E%3C/svg%3E");
@@ -205,7 +205,7 @@ section.s.deepest{background:var(--bg-deepest)}
 .problem-section .container{position:relative;z-index:1}
 .problem-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:0;align-items:center;margin-top:32px}
 .problem-img{
-  height:440px;overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,0.7);
+  height:500px;overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,0.7);
   isolation:isolate;position:relative;z-index:2;
   margin-left:calc(-1 * ((100vw - 100%) / 2 - 0px));
   width:calc(100% + ((100vw - 100%) / 2));
@@ -290,13 +290,13 @@ section.s.deepest{background:var(--bg-deepest)}
 /* ═══ STORY top divider (trapezoid notch) — full bleed ═══ */
 .story-divider{position:relative;height:60px;width:100vw;margin:0;padding:0;background:var(--bg-base);overflow:hidden;display:block;line-height:0}
 .story-divider svg{position:absolute;top:0;left:0;width:100%;height:100%;display:block}
-.story-divider-path{fill:var(--bg-deepest);stroke:var(--gold);stroke-width:1.5}
+.story-divider-path{fill:var(--bg-deepest);stroke:none}
 
 /* ═══ STORY — diagonal cut foto grudada margem esquerda ═══ */
 .story-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:0;align-items:start;margin-top:48px}
 .story-img-wrap{position:sticky;top:120px}
 .story-portrait{
-  height:440px;overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,0.7);
+  height:500px;overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,0.7);
   isolation:isolate;position:relative;z-index:2;
   margin-left:calc(-1 * ((100vw - 100%) / 2 - 0px));
   width:calc(100% + ((100vw - 100%) / 2));
@@ -400,7 +400,7 @@ section.s.deepest{background:var(--bg-deepest)}
 }
 
 /* ═══ LEARN — bento grid assimétrico ═══ */
-.bento{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:200px;grid-auto-flow:dense;gap:18px;margin-top:32px}
+.bento{display:grid;grid-template-columns:0.85fr 0.85fr 1.15fr 1.15fr;grid-auto-rows:200px;grid-auto-flow:dense;gap:18px;margin-top:32px}
 .bento-item{
   background:var(--bg-elevated);border:1px solid var(--border-default);
   border-radius:14px;padding:28px;position:relative;overflow:hidden;
@@ -432,6 +432,9 @@ section.s.deepest{background:var(--bg-deepest)}
 .bento-lg p{font-size:15px;line-height:1.7}
 
 /* ═══ INCLUDES — border-trace ANIMADO (conic rotativo) ═══ */
+.includes-section{position:relative}
+.includes-section::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);pointer-events:none}
+.includes-section::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);pointer-events:none}
 .inc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:32px}
 .inc{
   position:relative;background:var(--bg-elevated);border-radius:14px;
@@ -743,10 +746,12 @@ section.s.deepest{background:var(--bg-deepest)}
 .final::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
 .final::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
 .final .container{position:relative;z-index:1}
-.final-grid{display:grid;grid-template-columns:1.05fr 0.95fr;gap:80px;align-items:center}
+.final-grid{display:grid;grid-template-columns:1fr;gap:80px;align-items:center;max-width:780px;margin:0 auto;text-align:center}
+.final-text p{margin-left:auto;margin-right:auto}
+.final-text .final-cta-row{justify-content:center}
 .final-text h2{
   font-size:clamp(40px,4.8vw,68px);color:var(--text-primary);
-  max-width:20ch;margin:18px 0 28px;font-weight:800;line-height:1.08;letter-spacing:-0.02em;
+  max-width:20ch;margin:18px auto 28px;font-weight:800;line-height:1.08;letter-spacing:-0.02em;
 }
 .final-text h2 .accent{color:var(--gold);font-style:italic}
 .final-text p{font-size:17px;color:var(--text-muted);max-width:540px;margin-bottom:18px;line-height:1.85}
@@ -1088,19 +1093,19 @@ footer{background:var(--bg-deepest);color:var(--text-muted);padding:56px 0 36px;
 
     <div class="bento">
       <div class="bento-item bento-lg reveal"><span class="bento-num">i</span><h4>Comportamento canino a fundo</h4><p>Leitura, comunicação e aprendizagem do cão. Base científica sólida para que cada decisão técnica tenha um porquê claro — sem achismos, sem modismos.</p></div>
-      <div class="bento-item bento-tall reveal delay-1"><span class="bento-num">ii</span><h4>Padrões emocionais dos donos</h4><p>Como o humano cria ou perpetua o problema.</p></div>
-      <div class="bento-item bento-tall reveal delay-2"><span class="bento-num">iii</span><h4>Estruturas de treino</h4><p>Protocolos que aguentam fora da sessão.</p></div>
+      <div class="bento-item reveal delay-1"><span class="bento-num">ii</span><h4>Padrões emocionais dos donos</h4><p>Como o humano cria ou perpetua o problema.</p></div>
+      <div class="bento-item reveal delay-2"><span class="bento-num">iii</span><h4>Estruturas de treino</h4><p>Protocolos que aguentam fora da sessão.</p></div>
       <div class="bento-item bento-wide reveal"><span class="bento-num">iv</span><h4>Casos complexos</h4><p>Agressividade, ansiedade de separação, medo, comportamentos obsessivo-compulsivos. Os casos onde a maioria desiste.</p></div>
-      <div class="bento-item bento-tall reveal delay-1"><span class="bento-num">v</span><h4>Koehler Method</h4><p>O método de preferência do Ricardo, ensinado pelo único formador reconhecido em Portugal e um dos apenas 4 na Europa.</p></div>
-      <div class="bento-item bento-wide reveal delay-2"><span class="bento-num">vi</span><h4>Coaching familiar</h4><p>Família toda na mesma direcção.</p></div>
-      <div class="bento-item bento-wide reveal"><span class="bento-num">vii</span><h4>Modelo de negócio</h4><p>Preços, serviços, funil, margens.</p></div>
-      <div class="bento-item bento-lg reveal delay-1"><span class="bento-num">viii</span><h4>Posicionamento digital e conteúdo</h4><p>Como construíres uma presença online que te traz clientes e te permite facturar €2.000 a €30.000+/mês.</p></div>
+      <div class="bento-item bento-lg reveal delay-1"><span class="bento-num">v</span><h4>Koehler Method</h4><p>O método de preferência do Ricardo, ensinado pelo único formador reconhecido em Portugal e um dos apenas 4 na Europa.</p></div>
+      <div class="bento-item reveal delay-2"><span class="bento-num">vi</span><h4>Coaching familiar</h4><p>Família toda na mesma direcção.</p></div>
+      <div class="bento-item reveal"><span class="bento-num">vii</span><h4>Modelo de negócio</h4><p>Preços, serviços, funil, margens.</p></div>
+      <div class="bento-item bento-wide reveal delay-1"><span class="bento-num">viii</span><h4>Posicionamento digital e conteúdo</h4><p>Como construíres uma presença online que te traz clientes e te permite facturar €2.000 a €30.000+/mês.</p></div>
     </div>
   </div>
 </section>
 
 <!-- ═══ INCLUDES — border-trace premium ═══ -->
-<section class="s">
+<section class="s includes-section">
   <div class="container">
     <div class="tag reveal">Incluído</div>
     <h2 class="h2 reveal">Tudo o que precisas para saíres daqui como <span class="accent">profissional de elite.</span></h2>
@@ -1416,11 +1421,6 @@ footer{background:var(--bg-deepest);color:var(--text-muted);padding:56px 0 36px;
           <a href="#investimento" class="btn btn-lg btn-pulse">Candidatar-me Agora →</a>
         </div>
         <p class="final-micro">Candidatura prévia obrigatória · vagas limitadas</p>
-      </div>
-      <div class="final-img-wrap reveal delay-1">
-        <div class="final-img">
-          <img src="img/final.jpeg" alt="Ricardo Calheiros">
-        </div>
       </div>
     </div>
   </div>
