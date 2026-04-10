@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Certificação em Coaching e Treino Canino — Ricardo Calheiros</title>
 <meta name="description" content="A única Certificação em Coaching e Treino Canino em Portugal ensinada por 1 dos 4 treinadores Koehler reconhecidos na Europa. Seis meses, online, Turma ou Individual.">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Manrope:wght@400;500;600;700;800;900&family=Dancing+Script:wght@500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Manrope:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&display=swap" rel="stylesheet">
 <style>
 /* ═══════════════════════════════════════════════
    NOIR TINSEL PREMIUM — v3
@@ -189,8 +189,15 @@ section.s.deepest{background:var(--bg-deepest)}
 .for-fecho{text-align:center;margin-top:48px;font-family:var(--font-display);font-style:italic;font-size:20px;color:var(--text-secondary);font-weight:500}
 .for-fecho strong{color:var(--text-primary);font-weight:700;font-style:normal}
 
-/* ═══ PROBLEM — gold bg + diagonal cut photo ═══ */
-.problem-section{position:relative;overflow:hidden;padding:110px 0;background:var(--bg-deepest)}
+/* ═══ FOR WHO TOP CURVE DIVIDER ═══ */
+.for-who-divider{
+  position:relative;height:80px;background:var(--bg-base);overflow:hidden;
+}
+.for-who-divider svg{position:absolute;top:0;left:0;width:100%;height:100%;display:block}
+.for-who-divider .curve-line{stroke:var(--gold);stroke-width:2;fill:none;filter:drop-shadow(0 0 8px rgba(203,150,80,0.5))}
+
+/* ═══ PROBLEM — gold bg + diagonal cut photo + rounded corners ═══ */
+.problem-section{position:relative;overflow:hidden;padding:110px 0;background:var(--bg-deepest);border-radius:48px;margin:48px 24px}
 .problem-section::before{
   content:'';position:absolute;inset:0;opacity:0.6;pointer-events:none;z-index:0;
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='800' viewBox='0 0 1200 800'%3E%3Cg fill='none' stroke='%23CB9650' stroke-width='0.4' opacity='0.25'%3E%3Cpath d='M0,400 Q300,200 600,400 T1200,400'/%3E%3Cpath d='M0,450 Q300,250 600,450 T1200,450'/%3E%3Cpath d='M0,350 Q300,150 600,350 T1200,350'/%3E%3C/g%3E%3Cg fill='%23CB9650' opacity='0.12'%3E%3Ccircle cx='100' cy='100' r='2'/%3E%3Ccircle cx='300' cy='200' r='2'/%3E%3Ccircle cx='500' cy='150' r='2'/%3E%3Ccircle cx='700' cy='250' r='2'/%3E%3Ccircle cx='900' cy='100' r='2'/%3E%3Ccircle cx='1100' cy='200' r='2'/%3E%3Ccircle cx='200' cy='600' r='2'/%3E%3Ccircle cx='400' cy='700' r='2'/%3E%3Ccircle cx='600' cy='650' r='2'/%3E%3Ccircle cx='800' cy='700' r='2'/%3E%3Ccircle cx='1000' cy='600' r='2'/%3E%3C/g%3E%3C/svg%3E");
@@ -206,7 +213,8 @@ section.s.deepest{background:var(--bg-deepest)}
 .problem-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:0;align-items:center;margin-top:32px}
 .problem-img{
   position:relative;aspect-ratio:4/5;overflow:hidden;
-  margin-left:-32px;width:calc(100% + 32px);max-width:none;
+  margin-left:calc(-1 * ((100vw - 100%) / 2 - 0px));
+  width:calc(100% + ((100vw - 100%) / 2));max-width:none;
   clip-path:polygon(0 0,100% 0,calc(100% - 70px) 100%,0 100%);
 }
 .problem-img img{width:100%;height:100%;object-fit:cover;filter:contrast(1.1) brightness(0.85)}
@@ -285,13 +293,19 @@ section.s.deepest{background:var(--bg-deepest)}
 .p-card p{font-size:15px;color:var(--text-secondary);line-height:1.75;position:relative;z-index:1}
 .promise-note{margin-top:48px;font-family:var(--font-display);font-style:italic;font-size:13px;color:var(--text-muted);text-align:center;max-width:760px;margin-left:auto;margin-right:auto}
 
+/* ═══ STORY top divider (trapezoid notch) ═══ */
+.story-divider{position:relative;height:60px;background:var(--bg-base);overflow:hidden}
+.story-divider svg{position:absolute;top:0;left:0;width:100%;height:100%}
+.story-divider-path{fill:var(--bg-deepest);stroke:var(--gold);stroke-width:1.5}
+
 /* ═══ STORY — diagonal cut foto grudada margem esquerda ═══ */
 .story-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:0;align-items:start;margin-top:48px}
 .story-img-wrap{position:sticky;top:120px}
 .story-portrait{
   aspect-ratio:4/5;overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,0.7);
   isolation:isolate;position:relative;z-index:2;
-  margin-left:-32px;width:calc(100% + 32px);
+  margin-left:calc(-1 * ((100vw - 100%) / 2 - 0px));
+  width:calc(100% + ((100vw - 100%) / 2));
   clip-path:polygon(0 0,100% 0,calc(100% - 70px) 100%,0 100%);
 }
 .story-text{padding-left:64px}
@@ -384,15 +398,15 @@ section.s.deepest{background:var(--bg-deepest)}
   text-shadow:0 4px 40px rgba(0,0,0,0.9);
 }
 .video-break h3 .accent{
-  display:block;margin-top:18px;
-  font-family:'Dancing Script',cursive;font-weight:700;font-style:normal;
-  font-size:clamp(52px,6.5vw,96px);line-height:1;
+  display:block;margin-top:14px;
+  font-family:'Playfair Display',Georgia,serif;font-weight:700;font-style:italic;
+  font-size:clamp(44px,5.6vw,80px);line-height:1.1;letter-spacing:-0.01em;
   color:var(--gold);
   text-shadow:0 4px 40px rgba(203,150,80,0.5),0 0 60px rgba(0,0,0,0.9);
 }
 
 /* ═══ LEARN — bento grid assimétrico ═══ */
-.bento{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:200px;gap:18px;margin-top:32px}
+.bento{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:200px;grid-auto-flow:dense;gap:18px;margin-top:32px}
 .bento-item{
   background:var(--bg-elevated);border:1px solid var(--border-default);
   border-radius:14px;padding:28px;position:relative;overflow:hidden;
@@ -450,15 +464,24 @@ section.s.deepest{background:var(--bg-deepest)}
 .inc p{font-size:14px;color:var(--text-secondary);line-height:1.7}
 
 /* ═══ BONUS — Image #3 style (large cards with icon + big title + illustration) ═══ */
-.bonus-section{padding:110px 0;position:relative;background:radial-gradient(ellipse at top right,rgba(106,58,48,0.35),transparent 60%),var(--bg-deepest)}
+.bonus-section{padding:110px 0;position:relative;background:radial-gradient(ellipse at top right,rgba(203,150,80,0.22),transparent 60%),var(--bg-deepest)}
 .bonus-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:32px}
 .bonus{
-  background:var(--bg-elevated);border:1px solid var(--border-default);
+  background:var(--bg-elevated);
   border-radius:20px;padding:52px 48px 40px;
   transition:all 400ms var(--ease);position:relative;overflow:hidden;
   display:flex;flex-direction:column;min-height:520px;
+  isolation:isolate;
 }
-.bonus:hover{border-color:var(--gold);transform:translateY(-8px);box-shadow:var(--shadow-lg),var(--glow-md)}
+.bonus::before{
+  content:'';position:absolute;inset:0;padding:1.5px;border-radius:inherit;
+  background:conic-gradient(from var(--rot,0deg),transparent 0%,transparent 60%,var(--gold-bright) 78%,var(--gold) 85%,var(--gold-bright) 92%,transparent 100%);
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+  mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+  -webkit-mask-composite:xor;mask-composite:exclude;
+  pointer-events:none;animation:rot-conic 5s linear infinite;
+}
+.bonus:hover{transform:translateY(-8px);box-shadow:var(--shadow-lg),var(--glow-md)}
 .bonus::before{
   content:'';position:absolute;top:-60%;right:-40%;width:100%;height:200%;
   background:radial-gradient(circle,rgba(203,150,80,0.1),transparent 60%);
@@ -485,18 +508,22 @@ section.s.deepest{background:var(--bg-deepest)}
 .bonus-illust svg{width:70%;height:70%;opacity:0.9}
 .bonus-note{margin-top:48px;font-family:var(--font-display);font-style:italic;font-size:13px;color:var(--text-muted);text-align:center}
 
-/* ═══ EXAME — minimalist abstract bg ═══ */
+/* ═══ EXAME — animated abstract bg ═══ */
 .exam-section{padding:110px 0;position:relative;background:var(--bg-base);overflow:hidden}
 .exam-section::before{
-  content:'';position:absolute;inset:0;opacity:0.35;pointer-events:none;z-index:0;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='800' viewBox='0 0 1200 800'%3E%3Cg fill='none' stroke='%23CB9650' stroke-width='0.5'%3E%3Cpath d='M0,100 L1200,100' opacity='0.15'/%3E%3Cpath d='M0,200 L1200,200' opacity='0.1'/%3E%3Cpath d='M0,300 L1200,300' opacity='0.12'/%3E%3Cpath d='M0,500 L1200,500' opacity='0.1'/%3E%3Cpath d='M0,600 L1200,600' opacity='0.15'/%3E%3Cpath d='M0,700 L1200,700' opacity='0.1'/%3E%3C/g%3E%3Cg fill='%23CB9650' opacity='0.15'%3E%3Ccircle cx='150' cy='150' r='3'/%3E%3Ccircle cx='400' cy='100' r='2'/%3E%3Ccircle cx='750' cy='200' r='3'/%3E%3Ccircle cx='1000' cy='150' r='2'/%3E%3Ccircle cx='250' cy='550' r='2'/%3E%3Ccircle cx='550' cy='650' r='3'/%3E%3Ccircle cx='850' cy='600' r='2'/%3E%3C/g%3E%3C/svg%3E");
+  content:'';position:absolute;inset:0;opacity:0.4;pointer-events:none;z-index:0;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='800' viewBox='0 0 1200 800'%3E%3Cg fill='none' stroke='%23CB9650' stroke-width='0.5'%3E%3Cpath d='M0,100 L1200,100' opacity='0.15'/%3E%3Cpath d='M0,200 L1200,200' opacity='0.1'/%3E%3Cpath d='M0,500 L1200,500' opacity='0.1'/%3E%3Cpath d='M0,600 L1200,600' opacity='0.15'/%3E%3C/g%3E%3Cg fill='%23CB9650' opacity='0.2'%3E%3Ccircle cx='150' cy='150' r='3'/%3E%3Ccircle cx='400' cy='100' r='2'/%3E%3Ccircle cx='750' cy='200' r='3'/%3E%3Ccircle cx='1000' cy='150' r='2'/%3E%3Ccircle cx='250' cy='550' r='2'/%3E%3Ccircle cx='550' cy='650' r='3'/%3E%3Ccircle cx='850' cy='600' r='2'/%3E%3C/g%3E%3C/svg%3E");
   background-size:cover;background-position:center;
+  animation:exam-bg-drift 40s ease-in-out infinite;
 }
 .exam-section::after{
   content:'';position:absolute;top:-100px;right:-100px;width:500px;height:500px;
-  background:radial-gradient(circle,rgba(203,150,80,0.12),transparent 70%);
+  background:radial-gradient(circle,rgba(203,150,80,0.22),transparent 70%);
   filter:blur(60px);pointer-events:none;z-index:0;
+  animation:exam-orb 20s ease-in-out infinite;
 }
+@keyframes exam-bg-drift{0%,100%{background-position:0 0}50%{background-position:40px 20px}}
+@keyframes exam-orb{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(50px,-30px) scale(1.15)}66%{transform:translate(-30px,50px) scale(0.95)}}
 .exam-section .container{position:relative;z-index:1}
 .exam-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:28px;margin-top:32px}
 .exam{background:var(--bg-elevated);border:1px solid var(--border-default);border-radius:12px;overflow:hidden;transition:all 400ms var(--ease)}
@@ -526,14 +553,15 @@ section.s.deepest{background:var(--bg-deepest)}
   mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);
 }
 .test-track{
-  display:flex;gap:0;width:max-content;
-  animation:test-marquee 50s linear infinite;
-  padding:24px 0;
+  display:flex;gap:0;
+  animation:test-marquee 60s linear infinite;
+  padding:24px 0;width:max-content;
 }
 .test-marquee:hover .test-track{animation-play-state:paused}
+/* 4 cards de 280 + 24 margin = 304 each. 1 set = 1216px */
 @keyframes test-marquee{
-  from{transform:translateX(0)}
-  to{transform:translateX(-50%)}
+  from{transform:translate3d(0,0,0)}
+  to{transform:translate3d(-1216px,0,0)}
 }
 .test{flex-shrink:0;width:280px;margin-right:24px;background:var(--bg-elevated);border:1px solid var(--border-default);border-radius:12px;overflow:hidden;transition:all 400ms var(--ease)}
 .test:hover{border-color:var(--gold);transform:scale(1.05);box-shadow:var(--shadow-md),var(--glow)}
@@ -647,7 +675,21 @@ section.s.deepest{background:var(--bg-deepest)}
 .pricing-seal-title{margin-top:20px;font-family:var(--font-display);font-size:22px;font-weight:800;color:var(--text-primary)}
 .pricing-seal-desc{margin-top:10px;font-size:14px;color:var(--text-muted);max-width:560px;text-align:center;line-height:1.75}
 
-/* ═══ HOW IT WORKS — timeline ═══ */
+/* ═══ HOW IT WORKS — animated bg + gold borders ═══ */
+.how-section{position:relative;overflow:hidden}
+.how-section::before,.how-section::after{
+  content:'';position:absolute;left:0;right:0;height:2px;z-index:3;pointer-events:none;
+  background:linear-gradient(90deg,transparent 0%,transparent 15%,var(--gold-deep) 30%,var(--gold-bright) 50%,var(--gold-deep) 70%,transparent 85%,transparent 100%);
+}
+.how-section::before{top:0}
+.how-section::after{bottom:0}
+.how-bg{
+  position:absolute;inset:0;z-index:0;pointer-events:none;opacity:0.4;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='600' viewBox='0 0 1200 600'%3E%3Cg fill='none' stroke='%23CB9650' stroke-width='0.5' opacity='0.25'%3E%3Cpath d='M0,300 Q400,100 800,300 T1200,300'/%3E%3Cpath d='M0,320 Q400,120 800,320 T1200,320'/%3E%3C/g%3E%3Cg fill='%23CB9650' opacity='0.2'%3E%3Ccircle cx='200' cy='150' r='2'/%3E%3Ccircle cx='500' cy='450' r='2'/%3E%3Ccircle cx='900' cy='200' r='3'/%3E%3Ccircle cx='1100' cy='400' r='2'/%3E%3C/g%3E%3C/svg%3E");
+  animation:how-drift 30s ease-in-out infinite;
+}
+@keyframes how-drift{0%,100%{background-position:0 0}50%{background-position:30px -15px}}
+.how-section .container{position:relative;z-index:1}
 .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:32px;position:relative}
 .steps::before{content:'';position:absolute;top:38px;left:5%;right:5%;height:1px;background:linear-gradient(90deg,transparent,var(--gold),var(--gold-bright),var(--gold),transparent);z-index:0}
 .step{background:var(--bg-elevated);border:1px solid var(--border-default);border-radius:8px;padding:28px;position:relative;z-index:1;transition:all 350ms var(--ease);isolation:isolate}
@@ -923,7 +965,16 @@ footer{background:var(--bg-deepest);color:var(--text-muted);padding:56px 0 36px;
   </div>
 </section>
 
-<!-- ═══ PROBLEM — abstract bg + corner-bracket fecho ═══ -->
+<!-- ═══ FOR WHO → PROBLEM curve divider ═══ -->
+<div class="for-who-divider">
+  <svg viewBox="0 0 1200 80" preserveAspectRatio="none">
+    <path class="curve-line" d="M0,0 L520,0 Q600,0 600,40 Q600,80 680,80 L1200,80 L1200,0 Z" fill="var(--bg-deepest)"/>
+    <path class="curve-line" d="M0,2 L520,2 Q600,2 600,42 Q600,82 680,82 L1200,82" stroke="url(#gold-grad-curve)" fill="none"/>
+    <defs><linearGradient id="gold-grad-curve" x1="0" x2="1200" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="rgba(203,150,80,0)"/><stop offset="50%" stop-color="rgba(203,150,80,1)"/><stop offset="100%" stop-color="rgba(203,150,80,0)"/></linearGradient></defs>
+  </svg>
+</div>
+
+<!-- ═══ PROBLEM — abstract bg + rounded corners ═══ -->
 <section class="problem-section">
   <div class="container">
     <div class="tag reveal">A Realidade do Mercado</div>
@@ -977,6 +1028,15 @@ footer{background:var(--bg-deepest);color:var(--text-muted);padding:56px 0 36px;
     <p class="promise-note reveal">Estes valores são os reportados por alunos reais em actividade. Não há garantias — o resultado depende do compromisso, do trabalho e da capacidade de cada aluno para aplicar o que aprende.</p>
   </div>
 </section>
+
+<!-- ═══ STORY top divider ═══ -->
+<div class="story-divider">
+  <svg viewBox="0 0 1200 60" preserveAspectRatio="none">
+    <path class="story-divider-path" d="M0,0 L440,0 L480,30 L720,30 L760,0 L1200,0 L1200,60 L0,60 Z"/>
+    <path d="M0,1 L440,1 L480,31 L720,31 L760,1 L1200,1" fill="none" stroke="url(#gold-story-grad)" stroke-width="2"/>
+    <defs><linearGradient id="gold-story-grad" x1="0" x2="1200" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="rgba(203,150,80,0)"/><stop offset="50%" stop-color="rgba(203,150,80,1)"/><stop offset="100%" stop-color="rgba(203,150,80,0)"/></linearGradient></defs>
+  </svg>
+</div>
 
 <!-- ═══ STORY — efeito abstracto em volta da foto ═══ -->
 <section class="s deepest">
@@ -1302,7 +1362,8 @@ footer{background:var(--bg-deepest);color:var(--text-muted);padding:56px 0 36px;
 </section>
 
 <!-- ═══ HOW IT WORKS ═══ -->
-<section class="s">
+<section class="s how-section">
+  <div class="how-bg"></div>
   <div class="container">
     <div class="tag reveal">Processo</div>
     <h2 class="h2 reveal">Como entras — <span class="accent">passo a passo.</span></h2>
