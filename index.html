@@ -205,13 +205,13 @@ section.s.deepest{background:var(--bg-deepest)}
 .problem-section .container{position:relative;z-index:1}
 .problem-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:0;align-items:center;margin-top:32px}
 .problem-img{
-  height:500px;overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,0.7);
+  height:640px;overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,0.7);
   isolation:isolate;position:relative;z-index:2;
   margin-left:calc(-1 * ((100vw - 100%) / 2 - 0px));
   width:calc(100% + ((100vw - 100%) / 2));
   clip-path:polygon(0 0,100% 0,calc(100% - 70px) 100%,0 100%);
 }
-.problem-img img{width:100%;height:100%;object-fit:cover;filter:contrast(1.1) brightness(0.85)}
+.problem-img img{width:100%;height:100%;object-fit:cover;object-position:center center;filter:contrast(1.1) brightness(0.85)}
 .problem-img::before{
   content:'';position:absolute;top:0;right:0;bottom:0;width:70px;z-index:3;
   background:linear-gradient(135deg,transparent 0%,transparent 40%,var(--gold-deep) 46%,var(--gold-bright) 50%,var(--gold) 54%,transparent 60%);
@@ -296,7 +296,7 @@ section.s.deepest{background:var(--bg-deepest)}
 .story-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:0;align-items:start;margin-top:48px}
 .story-img-wrap{position:sticky;top:120px}
 .story-portrait{
-  height:500px;overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,0.7);
+  height:640px;overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,0.7);
   isolation:isolate;position:relative;z-index:2;
   margin-left:calc(-1 * ((100vw - 100%) / 2 - 0px));
   width:calc(100% + ((100vw - 100%) / 2));
@@ -309,7 +309,7 @@ section.s.deepest{background:var(--bg-deepest)}
   clip-path:polygon(100% 0,100% 100%,0 100%,calc(100% - 60px) 0);
   pointer-events:none;
 }
-.story-portrait img{width:100%;height:100%;object-fit:cover;filter:sepia(0.12) contrast(1.05) brightness(0.95)}
+.story-portrait img{width:100%;height:100%;object-fit:cover;object-position:center center;filter:sepia(0.12) contrast(1.05) brightness(0.95)}
 .story-portrait::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(22,25,29,0.5) 100%);pointer-events:none}
 .story-deco-circle,.story-deco-dots{display:none}
 @keyframes spin{to{transform:rotate(360deg)}}
@@ -401,6 +401,7 @@ section.s.deepest{background:var(--bg-deepest)}
 
 /* ═══ LEARN — bento grid assimétrico ═══ */
 .bento{display:grid;grid-template-columns:0.85fr 0.85fr 1.15fr 1.15fr;grid-auto-rows:200px;grid-auto-flow:dense;gap:18px;margin-top:32px}
+.bento:hover .bento-item:not(:hover){filter:blur(3px) brightness(0.55);transform:scale(0.98)}
 .bento-item{
   background:var(--bg-elevated);border:1px solid var(--border-default);
   border-radius:14px;padding:28px;position:relative;overflow:hidden;
@@ -409,7 +410,8 @@ section.s.deepest{background:var(--bg-deepest)}
 }
 .bento-item:hover{
   border-color:var(--gold);background:var(--bg-elevated-2);
-  transform:translateY(-4px);box-shadow:var(--shadow-md),var(--glow-sm);
+  transform:translateY(-4px) scale(1.02);box-shadow:var(--shadow-md),var(--glow-sm);
+  z-index:5;
 }
 .bento-item::before{
   content:'';position:absolute;top:-40%;right:-40%;width:80%;height:180%;
@@ -421,11 +423,14 @@ section.s.deepest{background:var(--bg-deepest)}
 .bento-wide{grid-column:span 2}
 .bento-tall{grid-row:span 2}
 .bento-num{
-  font-family:var(--font-display);font-style:italic;
-  font-size:36px;font-weight:800;color:var(--gold);line-height:1;
-  margin-bottom:16px;display:block;position:relative;
+  position:absolute;bottom:14px;right:22px;
+  font-family:var(--font-display);font-weight:800;
+  font-size:72px;color:var(--gold);line-height:0.9;
+  opacity:0.18;letter-spacing:-0.04em;
+  pointer-events:none;transition:opacity 400ms var(--ease);
 }
-.bento-lg .bento-num{font-size:64px;margin-bottom:24px}
+.bento-lg .bento-num{font-size:120px;bottom:18px;right:28px}
+.bento-item:hover .bento-num{opacity:0.28}
 .bento-item h4{font-family:var(--font-display);font-size:17px;font-weight:700;color:var(--text-primary);margin-bottom:8px;line-height:1.25;position:relative}
 .bento-lg h4{font-size:26px}
 .bento-item p{font-size:13px;color:var(--text-muted);line-height:1.6;position:relative}
@@ -455,7 +460,8 @@ section.s.deepest{background:var(--bg-deepest)}
   transform:translateY(-6px) scale(1.02);
   box-shadow:var(--shadow-md),var(--glow);
 }
-.inc-icon{width:54px;height:54px;background:var(--gold-tint);border:1px solid var(--gold);color:var(--gold);border-radius:8px;display:flex;align-items:center;justify-content:center;margin-bottom:22px;font-size:22px;font-weight:800;font-family:var(--font-display);font-style:italic;transition:all 400ms var(--ease)}
+.inc-icon{width:54px;height:54px;background:var(--gold-tint);border:1px solid var(--gold);color:var(--gold);border-radius:8px;display:flex;align-items:center;justify-content:center;margin-bottom:22px;transition:all 400ms var(--ease)}
+.inc-icon svg{width:26px;height:26px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 .inc:hover .inc-icon{background:var(--gold);color:var(--bg-deepest);transform:rotate(-6deg) scale(1.1)}
 .inc h4{font-size:17px;color:var(--text-primary);margin-bottom:10px;font-weight:700}
 .inc p{font-size:14px;color:var(--text-secondary);line-height:1.7}
@@ -573,7 +579,7 @@ section.s.deepest{background:var(--bg-deepest)}
 
 /* ═══ PRICING — Image #4 premium style (diagonal rays + central cards) ═══ */
 .pricing-section{
-  padding:130px 0 120px;position:relative;overflow:hidden;
+  padding:65px 0 120px;position:relative;overflow:hidden;
   background:linear-gradient(180deg,var(--bg-deepest) 0%,#0A0C10 100%);
 }
 .pricing-section::before{
@@ -746,12 +752,10 @@ section.s.deepest{background:var(--bg-deepest)}
 .final::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
 .final::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
 .final .container{position:relative;z-index:1}
-.final-grid{display:grid;grid-template-columns:1fr;gap:80px;align-items:center;max-width:780px;margin:0 auto;text-align:center}
-.final-text p{margin-left:auto;margin-right:auto}
-.final-text .final-cta-row{justify-content:center}
+.final-grid{display:grid;grid-template-columns:1fr;gap:80px;align-items:center}
 .final-text h2{
   font-size:clamp(40px,4.8vw,68px);color:var(--text-primary);
-  max-width:20ch;margin:18px auto 28px;font-weight:800;line-height:1.08;letter-spacing:-0.02em;
+  max-width:20ch;margin:18px 0 28px;font-weight:800;line-height:1.08;letter-spacing:-0.02em;
 }
 .final-text h2 .accent{color:var(--gold);font-style:italic}
 .final-text p{font-size:17px;color:var(--text-muted);max-width:540px;margin-bottom:18px;line-height:1.85}
@@ -1092,14 +1096,14 @@ footer{background:var(--bg-deepest);color:var(--text-muted);padding:56px 0 36px;
     <p class="lead reveal">O currículo foi desenhado para cobrir tudo aquilo que um treinador canino de elite precisa de dominar — da técnica mais rigorosa ao modelo de negócio que sustenta a carreira.</p>
 
     <div class="bento">
-      <div class="bento-item bento-lg reveal"><span class="bento-num">i</span><h4>Comportamento canino a fundo</h4><p>Leitura, comunicação e aprendizagem do cão. Base científica sólida para que cada decisão técnica tenha um porquê claro — sem achismos, sem modismos.</p></div>
-      <div class="bento-item reveal delay-1"><span class="bento-num">ii</span><h4>Padrões emocionais dos donos</h4><p>Como o humano cria ou perpetua o problema.</p></div>
-      <div class="bento-item reveal delay-2"><span class="bento-num">iii</span><h4>Estruturas de treino</h4><p>Protocolos que aguentam fora da sessão.</p></div>
-      <div class="bento-item bento-wide reveal"><span class="bento-num">iv</span><h4>Casos complexos</h4><p>Agressividade, ansiedade de separação, medo, comportamentos obsessivo-compulsivos. Os casos onde a maioria desiste.</p></div>
-      <div class="bento-item bento-lg reveal delay-1"><span class="bento-num">v</span><h4>Koehler Method</h4><p>O método de preferência do Ricardo, ensinado pelo único formador reconhecido em Portugal e um dos apenas 4 na Europa.</p></div>
-      <div class="bento-item reveal delay-2"><span class="bento-num">vi</span><h4>Coaching familiar</h4><p>Família toda na mesma direcção.</p></div>
-      <div class="bento-item reveal"><span class="bento-num">vii</span><h4>Modelo de negócio</h4><p>Preços, serviços, funil, margens.</p></div>
-      <div class="bento-item bento-wide reveal delay-1"><span class="bento-num">viii</span><h4>Posicionamento digital e conteúdo</h4><p>Como construíres uma presença online que te traz clientes e te permite facturar €2.000 a €30.000+/mês.</p></div>
+      <div class="bento-item bento-lg reveal"><h4>Comportamento canino a fundo</h4><p>Leitura, comunicação e aprendizagem do cão. Base científica sólida para que cada decisão técnica tenha um porquê claro — sem achismos, sem modismos.</p><span class="bento-num">01</span></div>
+      <div class="bento-item reveal delay-1"><h4>Padrões emocionais dos donos</h4><p>Como o humano cria ou perpetua o problema.</p><span class="bento-num">02</span></div>
+      <div class="bento-item reveal delay-2"><h4>Estruturas de treino</h4><p>Protocolos que aguentam fora da sessão.</p><span class="bento-num">03</span></div>
+      <div class="bento-item bento-wide reveal"><h4>Casos complexos</h4><p>Agressividade, ansiedade de separação, medo, comportamentos obsessivo-compulsivos. Os casos onde a maioria desiste.</p><span class="bento-num">04</span></div>
+      <div class="bento-item bento-lg reveal delay-1"><h4>Koehler Method</h4><p>O método de preferência do Ricardo, ensinado pelo único formador reconhecido em Portugal e um dos apenas 4 na Europa.</p><span class="bento-num">05</span></div>
+      <div class="bento-item reveal delay-2"><h4>Coaching familiar</h4><p>Família toda na mesma direcção.</p><span class="bento-num">06</span></div>
+      <div class="bento-item reveal"><h4>Modelo de negócio</h4><p>Preços, serviços, funil, margens.</p><span class="bento-num">07</span></div>
+      <div class="bento-item bento-wide reveal delay-1"><h4>Posicionamento digital e conteúdo</h4><p>Como construíres uma presença online que te traz clientes e te permite facturar €2.000 a €30.000+/mês.</p><span class="bento-num">08</span></div>
     </div>
   </div>
 </section>
@@ -1111,12 +1115,12 @@ footer{background:var(--bg-deepest);color:var(--text-muted);padding:56px 0 36px;
     <h2 class="h2 reveal">Tudo o que precisas para saíres daqui como <span class="accent">profissional de elite.</span></h2>
 
     <div class="inc-grid">
-      <div class="inc reveal"><div class="inc-icon">i</div><h4>Aulas ao vivo · Zoom</h4><p>Sessões semanais com o Ricardo às sextas-feiras, às 9h. Em tempo real e com interacção directa.</p></div>
-      <div class="inc reveal delay-1"><div class="inc-icon">ii</div><h4>Gravações sem limite</h4><p>Revês cada aula quando quiseres e as vezes que quiseres. Ficam contigo antes, durante e depois da certificação.</p></div>
-      <div class="inc reveal delay-2"><div class="inc-icon">iii</div><h4>Acompanhamento semanal</h4><p>Comunidade privada com feedback contínuo, partilha de casos e correcção permanente entre aulas.</p></div>
-      <div class="inc reveal"><div class="inc-icon">iv</div><h4>Análise do teu trabalho</h4><p>Envias vídeos do teu trabalho com o cão, o Ricardo vê, comenta e corrige. Aprendes com erros reais — os teus.</p></div>
-      <div class="inc reveal delay-1"><div class="inc-icon">v</div><h4>Exame prático final</h4><p>Avaliação com cão em contexto real — controlo com e sem trela. Não passas porque pagaste. Passas porque sabes.</p></div>
-      <div class="inc reveal delay-2"><div class="inc-icon">vi</div><h4>Certificado oficial</h4><p>A tua credencial formal da Certificação em Coaching e Treino Canino. A prova visível de quem és e de onde vens.</p></div>
+      <div class="inc reveal"><div class="inc-icon"><svg viewBox="0 0 24 24"><rect x="2" y="6" width="14" height="12" rx="2"/><path d="M22 8l-6 4 6 4V8z"/></svg></div><h4>Aulas ao vivo · Zoom</h4><p>Sessões semanais com o Ricardo às sextas-feiras, às 9h. Em tempo real e com interacção directa.</p></div>
+      <div class="inc reveal delay-1"><div class="inc-icon"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="18" rx="2"/><path d="M7 3v18M17 3v18M2 8h5M2 16h5M17 8h5M17 16h5M2 12h20"/></svg></div><h4>Gravações sem limite</h4><p>Revês cada aula quando quiseres e as vezes que quiseres. Ficam contigo antes, durante e depois da certificação.</p></div>
+      <div class="inc reveal delay-2"><div class="inc-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><h4>Acompanhamento semanal</h4><p>Comunidade privada com feedback contínuo, partilha de casos e correcção permanente entre aulas.</p></div>
+      <div class="inc reveal"><div class="inc-icon"><svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div><h4>Análise do teu trabalho</h4><p>Envias vídeos do teu trabalho com o cão, o Ricardo vê, comenta e corrige. Aprendes com erros reais — os teus.</p></div>
+      <div class="inc reveal delay-1"><div class="inc-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="7"/><path d="M8.21 13.89L7 23l5-3 5 3-1.21-9.12"/></svg></div><h4>Exame prático final</h4><p>Avaliação com cão em contexto real — controlo com e sem trela. Não passas porque pagaste. Passas porque sabes.</p></div>
+      <div class="inc reveal delay-2"><div class="inc-icon"><svg viewBox="0 0 24 24"><path d="M12 15c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4z"/><path d="M8.21 13.89L7 23l5-3 5 3-1.21-9.11"/><circle cx="12" cy="11" r="7"/></svg></div><h4>Certificado oficial</h4><p>A tua credencial formal da Certificação em Coaching e Treino Canino. A prova visível de quem és e de onde vens.</p></div>
     </div>
   </div>
 </section>
