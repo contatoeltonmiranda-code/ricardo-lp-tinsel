@@ -96,8 +96,8 @@ img{max-width:100%;display:block}
 .hero{
   margin-top:71px;padding:90px 0 110px;position:relative;overflow:hidden;
   background:
-    radial-gradient(ellipse 60% 50% at 70% 40%,rgba(203,150,80,0.22),transparent 65%),
-    radial-gradient(ellipse 40% 30% at 10% 80%,rgba(203,150,80,0.22),transparent 70%),
+    linear-gradient(90deg,rgba(22,25,29,0.92) 0%,rgba(22,25,29,0.78) 45%,rgba(22,25,29,0.55) 70%,rgba(22,25,29,0.4) 100%),
+    url('img/bg-hero.png') center right / cover no-repeat,
     linear-gradient(165deg,var(--bg-deepest) 0%,var(--bg-base) 60%,var(--bg-elevated) 100%);
 }
 /* ABSTRACT PATTERN OVERLAY */
@@ -120,7 +120,7 @@ img{max-width:100%;display:block}
   pointer-events:none;
 }
 @keyframes orb-drift{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(60px,-40px) scale(1.1)}66%{transform:translate(-40px,60px) scale(0.95)}}
-.hero-grid{display:grid;grid-template-columns:1.05fr 0.95fr;gap:64px;align-items:center;position:relative;z-index:1}
+.hero-grid{display:grid;grid-template-columns:1fr;gap:64px;align-items:center;position:relative;z-index:1;max-width:720px}
 .hero h1{font-size:clamp(38px,4.6vw,62px);font-weight:800;line-height:1.1;margin:24px 0 22px;max-width:18ch}
 .hero-sub{font-size:17px;color:var(--text-muted);line-height:1.75;margin-bottom:32px;max-width:540px}
 .hero-sub strong{color:var(--text-primary);font-weight:600}
@@ -376,9 +376,15 @@ section.s.deepest{background:var(--bg-deepest)}
 }
 .story-text p{font-size:16px;color:var(--text-secondary);line-height:1.85;margin-bottom:22px}
 .story-text p strong{color:var(--text-primary);font-weight:600}
-.story-quote{background:linear-gradient(90deg,rgba(203,150,80,0.1) 0%,rgba(203,150,80,0.06) 50%,transparent 100%);border-left:4px solid var(--gold);padding:32px 38px;margin:32px 0;border-radius:0 8px 8px 0;font-family:var(--font-display);font-style:italic;font-size:22px;color:var(--text-primary);line-height:1.5;font-weight:500;max-width:30ch}
+.story-quote{background:linear-gradient(90deg,rgba(203,150,80,0.1) 0%,rgba(203,150,80,0.06) 50%,transparent 100%);border-left:4px solid var(--gold);padding:32px 38px;margin:32px 0;border-radius:0 8px 8px 0;font-family:var(--font-display);font-style:italic;font-size:20px;color:var(--text-primary);line-height:1.5;font-weight:500;max-width:46ch}
 
 /* ═══ METHOD — timeline vertical alinhada à esquerda ═══ */
+.method-section{position:relative;overflow:hidden;background:
+  linear-gradient(90deg,rgba(22,25,29,0.96) 0%,rgba(22,25,29,0.85) 50%,rgba(22,25,29,0.65) 100%),
+  url('img/bg-method.png') center center / cover no-repeat,
+  var(--bg-base);
+}
+.method-section .container{position:relative;z-index:1}
 .method-wrap{max-width:820px;margin:32px 0 0 0;position:relative;padding-left:60px}
 .method-wrap::before{
   content:'';position:absolute;left:19px;top:14px;bottom:14px;
@@ -467,6 +473,17 @@ section.s.deepest{background:var(--bg-deepest)}
   cursor:pointer;
   display:flex;flex-direction:column;justify-content:flex-start;
 }
+.bento-photo{
+  position:absolute;top:0;left:0;bottom:0;width:55%;
+  background-size:cover;background-position:center;
+  opacity:0.18;
+  -webkit-mask-image:linear-gradient(90deg,#000 0%,#000 35%,transparent 100%);
+  mask-image:linear-gradient(90deg,#000 0%,#000 35%,transparent 100%);
+  pointer-events:none;z-index:0;
+  transition:opacity 900ms cubic-bezier(0.16,1,0.3,1);
+}
+.bento-item:hover .bento-photo{opacity:0.28}
+.bento-item h4,.bento-item p{position:relative;z-index:1}
 .bento-item:hover{
   border-color:var(--gold);background:var(--bg-elevated-2);
   transform:translateY(-4px) scale(1.02);box-shadow:var(--shadow-md),var(--glow-sm);
@@ -701,14 +718,15 @@ section.s.deepest{background:var(--bg-deepest)}
 .price-card.featured{
   background:linear-gradient(180deg,rgba(45,48,55,0.98) 0%,rgba(203,150,80,0.18) 100%);
   isolation:isolate;
+  border-color:transparent;
 }
 .price-card.featured::before{
-  content:'';position:absolute;inset:-1px;padding:2px;border-radius:inherit;
-  background:conic-gradient(from var(--rot,0deg),var(--gold-deep),var(--gold-bright),var(--gold),var(--gold-deep));
+  content:'';position:absolute;inset:0;padding:2.5px;border-radius:inherit;
+  background:conic-gradient(from var(--rot,0deg),transparent 0%,transparent 25%,var(--gold-deep) 38%,var(--gold-bright) 48%,var(--gold) 52%,var(--gold-bright) 56%,var(--gold-deep) 65%,transparent 75%,transparent 100%);
   -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
   mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
   -webkit-mask-composite:xor;mask-composite:exclude;
-  animation:rot-conic 6s linear infinite;pointer-events:none;
+  animation:rot-conic 5s linear infinite;pointer-events:none;
 }
 .price-signature{
   font-family:var(--font-script);font-size:26px;color:var(--gold);
@@ -821,10 +839,11 @@ section.s.deepest{background:var(--bg-deepest)}
 /* smoother accordion via wrapper */
 .faq-body{
   display:grid;grid-template-rows:0fr;
-  transition:grid-template-rows 500ms var(--ease);
+  transition:grid-template-rows 800ms cubic-bezier(0.16,1,0.3,1),opacity 700ms cubic-bezier(0.16,1,0.3,1);
+  opacity:0;
 }
-.faq[open] .faq-body{grid-template-rows:1fr}
-.faq-body > div{overflow:hidden}
+.faq[open] .faq-body{grid-template-rows:1fr;opacity:1}
+.faq-body > div{overflow:hidden;transition:padding 700ms cubic-bezier(0.16,1,0.3,1)}
 .faq-body-inner{padding:0 34px 28px;font-size:15px;color:var(--text-secondary);line-height:1.85}
 .faq-body-inner strong{color:var(--text-primary);font-weight:600}
 
@@ -832,8 +851,8 @@ section.s.deepest{background:var(--bg-deepest)}
 .final{
   padding:130px 0;position:relative;overflow:hidden;
   background:
-    radial-gradient(ellipse 80% 60% at 80% 50%,rgba(203,150,80,0.22),transparent 70%),
-    radial-gradient(ellipse 40% 60% at 20% 80%,rgba(203,150,80,0.25),transparent 70%),
+    linear-gradient(90deg,rgba(22,25,29,0.92) 0%,rgba(22,25,29,0.78) 50%,rgba(22,25,29,0.5) 100%),
+    url('img/bg-final.png') center center / cover no-repeat,
     linear-gradient(160deg,var(--bg-deepest) 0%,var(--bg-base) 100%);
 }
 .final::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
@@ -948,15 +967,6 @@ footer{background:var(--bg-deepest);color:var(--text-muted);padding:56px 0 36px;
           <a href="#vsl" class="btn-link">▶ Ver vídeo do Ricardo</a>
         </div>
         <p class="hero-micro">Candidatura prévia obrigatória · vagas limitadas</p>
-      </div>
-      <div>
-        <div class="hero-portrait">
-          <img src="img/hero.jpeg" alt="Ricardo Calheiros com a Jade no Porto">
-          <div class="hero-portrait-cap">
-            <div class="name">Ricardo Calheiros</div>
-            <div class="role">Koehler Method · Porto, Portugal</div>
-          </div>
-        </div>
       </div>
     </div>
   </div>
@@ -1140,7 +1150,7 @@ footer{background:var(--bg-deepest);color:var(--text-muted);padding:56px 0 36px;
 </section>
 
 <!-- ═══ METHOD — timeline vertical alinhada à esquerda ═══ -->
-<section class="s" id="metodo">
+<section class="s method-section" id="metodo">
   <div class="container">
     <div class="tag reveal">O Método</div>
     <h2 class="h2 reveal">Porque os problemas do cão <span class="accent">raramente são só do cão.</span></h2>
@@ -1190,14 +1200,14 @@ footer{background:var(--bg-deepest);color:var(--text-muted);padding:56px 0 36px;
     <p class="lead reveal">O currículo foi desenhado para cobrir tudo aquilo que um treinador canino de elite precisa de dominar — da técnica mais rigorosa ao modelo de negócio que sustenta a carreira.</p>
 
     <div class="bento">
-      <div class="bento-item bento-lg reveal"><h4>Comportamento canino a fundo</h4><p>Leitura, comunicação e aprendizagem do cão. Base científica sólida para que cada decisão técnica tenha um porquê claro — sem achismos, sem modismos.</p><span class="bento-num">01</span></div>
-      <div class="bento-item reveal delay-1"><h4>Padrões emocionais dos donos</h4><p>Como o humano cria ou perpetua o problema.</p><span class="bento-num">02</span></div>
-      <div class="bento-item reveal delay-2"><h4>Estruturas de treino</h4><p>Protocolos que aguentam fora da sessão.</p><span class="bento-num">03</span></div>
-      <div class="bento-item bento-wide reveal"><h4>Casos complexos</h4><p>Agressividade, ansiedade de separação, medo, comportamentos obsessivo-compulsivos. Os casos onde a maioria desiste.</p><span class="bento-num">04</span></div>
-      <div class="bento-item bento-lg reveal delay-1"><h4>Koehler Method</h4><p>O método de preferência do Ricardo, ensinado pelo único formador reconhecido em Portugal e um dos apenas 4 na Europa.</p><span class="bento-num">05</span></div>
-      <div class="bento-item reveal delay-2"><h4>Coaching familiar</h4><p>Família toda na mesma direcção.</p><span class="bento-num">06</span></div>
-      <div class="bento-item reveal"><h4>Modelo de negócio</h4><p>Preços, serviços, funil, margens.</p><span class="bento-num">07</span></div>
-      <div class="bento-item bento-wide reveal delay-1"><h4>Posicionamento digital e conteúdo</h4><p>Como construíres uma presença online que te traz clientes e te permite facturar €2.000 a €30.000+/mês.</p><span class="bento-num">08</span></div>
+      <div class="bento-item bento-lg reveal"><div class="bento-photo" style="background-image:url('img/bento-7RC.jpeg')"></div><h4>Comportamento canino a fundo</h4><p>Leitura, comunicação e aprendizagem do cão. Base científica sólida para que cada decisão técnica tenha um porquê claro — sem achismos, sem modismos.</p><span class="bento-num">01</span></div>
+      <div class="bento-item reveal delay-1"><div class="bento-photo" style="background-image:url('img/bento-8RC.jpeg')"></div><h4>Padrões emocionais dos donos</h4><p>Como o humano cria ou perpetua o problema.</p><span class="bento-num">02</span></div>
+      <div class="bento-item reveal delay-2"><div class="bento-photo" style="background-image:url('img/bento-9RC.jpeg')"></div><h4>Estruturas de treino</h4><p>Protocolos que aguentam fora da sessão.</p><span class="bento-num">03</span></div>
+      <div class="bento-item bento-wide reveal"><div class="bento-photo" style="background-image:url('img/bento-12RC.jpeg')"></div><h4>Casos complexos</h4><p>Agressividade, ansiedade de separação, medo, comportamentos obsessivo-compulsivos. Os casos onde a maioria desiste.</p><span class="bento-num">04</span></div>
+      <div class="bento-item bento-lg reveal delay-1"><div class="bento-photo" style="background-image:url('img/bento-20RC.jpeg')"></div><h4>Koehler Method</h4><p>O método de preferência do Ricardo, ensinado pelo único formador reconhecido em Portugal e um dos apenas 4 na Europa.</p><span class="bento-num">05</span></div>
+      <div class="bento-item reveal delay-2"><div class="bento-photo" style="background-image:url('img/bento-24RC.jpeg')"></div><h4>Coaching familiar</h4><p>Família toda na mesma direcção.</p><span class="bento-num">06</span></div>
+      <div class="bento-item reveal"><div class="bento-photo" style="background-image:url('img/bento-37RC.jpeg')"></div><h4>Modelo de negócio</h4><p>Preços, serviços, funil, margens.</p><span class="bento-num">07</span></div>
+      <div class="bento-item bento-wide reveal delay-1"><div class="bento-photo" style="background-image:url('img/bento-50RC.jpeg')"></div><h4>Posicionamento digital e conteúdo</h4><p>Como construíres uma presença online que te traz clientes e te permite facturar €2.000 a €30.000+/mês.</p><span class="bento-num">08</span></div>
     </div>
   </div>
 </section>
