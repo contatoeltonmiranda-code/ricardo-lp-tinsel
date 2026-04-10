@@ -621,6 +621,21 @@ section.s.method-section .container{position:relative;z-index:1}
   border:1px solid var(--border-warm);
 }
 .bonus-illust svg{width:70%;height:70%;opacity:0.9}
+.bonus-illust-photo{padding:0;background:var(--bg-deepest)}
+.bonus-illust-photo img{
+  width:100%;height:100%;object-fit:cover;object-position:center 30%;
+  filter:contrast(1.18) brightness(0.78) saturate(0.85) sepia(0.15);
+  transition:transform 1.2s cubic-bezier(0.16,1,0.3,1),filter 1.2s cubic-bezier(0.16,1,0.3,1);
+}
+.bonus-illust-photo::after{
+  content:'';position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(180deg,transparent 50%,rgba(22,25,29,0.55) 100%),
+             radial-gradient(ellipse at center,transparent 40%,rgba(22,25,29,0.35) 100%);
+}
+.bonus:hover .bonus-illust-photo img{
+  transform:scale(1.06);
+  filter:contrast(1.22) brightness(0.85) saturate(0.95) sepia(0.1);
+}
 .bonus-note{margin-top:48px;font-family:var(--font-display);font-style:italic;font-size:13px;color:var(--text-muted);text-align:center}
 
 /* ═══ EXAME — animated abstract bg ═══ */
@@ -1257,42 +1272,8 @@ footer{background:var(--bg-deepest);color:var(--text-muted);padding:56px 0 36px;
         </div>
         <h3>Imersão em Agressividade</h3>
         <p>Um dia completo dedicado a um dos temas mais difíceis e mais procurados do mercado. Agressividade a pessoas, a outros cães, por recurso, por medo. O Ricardo é especialista nesta área e é por aqui que muitos alunos começam a diferenciar-se no mercado.</p>
-        <div class="bonus-illust">
-          <svg viewBox="0 0 200 150" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <linearGradient id="dog-silh" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stop-color="#ECE1AB" stop-opacity="0.9"/>
-                <stop offset="50%" stop-color="#DDA968"/>
-                <stop offset="100%" stop-color="#8B5A28"/>
-              </linearGradient>
-              <radialGradient id="alert-glow" cx="50%" cy="55%" r="60%">
-                <stop offset="0%" stop-color="#DDA968" stop-opacity="0.45"/>
-                <stop offset="60%" stop-color="#CB9650" stop-opacity="0.12"/>
-                <stop offset="100%" stop-color="#CB9650" stop-opacity="0"/>
-              </radialGradient>
-            </defs>
-            <ellipse cx="100" cy="82" rx="92" ry="62" fill="url(#alert-glow)"/>
-            <g opacity="0.35" stroke="#CB9650" stroke-width="0.8" fill="none" stroke-linecap="round">
-              <path d="M22 12L34 28"/>
-              <path d="M178 12L166 28"/>
-              <path d="M10 75L28 75"/>
-              <path d="M190 75L172 75"/>
-              <path d="M22 138L34 122"/>
-              <path d="M178 138L166 122"/>
-            </g>
-            <g fill="url(#dog-silh)">
-              <path d="M55 95 C55 95 50 78 56 65 C60 56 70 50 80 48 L88 32 L96 48 L110 46 L120 42 L132 36 L148 38 L158 50 L165 65 C168 75 167 85 162 95 L162 110 C162 118 156 124 148 124 L72 124 C63 124 55 116 55 108 Z"/>
-            </g>
-            <g fill="#16191D">
-              <ellipse cx="92" cy="78" rx="3.5" ry="4.5"/>
-              <ellipse cx="135" cy="75" rx="3.5" ry="4.5"/>
-            </g>
-            <g stroke="#16191D" stroke-width="2.2" stroke-linecap="round" fill="none">
-              <path d="M82 70L96 73"/>
-              <path d="M132 70L146 67"/>
-            </g>
-            <path d="M100 105 L108 100 L116 105 L124 100 L132 105" stroke="#ECE1AB" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.85"/>
-          </svg>
+        <div class="bonus-illust bonus-illust-photo">
+          <img src="img/jade-closeup.jpeg" alt="Cão alerta — sessão de agressividade">
         </div>
       </div>
       <div class="bonus reveal delay-1">
