@@ -214,7 +214,7 @@ section.s.deepest{background:var(--bg-deepest)}
 }
 .problem-img-bg{
   position:absolute;inset:0;z-index:0;
-  background-image:url('img/jade-closeup.jpeg');
+  background-image:url('img/problem-14rc.jpeg');
   background-size:cover;background-position:center;
   filter:blur(32px) brightness(0.42) saturate(1.1);
   transform:scale(1.18);
@@ -330,14 +330,15 @@ section.s.deepest{background:var(--bg-deepest)}
 .story-deco-circle,.story-deco-dots{display:none}
 @keyframes spin{to{transform:rotate(360deg)}}
 .story-badge{
-  margin-top:36px;
+  margin-top:-48px;margin-left:48px;margin-right:48px;
   background:linear-gradient(135deg,rgba(45,48,55,0.96) 0%,rgba(35,38,43,0.98) 100%);
   border:1px solid rgba(203,150,80,0.35);
   border-radius:14px;padding:22px 28px;
   display:flex;align-items:center;gap:22px;
-  position:relative;z-index:2;overflow:hidden;
-  box-shadow:0 14px 40px rgba(0,0,0,0.5),inset 0 0 0 1px rgba(203,150,80,0.06);
+  position:relative;z-index:5;overflow:hidden;
+  box-shadow:0 18px 50px rgba(0,0,0,0.7),inset 0 0 0 1px rgba(203,150,80,0.06);
   transition:all 600ms cubic-bezier(0.16,1,0.3,1);
+  backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
 }
 .story-badge::before{
   content:'';position:absolute;top:0;left:0;width:3px;height:100%;
@@ -375,7 +376,7 @@ section.s.deepest{background:var(--bg-deepest)}
 }
 .story-text p{font-size:16px;color:var(--text-secondary);line-height:1.85;margin-bottom:22px}
 .story-text p strong{color:var(--text-primary);font-weight:600}
-.story-quote{background:rgba(203,150,80,0.06);border-left:4px solid var(--gold);padding:32px 38px;margin:32px 0;border-radius:0 8px 8px 0;font-family:var(--font-display);font-style:italic;font-size:21px;color:var(--text-primary);line-height:1.55;font-weight:500}
+.story-quote{background:linear-gradient(90deg,rgba(203,150,80,0.1) 0%,rgba(203,150,80,0.06) 50%,transparent 100%);border-left:4px solid var(--gold);padding:32px 38px;margin:32px 0;border-radius:0 8px 8px 0;font-family:var(--font-display);font-style:italic;font-size:22px;color:var(--text-primary);line-height:1.5;font-weight:500;max-width:30ch}
 
 /* ═══ METHOD — timeline vertical alinhada à esquerda ═══ */
 .method-wrap{max-width:820px;margin:32px 0 0 0;position:relative;padding-left:60px}
@@ -777,7 +778,7 @@ section.s.deepest{background:var(--bg-deepest)}
 .how-section .container{position:relative;z-index:1}
 .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:32px;position:relative}
 .steps::before{content:'';position:absolute;top:38px;left:5%;right:5%;height:1px;background:linear-gradient(90deg,transparent,var(--gold),var(--gold-bright),var(--gold),transparent);z-index:0}
-.step{background:var(--bg-elevated);border:none;border-radius:8px;padding:28px 28px 40px;position:relative;z-index:1;transition:all 700ms cubic-bezier(0.16,1,0.3,1);isolation:isolate;
+.step{background:var(--bg-elevated);border:none;border-radius:32px 32px 8px 8px;padding:28px 28px 40px;position:relative;z-index:1;transition:all 700ms cubic-bezier(0.16,1,0.3,1);isolation:isolate;
   -webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 14%,#000 86%,transparent 100%),linear-gradient(180deg,#000 0%,#000 60%,transparent 100%);
   mask-image:linear-gradient(90deg,transparent 0%,#000 14%,#000 86%,transparent 100%),linear-gradient(180deg,#000 0%,#000 60%,transparent 100%);
   -webkit-mask-composite:source-in;mask-composite:intersect;
@@ -1046,7 +1047,7 @@ footer{background:var(--bg-deepest);color:var(--text-muted);padding:56px 0 36px;
     <div class="problem-grid">
       <div class="problem-img reveal">
         <div class="problem-img-bg"></div>
-        <img src="img/jade-closeup.jpeg" alt="Close-up da Jade">
+        <img src="img/problem-14rc.jpeg" alt="Ricardo com cão">
       </div>
       <div class="problem-text reveal delay-1">
         <p>De um lado, os treinadores do espectáculo. Vídeos virais, cães impecáveis em câmara — e <strong>zero transformação real</strong> quando o telemóvel se desliga.</p>
@@ -1066,7 +1067,7 @@ footer{background:var(--bg-deepest);color:var(--text-muted);padding:56px 0 36px;
 <section class="s">
   <div class="container">
     <div class="tag reveal">A Transformação</div>
-    <h2 class="h2 reveal">Seis meses. <span class="accent">Três transformações reais.</span></h2>
+    <h2 class="h2 reveal">Seis meses.<br><span class="accent">Três transformações reais.</span></h2>
     <p class="lead reveal">Não vendemos sonhos. Estas são as três transformações concretas que os alunos do Ricardo reportam quando terminam a certificação.</p>
 
     <div class="promise-grid">
@@ -1511,7 +1512,7 @@ footer{background:var(--bg-deepest);color:var(--text-muted);padding:56px 0 36px;
     <div class="final-grid">
       <div class="final-text reveal">
         <span class="tag">Próximo Passo</span>
-        <h2>A tua próxima vida começa a <span class="accent">9 de Maio.</span></h2>
+        <h2>A tua próxima vida<br>começa a <span class="accent">9 de Maio.</span></h2>
         <p>A próxima turma é limitada e a candidatura prévia é obrigatória. Quando fecha, fecha — e a seguinte fica para daqui a alguns meses.</p>
         <p>Após a candidatura, o Ricardo entra em contacto pessoalmente para agendar a chamada de avaliação. Sem pressão, sem truques — só uma conversa directa.</p>
         <div class="final-cta-row">
