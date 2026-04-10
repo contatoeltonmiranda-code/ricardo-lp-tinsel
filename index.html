@@ -189,8 +189,8 @@ section.s.deepest{background:var(--bg-deepest)}
 .for-fecho{text-align:center;margin-top:48px;font-family:var(--font-display);font-style:italic;font-size:20px;color:var(--text-secondary);font-weight:500}
 .for-fecho strong{color:var(--text-primary);font-weight:700;font-style:normal}
 
-/* ═══ PROBLEM — gold bg + diagonal cut photo + rounded corners ═══ */
-.problem-section{position:relative;overflow:hidden;padding:110px 0;background:var(--bg-deepest);border-radius:48px;margin:48px 24px;isolation:isolate}
+/* ═══ PROBLEM — gold bg + diagonal cut photo (full-bleed igual story) ═══ */
+.problem-section{position:relative;overflow:hidden;padding:110px 0;background:var(--bg-deepest);isolation:isolate}
 .problem-section::before{
   content:'';position:absolute;inset:0;opacity:0.6;pointer-events:none;z-index:0;
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='800' viewBox='0 0 1200 800'%3E%3Cg fill='none' stroke='%23CB9650' stroke-width='0.4' opacity='0.25'%3E%3Cpath d='M0,400 Q300,200 600,400 T1200,400'/%3E%3Cpath d='M0,450 Q300,250 600,450 T1200,450'/%3E%3Cpath d='M0,350 Q300,150 600,350 T1200,350'/%3E%3C/g%3E%3Cg fill='%23CB9650' opacity='0.12'%3E%3Ccircle cx='100' cy='100' r='2'/%3E%3Ccircle cx='300' cy='200' r='2'/%3E%3Ccircle cx='500' cy='150' r='2'/%3E%3Ccircle cx='700' cy='250' r='2'/%3E%3Ccircle cx='900' cy='100' r='2'/%3E%3Ccircle cx='1100' cy='200' r='2'/%3E%3Ccircle cx='200' cy='600' r='2'/%3E%3Ccircle cx='400' cy='700' r='2'/%3E%3Ccircle cx='600' cy='650' r='2'/%3E%3Ccircle cx='800' cy='700' r='2'/%3E%3Ccircle cx='1000' cy='600' r='2'/%3E%3C/g%3E%3C/svg%3E");
@@ -205,19 +205,20 @@ section.s.deepest{background:var(--bg-deepest)}
 .problem-section .container{position:relative;z-index:1}
 .problem-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:0;align-items:center;margin-top:32px}
 .problem-img{
-  position:relative;aspect-ratio:4/5;overflow:hidden;
-  margin-left:-32px;
-  width:calc(100% + 32px);max-width:none;
+  height:440px;overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,0.7);
+  isolation:isolate;position:relative;z-index:2;
+  margin-left:calc(-1 * ((100vw - 100%) / 2 - 0px));
+  width:calc(100% + ((100vw - 100%) / 2));
   clip-path:polygon(0 0,100% 0,calc(100% - 70px) 100%,0 100%);
 }
 .problem-img img{width:100%;height:100%;object-fit:cover;filter:contrast(1.1) brightness(0.85)}
 .problem-img::before{
-  content:'';position:absolute;top:0;right:0;bottom:0;width:90px;z-index:2;
-  background:linear-gradient(135deg,transparent 0%,transparent 40%,var(--gold-deep) 46%,var(--gold-bright) 50%,var(--gold) 54%,transparent 60%,transparent 100%);
-  clip-path:polygon(100% 0,100% 100%,0 100%,calc(100% - 80px) 0);
+  content:'';position:absolute;top:0;right:0;bottom:0;width:70px;z-index:3;
+  background:linear-gradient(135deg,transparent 0%,transparent 40%,var(--gold-deep) 46%,var(--gold-bright) 50%,var(--gold) 54%,transparent 60%);
+  clip-path:polygon(100% 0,100% 100%,0 100%,calc(100% - 60px) 0);
   pointer-events:none;
 }
-.problem-img::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,transparent 60%,rgba(22,25,29,0.4) 100%);pointer-events:none}
+.problem-img::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(22,25,29,0.5) 100%);pointer-events:none}
 .problem-text{padding-left:64px}
 .problem-text p{font-size:16px;color:var(--text-secondary);line-height:1.85;margin-bottom:20px}
 .problem-text p strong{color:var(--text-primary);font-weight:600}
@@ -286,16 +287,16 @@ section.s.deepest{background:var(--bg-deepest)}
 .p-card p{font-size:15px;color:var(--text-secondary);line-height:1.75;position:relative;z-index:1}
 .promise-note{margin-top:48px;font-family:var(--font-display);font-style:italic;font-size:13px;color:var(--text-muted);text-align:center;max-width:760px;margin-left:auto;margin-right:auto}
 
-/* ═══ STORY top divider (trapezoid notch) ═══ */
-.story-divider{position:relative;height:60px;background:var(--bg-base);overflow:hidden}
-.story-divider svg{position:absolute;top:0;left:0;width:100%;height:100%}
+/* ═══ STORY top divider (trapezoid notch) — full bleed ═══ */
+.story-divider{position:relative;height:60px;width:100vw;margin:0;padding:0;background:var(--bg-base);overflow:hidden;display:block;line-height:0}
+.story-divider svg{position:absolute;top:0;left:0;width:100%;height:100%;display:block}
 .story-divider-path{fill:var(--bg-deepest);stroke:var(--gold);stroke-width:1.5}
 
 /* ═══ STORY — diagonal cut foto grudada margem esquerda ═══ */
 .story-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:0;align-items:start;margin-top:48px}
 .story-img-wrap{position:sticky;top:120px}
 .story-portrait{
-  aspect-ratio:4/5;overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,0.7);
+  height:440px;overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,0.7);
   isolation:isolate;position:relative;z-index:2;
   margin-left:calc(-1 * ((100vw - 100%) / 2 - 0px));
   width:calc(100% + ((100vw - 100%) / 2));
@@ -759,26 +760,6 @@ section.s.deepest{background:var(--bg-deepest)}
 }
 .final-img img{width:100%;height:100%;object-fit:cover;filter:contrast(1.05) brightness(0.92) saturate(1.1)}
 .final-img::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,transparent 50%,rgba(22,25,29,0.4) 100%);pointer-events:none}
-/* floating badges over final image */
-.float-badge{
-  position:absolute;background:rgba(22,25,29,0.92);
-  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
-  border:1px solid var(--gold);border-radius:12px;
-  padding:16px 22px;display:flex;align-items:center;gap:14px;
-  box-shadow:var(--shadow-md),var(--glow-sm);
-  animation:float-badge 5s ease-in-out infinite;
-}
-.float-badge-1{top:18%;left:-30px;animation-delay:0s}
-.float-badge-2{bottom:22%;right:-30px;animation-delay:-2.5s}
-@keyframes float-badge{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
-.float-badge-icon{
-  width:40px;height:40px;border-radius:10px;
-  background:var(--gold);color:var(--bg-deepest);
-  display:flex;align-items:center;justify-content:center;flex-shrink:0;
-}
-.float-badge-icon svg{width:20px;height:20px}
-.float-badge-text{font-family:var(--font-display);font-size:13px;font-weight:700;color:var(--text-primary);line-height:1.2}
-.float-badge-text .sub{display:block;font-size:10px;font-weight:500;color:var(--text-muted);letter-spacing:0.5px;text-transform:uppercase;margin-top:4px;font-family:var(--font-body)}
 
 /* ═══ FOOTER ═══ */
 footer{background:var(--bg-deepest);color:var(--text-muted);padding:56px 0 36px;border-top:1px solid var(--border-warm)}
@@ -802,14 +783,16 @@ footer{background:var(--bg-deepest);color:var(--text-muted);padding:56px 0 36px;
   .hero-portrait{max-width:480px;margin:0 auto}
   .promise-grid,.inc-grid,.steps,.exam-grid{grid-template-columns:1fr 1fr}
   .story-grid,.problem-grid,.final-grid{grid-template-columns:1fr;gap:48px}
-  .story-img-wrap{position:static;max-width:420px;margin:0 auto}
-  .problem-img{max-width:480px;margin:0 auto}
+  .story-img-wrap{position:static;max-width:none;margin:0;width:100%}
+  .story-portrait{height:420px;margin-left:calc(-1 * ((100vw - 100%) / 2));width:100vw}
+  .problem-text{padding-left:0;margin-top:32px}
+  .story-text{padding-left:0;margin-top:32px}
+  .problem-img{height:420px;margin-left:calc(-1 * ((100vw - 100%) / 2));width:100vw}
   .steps::before{display:none}
   .bento{grid-template-columns:repeat(2,1fr)}
   .bento-lg,.bento-wide{grid-column:span 2}
   .bento-tall{grid-row:auto}
   .final-img-wrap{max-width:480px;margin:0 auto}
-  .float-badge-1{left:-16px}.float-badge-2{right:-16px}
 }
 @media(max-width:720px){
   .nav-links{display:none}
@@ -827,7 +810,6 @@ footer{background:var(--bg-deepest);color:var(--text-muted);padding:56px 0 36px;
   .bento-lg,.bento-wide,.bento-tall{grid-column:span 1;grid-row:auto}
   .method-wrap{padding-left:40px}
   .method-item::before{left:-32px}
-  .float-badge{display:none}
 }
 @media(prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:0.01ms!important;transition-duration:0.01ms!important}
@@ -1106,13 +1088,13 @@ footer{background:var(--bg-deepest);color:var(--text-muted);padding:56px 0 36px;
 
     <div class="bento">
       <div class="bento-item bento-lg reveal"><span class="bento-num">i</span><h4>Comportamento canino a fundo</h4><p>Leitura, comunicação e aprendizagem do cão. Base científica sólida para que cada decisão técnica tenha um porquê claro — sem achismos, sem modismos.</p></div>
-      <div class="bento-item reveal delay-1"><span class="bento-num">ii</span><h4>Padrões emocionais dos donos</h4><p>Como o humano cria ou perpetua o problema.</p></div>
-      <div class="bento-item reveal delay-2"><span class="bento-num">iii</span><h4>Estruturas de treino</h4><p>Protocolos que aguentam fora da sessão.</p></div>
+      <div class="bento-item bento-tall reveal delay-1"><span class="bento-num">ii</span><h4>Padrões emocionais dos donos</h4><p>Como o humano cria ou perpetua o problema.</p></div>
+      <div class="bento-item bento-tall reveal delay-2"><span class="bento-num">iii</span><h4>Estruturas de treino</h4><p>Protocolos que aguentam fora da sessão.</p></div>
       <div class="bento-item bento-wide reveal"><span class="bento-num">iv</span><h4>Casos complexos</h4><p>Agressividade, ansiedade de separação, medo, comportamentos obsessivo-compulsivos. Os casos onde a maioria desiste.</p></div>
-      <div class="bento-item bento-lg reveal delay-1"><span class="bento-num">v</span><h4>Koehler Method</h4><p>O método de preferência do Ricardo, ensinado pelo único formador reconhecido em Portugal e um dos apenas 4 na Europa.</p></div>
-      <div class="bento-item reveal delay-2"><span class="bento-num">vi</span><h4>Coaching familiar</h4><p>Família toda na mesma direcção.</p></div>
-      <div class="bento-item reveal"><span class="bento-num">vii</span><h4>Modelo de negócio</h4><p>Preços, serviços, funil, margens.</p></div>
-      <div class="bento-item bento-wide reveal delay-1"><span class="bento-num">viii</span><h4>Posicionamento digital e conteúdo</h4><p>Como construíres uma presença online que te traz clientes e te permite facturar €2.000 a €30.000+/mês.</p></div>
+      <div class="bento-item bento-tall reveal delay-1"><span class="bento-num">v</span><h4>Koehler Method</h4><p>O método de preferência do Ricardo, ensinado pelo único formador reconhecido em Portugal e um dos apenas 4 na Europa.</p></div>
+      <div class="bento-item bento-wide reveal delay-2"><span class="bento-num">vi</span><h4>Coaching familiar</h4><p>Família toda na mesma direcção.</p></div>
+      <div class="bento-item bento-wide reveal"><span class="bento-num">vii</span><h4>Modelo de negócio</h4><p>Preços, serviços, funil, margens.</p></div>
+      <div class="bento-item bento-lg reveal delay-1"><span class="bento-num">viii</span><h4>Posicionamento digital e conteúdo</h4><p>Como construíres uma presença online que te traz clientes e te permite facturar €2.000 a €30.000+/mês.</p></div>
     </div>
   </div>
 </section>
@@ -1438,18 +1420,6 @@ footer{background:var(--bg-deepest);color:var(--text-muted);padding:56px 0 36px;
       <div class="final-img-wrap reveal delay-1">
         <div class="final-img">
           <img src="img/final.jpeg" alt="Ricardo Calheiros">
-        </div>
-        <div class="float-badge float-badge-1">
-          <div class="float-badge-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
-          </div>
-          <div class="float-badge-text">9 de Maio 2026<span class="sub">Próxima turma</span></div>
-        </div>
-        <div class="float-badge float-badge-2">
-          <div class="float-badge-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-          </div>
-          <div class="float-badge-text">Vagas limitadas<span class="sub">Candidaturas abertas</span></div>
         </div>
       </div>
     </div>
